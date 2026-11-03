@@ -211,6 +211,14 @@ body.calming .stage{filter:saturate(.35) brightness(.75)}
 .win-line.win{color:#ffd23e}.win-line.ldw{color:#ffb84d;font-size:12.5px;text-transform:none}.win-line.lose{color:#8f76ad;font-size:11.5px}
 .line-info{min-height:19px;text-align:center;font-size:11.5px;color:#b79ad9}
 .line-info b{color:#ffd23e}
+.roast{margin:11px 2px 2px;background:#140526;border:1px solid #4a2a72;border-left:3px solid #ffb800;display:flex;gap:11px;padding:10px 12px;text-align:left;align-items:flex-start}
+.roast.pop{animation:roastIn .3s ease}
+@keyframes roastIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.roast .rav{width:37px;height:37px;flex:0 0 37px;border-radius:50%;background:#ffb800;color:#241300;font-family:"Arial Black",Arial,sans-serif;font-size:19px;display:flex;align-items:center;justify-content:center;border:2px solid #ffe680}
+.roast .rname{font-size:9.5px;font-weight:900;letter-spacing:1.6px;color:#ffb800}
+.roast .rtext{font-size:13.5px;color:#f2eaff;line-height:1.5;margin-top:2px}
+.roast .rfact{font-size:11.5px;color:#9db1cf;line-height:1.5;margin-top:4px}
+.roast .rfact b{color:#7cc4ee}
 .controls{background:#12041f;border-top:2px solid #c89112;padding:10px 12px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .disp{background:transparent;border:0;border-radius:0;padding:2px 2px;min-width:92px}
 .disp small{display:block;font-size:8.5px;letter-spacing:2px;color:#7d838f;font-weight:700}
@@ -697,6 +705,12 @@ body *:not(.spin):not(.av):not(.avatar):not(.breath-circle):not(.urge-track):not
               <div class="win-line" id="slotMsg">İYİ ŞANSLAR</div>
               <div class="line-info" id="lineInfo">8+ aynı sembol her yerde öder · Kazanan semboller düşer</div>
               <div class="bigwin" id="bigWin"><div><div class="bw-t">BIG WIN</div><div class="bw-a" id="bigWinAmt">₺0</div></div></div>
+              <div class="roast" id="roastBox">
+                <div class="rav">%</div>
+                <div><div class="rname">DR. OLASILIK · CANLI YORUM</div>
+                <div class="rtext" id="roastText">Hoş geldiniz. Ben her çevriminizi izleyip kibarca yorumlayacağım. Kibarca kısmı garanti değil.</div>
+                <div class="rfact" id="roastFact"></div></div>
+              </div>
             </div>
             <aside class="oly-right">
               <img class="zeus" src="assets/games/gates-of-olympus.webp" alt="" aria-hidden="true">
@@ -1220,6 +1234,67 @@ function setUrge(v,why){
   $("#urgeLabel").textContent=L[0]+(why?" · Tetikleyici: "+why:"");
   $("#urgeTips").innerHTML=L[1].map(t=>`<li>${t}</li>`).join("");
 }
+/* ---------- Dr. Olasilik: kullaniciyla dalga gecen canli yorum ----------
+   Hedef kisi degil: batil inanclar, kovalama ve kasanin tasarimi. */
+const ROASTS={
+ start:[
+  ["Hoş geldiniz. Ben her çevriminizi izleyip kibarca yorumlayacağım. Kibarca kısmı garanti değil.","Bu makinenin taban oyunu simülasyonda ~%90 geri verir. Yani uzun vadede her ₺100'ün ~₺90'ı döner; kalanı, bu cümlenin okunduğu yerin kirasıdır."],
+ ],
+ win:[
+  ["Kazandınız. Bu anın ekran görüntüsünü alın; devamını genelde makine finanse eder. Şimdi kalkmak, bugün yapabileceğiniz en kârlı hamle.","Dopamin, ödülün kendisinden çok <b>beklenti</b> anında yükselir. Beyniniz kazandığınızda değil, SPIN'e bastığınızda eğleniyor — makine de tam olarak o anı satıyor."],
+  ["Tebrikler, kasa size paranızın bir kısmını iade etti ve siz buna kazanç diyorsunuz. İlişkinizde toksik olan taraf siz değilsiniz.","Büyük ve küçük kazançlar sonrasındaki çevrimler en hızlı çevrilenlerdir; kazanç, çevrimi 'bedavaya getirdiği' hissi verir. O his de fiyat listesine dahildir."],
+ ],
+ bigwin:[
+  ["BIG WIN! Zeus bile tek kaşını kaldırdı. Yalnız bir not: büyük kazançlar, arkasından en uzun oynatan anlardır. Beyniniz bu anı önümüzdeki saatlere kira gibi yayacak.","Kayıpların acısı, aynı büyüklükteki kazançların sevincinden yaklaşık iki kat güçlüdür (Kahneman). O yüzden kazanınca 'artık kârlıyım, rahatım' değil, genelde 'kaybetme korkusu' yönetir."],
+ ],
+ ldw:[
+  ["KAZANDINIZ!!! (Net: eksi para.) Bu coşku, bahisten küçük bir iade için. Markette para üstü alınca da böyle seviniyor musunuz? Orada en azından ekmek almış oluyorsunuz.","Dixon ve arkadaşlarının araştırması: bahisten küçük dönüşlerde oyuncular kazandıklarını <b>sanıyor</b>. Ses + ışık + 'KAZANÇ' yazısı, kaybı kazanç gibi kaydettirir. Adı üstünde: kazanç kılığına girmiş kayıp."],
+ ],
+ near:[
+  ["7 sembol! Bir tane daha olsaydı... olmadı. 'Bir tane daha' hissi bu makinenin en çok satan ürünüdür; sembol üretmiyor, o hissi üretiyor.","Clark ve ark. (Cambridge, 2009): 'neredeyse kazanç'lar, kaybetmenize rağmen beynin kazançla ilişkili bölgelerini harekete geçirir ve devam etme isteğini artırır. Yani bu his bir tesadüf değil, ölçülmüş bir etki."],
+ ],
+ streak:[
+  ["Üç kayıp üst üste. İçinizdeki ses 'dönmek üzere' diyor. O sesin veri kaynağıyla tanıştırayım: hiçbiri.","Monte Carlo, 18 Ağustos 1913: rulet 26 kez üst üste siyah geldi. Oyuncular 'artık kırmızı şart' diye servet bastı ve kaybetti. Topun hafızası yoktu; makaraların da yok."],
+  ["Seri uzuyor ve siz hâlâ buradasınız. Skinner'ın güvercinleri de böyleydi: ödülün ne zaman geleceğini bilemedikleri için pedala basmayı bırakamıyorlardı. Onların ödülü en azından yenebiliyordu.","Değişken oranlı pekiştirme, davranışın en zor söndüğü programdır. 'Ne zaman geleceği belli olmayan ödül' = bu makinenin çalışma prensibi."],
+ ],
+ broke:[
+  ["Bakiye sıfır. Tebrikler: oyunun sonunu gördünüz. Çoğu oyuncu bu ekranı 'oyunun ortası' sanır; siz en azından finali tanıdınız.","Terry Watanabe'nin 2007'de Las Vegas'ta tahmini 127 milyon dolar kaybettiği haber olmuştu. Kasalar için 'çok şanssız oyuncu' diye bir şey yoktur; 'çok uzun oturmuş oyuncu' vardır."],
+ ],
+ reload:[
+  ["Yeni ₺1.000, tertemiz, lekesiz. Eski netiniz mi? Hâlâ orada, Sorumlu Oyun sayfasında sizi bekliyor. Hafıza silmek kasanın özelliği; sizde arıza yok.","Batık maliyet yanılgısı: giden para, bir sonraki kararın gerekçesi olamaz. Ama beyin 'buraya kadar geldik' demeyi sever. Kasa da bu cümleyi sever."],
+ ],
+ auto:[
+  ["Auto açık. Artık karar vermenize bile gerek yok; makine sizin yerinize de kaybedebiliyor. Verimlilikte son nokta.","Otomasyon, 'bir daha basayım mı?' diye sorduğunuz tek anı da siler. Koruyucu araçların tamamı, özünde o tek soruyu geri getirmeye çalışır."],
+ ],
+ ante:[
+  ["Ante Bet açık: %25 daha pahalıya 'belki' kelimesini satın aldınız. Scatter şansı arttı, matematik hâlâ aynı tarafta.","Ekstra bahis, ödeme tablosunu değiştirmez; sadece çevrim başına fiyatı artırır. Daha sık bonus görmek ile daha ucuza oynamak aynı şey değildir."],
+ ],
+ buy:[
+  ["Bonus satın aldınız: 'ücretsiz' çevrimlere para ödediniz. İsmindeki ücretsiz kelimesi pazarlamadan, faturası sizden.","Bonus satın alma, ortalaması genelde fiyatının altında olan bir pakettir; satın aldığınız şey matematik değil, beklemeyi atlama hissidir."],
+ ],
+ fsend:[
+  ["Ücretsiz çevrimler bitti. 'Bedava' kısmının bedeli, buraya gelene kadar çevirdiklerinizle ödendi; makine hayır kurumu değil, iyi bir hikâye anlatıcısıdır.","Bedava hissi, harcanan toplamı görünmez yapar. Toplamı görmek için Sorumlu Oyun'daki ömür boyu net satırı var: o satır hikâye anlatmaz."],
+ ],
+ milestone:[
+  ["{spins} çevrim geride. Netiniz: {net}. Bu sürede bir dil öğrenmeye başlasaydınız şu an muhtemelen 'bir bira lütfen' diyebiliyordunuz.","Gerçek kumarhanelerde pencere ve saat bulunmaması tesadüf değildir; zaman algısı zayıfladıkça oturum uzar. O yüzden süreniz bu sayfada hep gözünüzün önünde."],
+ ],
+ quit:[
+  ["Kapıdan çıktınız. Zeus arkanızdan bakıyor; siz bakmayın. Bugün kasadan aldığınız en değerli şey para değil, bu cümleyi okuyacak kadar dışarıda olmanız.","Araştırmalar, önceden yazılmış 'olursa-o zaman' planlarının dürtü anındaki kararlardan daha iyi çalıştığını gösterir. Planınız aşağıda; dürtü gelince karar vermeyin, planı okuyun."],
+ ],
+};
+let lastRoast="";
+function roast(kind){
+  const pool=ROASTS[kind]; if(!pool)return;
+  let pick=pool[Math.floor(Math.random()*pool.length)];
+  if(pool.length>1&&pick[0]===lastRoast)pick=pool[(pool.indexOf(pick)+1)%pool.length];
+  lastRoast=pick[0];
+  const net=S.returned-S.wagered;
+  const fill=t=>t.replace("{spins}",S.spins).replace("{net}",(net<0?"−₺":"₺")+fmt(Math.abs(net)));
+  const box=$("#roastBox"); if(!box)return;
+  $("#roastText").innerHTML=fill(pick[0]);
+  $("#roastFact").innerHTML="<b>Bilimsel gerçek:</b> "+fill(pick[1]);
+  box.classList.remove("pop"); void box.offsetWidth; box.classList.add("pop");
+}
 function isExcluded(){ return S.sessionLock||Date.now()<S.excludedUntil; }
 function addHistory(bet,ev,note){
   const tb=$("#histBody");
@@ -1319,7 +1394,7 @@ async function runFreeSpins(bet){
   }
   S.balance+=FS.total; FS.active=false; updateFsBadge(); updateHUD();
   $("#lineInfo").innerHTML=`Ücretsiz çevrimler bitti — toplam <b>₺${fmt(FS.total)}</b>${FS.mult?` (çarpan x${FS.mult} dahil)`:""}. Zeus'un verdiği de aynı makinenin parasıdır: bedeli, buraya gelene kadar çevrilenlerde ödenmiştir.`;
-  toast("Ücretsiz çevrimler bitti: toplam ₺"+fmt(FS.total));
+  toast("Ücretsiz çevrimler bitti: toplam ₺"+fmt(FS.total)); roast("fsend");
 }
 async function spin(){
   if(spinning||FS.active)return;
@@ -1342,17 +1417,20 @@ async function spin(){
     if(zr){ zr.classList.remove("flash"); void zr.offsetWidth; zr.classList.add("flash"); setTimeout(()=>zr.classList.remove("flash"),600); }
   }
   const msg=$("#slotMsg"), net=ev.pay-stake;
-  if(ev.pay>stake){ S.streak=0; msg.textContent="TOPLAM KAZANÇ ₺"+fmt(ev.pay); msg.className="win-line win"; beep(660,.14); setTimeout(()=>beep(880,.18),120); setUrge(S.urge+14,"kazanç sonrası devam isteği"); }
+  if(ev.pay>stake){ S.streak=0; msg.textContent="TOPLAM KAZANÇ ₺"+fmt(ev.pay); msg.className="win-line win"; beep(660,.14); setTimeout(()=>beep(880,.18),120); setUrge(S.urge+14,"kazanç sonrası devam isteği"); roast(ev.pay>=stake*15?"bigwin":"win"); }
   else if(ev.pay>0){ S.ldw++; S.streak++; msg.textContent="Kazanç ₺"+fmt(ev.pay)+" — bahis ₺"+fmt(stake); msg.className="win-line ldw";
-    $("#lineInfo").innerHTML=`Dönüş, bahisten küçük: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. Makine bunu da "kazanç" hanesine yazar.`; beep(520,.1); setUrge(S.urge+8,"bahisten küçük dönüşün kazanç diye sunulması"); }
+    $("#lineInfo").innerHTML=`Dönüş, bahisten küçük: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. Makine bunu da "kazanç" hanesine yazar.`; beep(520,.1); setUrge(S.urge+8,"bahisten küçük dönüşün kazanç diye sunulması"); roast("ldw"); }
   else { S.streak++; msg.textContent="KAZANÇ YOK"; msg.className="win-line lose";
-    if(ev.near){ S.near++; $("#lineInfo").textContent="Bir sembolden 7 tane geldi — ödeme 8'den başlar. Ödemesi, en kötü çevrimle aynı: ₺0."; }
+    if(ev.near){ S.near++; $("#lineInfo").textContent="Bir sembolden 7 tane geldi — ödeme 8'den başlar. Ödemesi, en kötü çevrimle aynı: ₺0."; roast("near"); }
+    else if(S.streak===3||S.streak===6){ roast("streak");
+      addChat(["Ma*** K.","De*** Y.","Re*** D."][Math.floor(Math.random()*3)],"@kullanici_47 kulübe hoş geldin, biz de 'dönmek üzere' diyerek geldik. aylardır dönmedi.","", "Perde arkası: bu masanın ömür boyu tablosu aşağıda. 'Dönmek üzere' diyenlerin toplamı orada yazıyor."); }
     setUrge(S.urge+(S.streak>=3?10:5),S.streak>=3?"kayıp serisini kovalama":"kayıp"); }
   if(S.streak>0)$("#streakLabel").innerHTML="Kayıp serisi: <b>"+S.streak+"</b>"; else $("#streakLabel").textContent="";
   S.worstStreak=Math.max(S.worstStreak,S.streak);
   S.history.push(S.balance); if(S.history.length>220)S.history.shift();
   addHistory(stake,ev,ev.scatterCount>=4?"Scatter "+ev.scatterCount:"");
-  if(S.balance<stake)$("#brokeBox").classList.add("show");
+  if([10,25,50,100].includes(S.spins))roast("milestone");
+  if(S.balance<stake){ $("#brokeBox").classList.add("show"); roast("broke"); }
   updateHUD(); drawChart(); realityText();
   spinning=false;
   if(ev.scatterCount>=4&&!isExcluded()){ await runFreeSpins(bet); }
@@ -1398,11 +1476,18 @@ function drawChart(){
   const net=S.returned-S.wagered;
   $("#chartNote").textContent="Şu an ₺"+fmt(S.balance)+" · "+S.spins+" çevrimde ömür boyu net "+(net<0?"−₺":"₺")+fmt(Math.abs(net))+".";
 }
+function eqText(amount){
+  const a=Math.abs(amount);
+  const items=[[20,"bardak çay"],[90,"filtre kahve"],[250,"sinema bileti"],[350,"kitap"],[1500,"haftalık market alışverişi"]];
+  const it=items.filter(([p])=>a>=p).pop()||items[0];
+  const n=Math.max(1,Math.round(a/it[0]));
+  return ` Günlük dile çevirirsek: Zeus'a yaklaşık <b>${fmt(n)} ${it[1]}</b> ısmarlamış oldunuz; o hâlâ tok, siz hâlâ susadınız.`;
+}
 function realityText(){
   const mins=Math.floor((Date.now()-S.started)/60000), net=S.returned-S.wagered;
   $("#realitySummary").innerHTML=S.spins===0?"Henüz çevrim yok. Birkaç çevrimden sonra burada süreniz, toplam bahsiniz ve netiniz; sohbet kutlama yaparken kasanın aldıklarıyla birlikte yazacak.":
    `<b>${mins} dakikada ${S.spins} çevrim</b>, toplam <b>₺${fmt(S.wagered)}</b> bahis, ömür boyu net <b style="color:${net<0?"#b3261e":"#137333"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</b>. Makine <b>${S.ldw}</b> zararı kazanç gibi sundu, <b>${S.near}</b> kez bir sembol farkla kaybettirdi. `+
-   (net<0?`Bunu bu makinede geri kazanmak için yaklaşık <b>₺${fmt(Math.abs(net)/.101)}</b> daha çevirmek gerekir; onun da yaklaşık %10'unu kaybetmeyi bekleyerek.`:`Öndesiniz; her yeni çevrimin fiyatı yaklaşık −%10 beklenen değer olduğu için (ücretsiz çevrimler bunu kısmen dengeler) istatistiksel olarak durmanın en doğru anı burası.`);
+   (net<0?`Bunu bu makinede geri kazanmak için yaklaşık <b>₺${fmt(Math.abs(net)/.101)}</b> daha çevirmek gerekir; onun da yaklaşık %10'unu kaybetmeyi bekleyerek.`+eqText(net):`Öndesiniz; her yeni çevrimin fiyatı yaklaşık −%10 beklenen değer olduğu için (ücretsiz çevrimler bunu kısmen dengeler) istatistiksel olarak durmanın en doğru anı burası.`);
 }
 
 /* kontroller */
@@ -1421,6 +1506,7 @@ $("#anteBtn").addEventListener("click",()=>{
   ANTE=!ANTE; const b=$("#anteBtn");
   b.classList.toggle("on",ANTE); b.innerHTML='<svg class="ic"><use href="#ic-turbo"/></svg> '+(ANTE?"Açık · Bahis ₺"+fmt(stakeOf()):"Kapalı");
   $("#lineInfo").innerHTML=ANTE?"Ante Bet açık: çevrim ₺"+fmt(stakeOf())+", Scatter ağırlığı ×2. Fiyat arttı; ödeme tablosu aynı.":"Ante Bet kapalı.";
+  if(ANTE)roast("ante");
 });
 $("#buyBtn").addEventListener("click",async()=>{
   if(spinning||FS.active)return;
@@ -1430,7 +1516,7 @@ $("#buyBtn").addEventListener("click",async()=>{
   if(!confirm("Bonus satın alınsın mı? ₺"+fmt(price)+" karşılığında 8 ücretsiz çevrim. Beklenen dönüş, fiyattan genelde düşüktür; Zeus garantisi yoktur."))return;
   spinning=true;
   S.balance-=price; S.wagered+=price; updateHUD();
-  toast("Bonus satın alındı: −₺"+fmt(price)+". 8 ücretsiz çevrim başlıyor; sonunda bu fiyatla karşılaştırın.");
+  toast("Bonus satın alındı: −₺"+fmt(price)+". 8 ücretsiz çevrim başlıyor; sonunda bu fiyatla karşılaştırın."); roast("buy");
   await runFreeSpins(S.bet);
   S.history.push(S.balance); updateHUD(); drawChart(); realityText();
   spinning=false;
@@ -1446,11 +1532,11 @@ $("#payRows").innerHTML=SYM.filter(s=>s.id!=="scatter").map(s=>{
     <b style="color:#fff;min-width:84px">Zeus</b><span style="font-size:11px;color:var(--muted)">SCATTER</span>
     <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">4+ = <b style="color:#ffd23e">8 ücretsiz çevrim</b></span></div>`;
 $("#autoBtn").addEventListener("click",()=>{ S.auto=!S.auto; $("#autoBtn").classList.toggle("on",S.auto);
-  if(S.auto){ S.autoLeft=10; if(!spinning)spin(); } });
+  if(S.auto){ S.autoLeft=10; roast("auto"); if(!spinning)spin(); } });
 $("#turboBtn").addEventListener("click",()=>{ S.turbo=!S.turbo; $("#turboBtn").classList.toggle("on",S.turbo); });
 $("#reloadBtn").addEventListener("click",()=>{ S.balance+=1000; S.reloads++; S.history.push(S.balance);
   $("#brokeBox").classList.remove("show"); setUrge(S.urge+10,"kasa yüklemesi"); updateHUD(); drawChart(); realityText();
-  toast("Demo kasadan ₺1.000 eklendi. Bakiye yenilendi; ömür boyu netiniz Sorumlu Oyun sayfasında aynen duruyor."); });
+  toast("Demo kasadan ₺1.000 eklendi. Bakiye yenilendi; ömür boyu netiniz Sorumlu Oyun sayfasında aynen duruyor."); roast("reload"); });
 $("#realityToggle").addEventListener("change",e=>{ document.body.classList.toggle("reality",e.target.checked);
   if(e.target.checked)toast("Perde arkası açık: Kazananlar listesinde ve sohbette gizli toplamlar görünüyor."); });
 $("#refreshReality").addEventListener("click",realityText);
@@ -1490,7 +1576,7 @@ function addClarity(n){ S.clarity+=n; updateHUD(); }
 function showOffer(i){
   $$(".offer").forEach(o=>o.classList.remove("show")); $("#exitWin").classList.remove("show");
   if(i>2){ S.clearSessions++; document.body.classList.add("calming"); $("#exitWin").classList.add("show"); addClarity(30); updateHUD();
-    toast("Kapatma provası tamamlandı: +30 kontrol puanı. Şimdi mola ve kilitlerle devam edin."); return; }
+    toast("Kapatma provası tamamlandı: +30 kontrol puanı. Şimdi mola ve kilitlerle devam edin."); roast("quit"); return; }
   const el=$("#offer"+i); el.classList.add("show"); el.scrollIntoView({behavior:"smooth",block:"center"});
   let left=59; const cd=el.querySelector(".cd"); cd.textContent="0:59"; clearInterval(offerTimers[i]);
   offerTimers[i]=setInterval(()=>{ left--; if(left<0){clearInterval(offerTimers[i]);cd.textContent="0:00 (geçince sessizce yenilenir)";return;} cd.textContent="0:"+String(left).padStart(2,"0"); },1000);
@@ -1582,7 +1668,7 @@ setInterval(()=>{ const s=Math.floor((Date.now()-S.started)/1000);
 setInterval(botTick,2100);
 
 /* init */
-setBet(20);
+setBet(20); roast("start");
 renderGrid(currentGrid);
 renderPlayers(); updateHUD(); updateHouse(); drawChart(); setUrge(10); calc(); realityText();
 addChat("Salon","Gates of Olympus demo açıldı. Oyuncular simüle, bakiye demo.","sys");
