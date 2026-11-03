@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VEGABET — Casino, Slot Oyunları, Canlı Casino</title>
+<meta name="description" content="Vegabet demo lobisi: slot oyunları, canlı kazananlar, promosyonlar. Burning Hot demo makinesi ve hesabınız içinde sorumlu oyun araçları.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23081120'/%3E%3Ctext x='50' y='72' font-size='62' fill='%23ff7e00' text-anchor='middle' font-family='Arial' font-weight='900'%3EV%3C/text%3E%3C/svg%3E">
+<style>
+/* ================= VEGABET — offshore slot lobisi düzeni ================= */
+:root{
+  --bg:#0a1424; --head:#060d1a; --panel:#0e1a30; --panel2:#12233f; --panel3:#182a4a;
+  --line:#1e3357; --line2:#2a4370;
+  --orange:#ff7e00; --orange2:#e56e00; --yellow:#ffb800; --green:#00b04f; --green2:#009444;
+  --red:#e62e2e; --text:#dbe4f2; --muted:#8494ae; --muted2:#5d6f8c;
+  --radius:4px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.45}
+button{font-family:inherit;cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.45}
+a{color:#cfe0f7;text-decoration:none}
+a:hover{color:#fff}
+:focus-visible{outline:2px solid var(--orange);outline-offset:1px}
+::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:#24385c;border-radius:4px}::-webkit-scrollbar-track{background:#0a1424}
+
+/* duyuru bandı */
+.announce{background:#04101f;border-bottom:1px solid #122540;overflow:hidden;white-space:nowrap}
+.announce-in{display:inline-block;padding:6px 0 6px 100%;animation:marq 55s linear infinite;color:#9db1cf;font-size:12px}
+.announce-in b{color:var(--yellow)}
+@keyframes marq{to{transform:translateX(-100%)}}
+
+/* header */
+.header{background:var(--head);border-bottom:2px solid var(--orange);position:sticky;top:0;z-index:80}
+.header-in{max-width:1360px;margin:0 auto;padding:0 14px;display:flex;align-items:center;gap:14px;min-height:60px}
+.logo{font-size:25px;font-weight:900;letter-spacing:.5px;color:#fff;font-style:italic;white-space:nowrap;cursor:pointer}
+.logo span{color:var(--orange)}
+.logo small{font-size:8.5px;letter-spacing:4px;color:var(--muted);display:block;font-style:normal;margin-top:-3px}
+.hnav{display:flex;gap:1px;margin-left:8px}
+.hnav a{padding:8px 11px;font-size:12px;font-weight:700;text-transform:uppercase;color:#b9c8df;letter-spacing:.3px}
+.hnav a:hover{background:var(--panel2);color:#fff;text-decoration:none}
+.hnav a.on{color:var(--orange)}
+@media(max-width:1060px){.hnav{display:none}}
+.hright{margin-left:auto;display:flex;gap:8px;align-items:center}
+.balance-box{background:#0d1c36;border:1px solid var(--line2);border-radius:var(--radius);padding:5px 6px 5px 12px;display:flex;gap:10px;align-items:center}
+.balance-box small{display:block;font-size:9px;letter-spacing:1px;color:var(--muted)}
+.balance-box b{font-size:14px;color:#fff}
+.balance-box .eye{background:none;border:0;color:var(--muted);font-size:13px;padding:2px}
+.btn{border:1px solid var(--line2);background:var(--panel2);color:#e6eefb;border-radius:var(--radius);padding:8px 14px;font-weight:700;font-size:12.5px}
+.btn:hover{border-color:#41619b}
+.btn-orange{background:#f26d00;border-color:#f26d00;border-bottom:3px solid #9e4600;color:#fff;text-transform:uppercase}
+.btn-green{background:#009444;border-color:#009444;border-bottom:3px solid #00592a;color:#fff;text-transform:uppercase}
+.btn-dark{background:#0d1c36}
+.userbox{display:flex;align-items:center;gap:8px;font-size:12px;color:#b9c8df}
+.userbox .avatar{width:31px;height:31px;border-radius:50%;background:#1d3f73;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;border:1px solid var(--line2)}
+@media(max-width:640px){.userbox .uname{display:none}.balance-box small{display:none}}
+
+/* alt kategori */
+.subnav{background:#081426;border-bottom:1px solid var(--line)}
+.subnav-in{max-width:1360px;margin:0 auto;padding:0 14px;display:flex;gap:2px;overflow-x:auto}
+.subnav button{background:none;border:0;border-bottom:2px solid transparent;color:#93a5c2;padding:10px 12px;font-size:12px;font-weight:700;text-transform:uppercase;white-space:nowrap}
+.subnav button:hover{color:#fff}
+.subnav button.on{color:var(--orange);border-bottom-color:var(--orange)}
+.subnav button .cnt{color:var(--muted2);font-weight:400}
+
+.wrap{max-width:1360px;margin:0 auto;padding:12px 14px 20px}
+
+/* promosyon vitrini */
+.promos{display:grid;grid-template-columns:2fr 1fr;gap:10px}
+@media(max-width:860px){.promos{grid-template-columns:1fr}}
+.promo-main{position:relative;min-height:218px;border-radius:2px;overflow:hidden;background:#12305e;border:1px solid var(--line);cursor:pointer}
+.promo-main .art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.promo-main::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,10,20,.88) 0%,rgba(4,10,20,.62) 46%,rgba(4,10,20,.05) 78%);pointer-events:none}
+.promo-main .copy{position:relative;z-index:1;padding:26px 28px;max-width:60%}
+@media(max-width:640px){.promo-main .copy{max-width:88%}}
+.promo-main .kicker{color:var(--yellow);font-weight:900;letter-spacing:2px;font-size:11px;text-transform:uppercase}
+.promo-main h2{margin:6px 0 4px;font-size:clamp(24px,3.6vw,38px);line-height:1.05;color:#fff;text-transform:uppercase;font-weight:900}
+.promo-main h2 span{color:var(--yellow)}
+.promo-main p{color:#c8d7ee;margin:0 0 13px;font-size:13px}
+.dots{position:absolute;bottom:11px;left:28px;display:flex;gap:6px;z-index:2}
+.dots button{width:22px;height:4px;border:0;background:#3a557f;padding:0}
+.dots button.on{background:var(--orange)}
+.promo-side{display:grid;gap:10px}
+.promo-small{border-radius:6px;border:1px solid var(--line);padding:15px 17px;position:relative;overflow:hidden;cursor:pointer;min-height:104px}
+.promo-small b{display:block;font-size:16px;color:#fff;text-transform:uppercase}
+.promo-small span{font-size:12px;color:#c8d7ee}
+.promo-small .go{color:var(--yellow);font-weight:800;font-size:12px}
+.ps1{background:#7e1e42}
+.ps2{background:#0d5a40}
+
+/* kazanan şeridi */
+.winners-strip{background:#081426;border:1px solid var(--line);border-radius:var(--radius);margin-top:10px;display:flex;align-items:stretch;overflow:hidden}
+.winners-strip .lbl{background:var(--orange);color:#fff;font-weight:900;font-size:11px;letter-spacing:1px;padding:8px 12px;display:flex;align-items:center;white-space:nowrap;text-transform:uppercase}
+.winners-strip .track{overflow:hidden;flex:1;display:flex;align-items:center}
+.winners-strip .move{display:inline-block;white-space:nowrap;padding-left:20px;animation:marq 46s linear infinite;color:#aebfd9;font-size:12px}
+.winners-strip .move b{color:#fff}.winners-strip .move .amt{color:var(--yellow);font-weight:700}
+
+/* sağlayıcılar */
+.providers{display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:2px}
+.providers span{flex:1;min-width:128px;text-align:center;background:#0c1930;border:1px solid var(--line);border-radius:var(--radius);padding:9px 6px;font-weight:900;font-size:11.5px;letter-spacing:.6px;color:#7286a5;white-space:nowrap}
+.providers span:hover{color:#dbe4f2;border-color:var(--line2)}
+
+/* lobi araç çubuğu */
+.lobbybar{display:flex;gap:8px;align-items:center;margin:14px 0 9px;flex-wrap:wrap}
+.lobbybar h2{margin:0;font-size:16px;color:#fff;text-transform:uppercase}
+.lobbybar h2 span{color:var(--orange)}
+.lobbybar .count{color:var(--muted);font-size:12px}
+.lobbybar .search{margin-left:auto;display:flex;gap:6px}
+.lobbybar input{background:#0c1930;border:1px solid var(--line);border-radius:var(--radius);color:#fff;padding:8px 11px;font-size:12.5px;width:205px}
+.lobbybar select{background:#0c1930;border:1px solid var(--line);border-radius:var(--radius);color:#cfe0f7;padding:8px;font-size:12.5px}
+
+/* oyun ızgarası — kapak görseli + logo kilidi + bilgi çubuğu */
+.games{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:1100px){.games{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.games{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.games{grid-template-columns:repeat(2,1fr)}}
+.game{background:#0a1526;border:1px solid #1d3050;border-radius:2px;overflow:hidden;padding:0;text-align:left;color:var(--text);position:relative;width:100%}
+.game:hover{border-color:#47648f}
+.game:focus-visible{outline:2px solid var(--orange);outline-offset:1px}
+.game .thumb{aspect-ratio:16/10;position:relative;overflow:hidden;background:#060d18}
+.game .thumb img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .35s ease}
+.game:hover .thumb img{transform:scale(1.05)}
+.game .thumb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(180deg,rgba(3,7,14,0),rgba(3,7,14,.86));pointer-events:none;z-index:1}
+.game .cover-logo{position:absolute;left:11px;right:11px;bottom:9px;z-index:2;pointer-events:none}
+.game .cover-logo .l1{display:block;font-family:"Arial Black",Arial,sans-serif;font-size:19px;line-height:.95;letter-spacing:.2px;color:#fff;text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.65),0 3px 10px rgba(0,0,0,.55)}
+.game .cover-logo .l2{display:block;font-family:"Arial Black",Arial,sans-serif;font-size:19px;line-height:.95;letter-spacing:.2px;text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.65),0 3px 10px rgba(0,0,0,.55)}
+.game .cover-logo.single .l1{font-size:21px}
+.game .ribbon{position:absolute;top:10px;left:-32px;transform:rotate(-38deg);background:#d92323;color:#fff;font-size:9px;font-weight:900;letter-spacing:1.2px;padding:3px 34px;z-index:3;box-shadow:0 1px 5px rgba(0,0,0,.45)}
+.game .ribbon.new{background:#009444}
+.game .ribbon.demo{background:#f26d00}
+.game .jp-amt{position:absolute;top:8px;right:8px;background:rgba(3,8,18,.88);border:1px solid rgba(255,184,0,.45);color:var(--yellow);font-size:10.5px;font-weight:700;text-align:center;padding:3px 7px;z-index:2}
+.game .hoverlay{position:absolute;inset:0;background:rgba(3,8,18,.66);display:none;flex-direction:column;gap:7px;align-items:center;justify-content:center;z-index:4}
+.game:hover .hoverlay,.game:focus-visible .hoverlay{display:flex}
+.game .hoverlay .play{background:#f26d00;color:#fff;border:0;border-bottom:3px solid #9e4600;border-radius:2px;padding:10px 22px;font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.game .hoverlay .demo{background:rgba(4,10,20,.65);border:1px solid #8296b5;color:#e6eefb;border-radius:2px;padding:6px 14px;font-size:11px;font-weight:700}
+.game .meta{padding:8px 10px 7px;background:#0a1526;border-top:1px solid #16283f}
+.game .gname{font-size:13px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.game .gprov{font-size:10.5px;color:#71839f;display:flex;justify-content:space-between;align-items:center;margin-top:2px}
+.game .gprov .rtptag{color:#69a97c;font-family:"Courier New",monospace;font-size:10.5px}
+.game .gprov .fav{color:#40557a;font-size:14px;line-height:1}.game:hover .gprov .fav{color:var(--yellow)}
+.related .game .cover-logo .l1,.related .game .cover-logo .l2{font-size:14px}
+.section-title{display:flex;align-items:center;gap:9px;margin:20px 0 9px}
+.section-title h2{margin:0;font-size:15px;color:#fff;text-transform:uppercase}
+.section-title h2 span{color:var(--orange)}
+.section-title a{margin-left:auto;font-size:12px;color:var(--muted)}
+.jackpot-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+@media(max-width:760px){.jackpot-cards{grid-template-columns:1fr}}
+.jcard{background:#0d1a2e;border:1px solid #35405e;border-radius:2px;padding:13px 16px;display:flex;align-items:center;gap:12px}
+.jcard small{display:block;font-size:10px;letter-spacing:1.6px;color:#8fa3c4;font-weight:700}
+.jcard b{font-size:20px;color:var(--yellow)}
+.jcard .timer{margin-left:auto;color:#8494ae;font-size:11.5px;text-align:right}
+
+/* ================= OYUN ODASI ================= */
+.game-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.game-top .back{background:none;border:1px solid var(--line2);color:#cfe0f7;border-radius:var(--radius);padding:8px 13px;font-weight:700;font-size:12.5px}
+.game-top h1{margin:0;font-size:19px;color:#fff;text-transform:uppercase}
+.game-top h1 span{color:var(--muted);font-size:12px;text-transform:none;font-weight:400}
+.game-top .tools{margin-left:auto;display:flex;gap:6px}
+.icon-btn{background:var(--panel2);border:1px solid var(--line);color:#cfe0f7;border-radius:var(--radius);padding:8px 11px;font-size:12px;font-weight:700}
+.stage-grid{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:10px;align-items:start}
+@media(max-width:980px){.stage-grid{grid-template-columns:1fr}}
+.stage{background:#04060a;border:1px solid #26395e;border-radius:2px;padding:0;overflow:hidden}
+body.calming .stage{filter:saturate(.35) brightness(.75)}
+.machine{background:#1c0530;border:3px solid #c89112;outline:1px solid #6e4d05;border-radius:2px;overflow:hidden;position:relative}
+.frame-corner{position:absolute;width:22px;height:22px;background:#c89112;transform:rotate(45deg);z-index:6;border:1px solid #ffe680}
+.frame-corner.tl{top:-12px;left:-12px}.frame-corner.tr{top:-12px;right:-12px}.frame-corner.bl{bottom:-12px;left:-12px}.frame-corner.br{bottom:-12px;right:-12px}
+.oly-top{background:linear-gradient(180deg,#4b1470,#2a0638);border-bottom:2px solid #c89112;text-align:center;padding:8px 12px;position:relative}
+.oly-top .t1{font-family:"Arial Black",Arial,sans-serif;font-size:21px;color:#fff;text-transform:uppercase;letter-spacing:.5px;text-shadow:0 2px 0 #2a0638}
+.oly-top .t1 span{color:#ffb800}
+.oly-top .sub{font-size:9px;letter-spacing:3px;color:#c9a6e8;text-transform:uppercase}
+.oly{display:grid;grid-template-columns:148px minmax(0,1fr) 178px;background:#2a0638}
+@media(max-width:900px){.oly{grid-template-columns:1fr}.oly-left{order:2}.oly-right{display:none}}
+.oly-left{border-right:2px solid #c89112;background:linear-gradient(180deg,#38104f,#20042c);padding:11px 10px;display:flex;flex-direction:column;gap:9px}
+.oly-right{border-left:2px solid #c89112;position:relative;overflow:hidden;min-height:340px;background:#12041f}
+.oly-right img.zeus{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.oly-right::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,3,38,0) 46%,rgba(24,3,38,.92) 88%)}
+.oly-right .zlock{position:absolute;z-index:1;left:10px;right:10px;bottom:11px;text-align:center}
+.oly-right .zlock .g1{display:block;font-family:"Arial Black",Arial,sans-serif;font-size:16px;color:#fff;text-transform:uppercase;line-height:1;text-shadow:0 2px 0 #000}
+.oly-right .zlock .g2{display:block;font-family:"Arial Black",Arial,sans-serif;font-size:16px;color:#ffb800;text-transform:uppercase;line-height:1;text-shadow:0 2px 0 #000}
+.fs-badge{display:none;margin:9px auto 0;background:#ffb800;color:#241300;font-weight:900;font-size:11px;padding:5px 9px;border-radius:2px;text-transform:uppercase}
+.fs-badge.show{display:inline-block}
+.buy-box{background:rgba(255,184,0,.09);border:1px solid #8a6d1f;padding:9px;text-align:center}
+.buy-box b{display:block;color:#ffd76a;font-size:11px;letter-spacing:.6px;text-transform:uppercase}
+.buy-box span{font-size:10.5px;color:#c9a6e8}
+.buy-btn{width:100%;margin-top:7px;background:#f26d00;border:1px solid #f26d00;border-bottom:3px solid #9e4600;color:#fff;font-weight:900;font-size:11.5px;padding:9px 4px;text-transform:uppercase;border-radius:2px}
+.buy-btn:active{transform:translateY(1px);border-bottom-width:1px}
+.ante-box{border:1px solid #4a2a72;padding:9px;background:rgba(20,4,34,.55)}
+.ante-box b{display:block;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.6px}
+.ante-box span{font-size:10.5px;color:#b79ad9}
+.ante-btn{width:100%;margin-top:7px;background:#241038;border:1px solid #6a4396;color:#c9a6e8;font-weight:900;font-size:11px;padding:8px 4px;text-transform:uppercase;border-radius:2px}
+.ante-btn.on{background:#5b21a8;border-color:#a678e8;color:#fff}
+.oly-note{font-size:10.5px;color:#a888cc;line-height:1.55}
+.oly-note b{color:#e8d5ff}
+.screen{background:radial-gradient(720px 300px at 50% 0%,#571b85,#2a0638 68%);margin:0;padding:12px 12px 10px;position:relative}
+.reels{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;background:rgba(16,2,28,.72);padding:4px;position:relative;border:1px solid #6a4396}
+.cell{aspect-ratio:1/1.04;background:rgba(84,28,130,.38);border-right:1px solid rgba(200,145,18,.28);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.cell svg{width:76%;height:76%;filter:drop-shadow(0 3px 4px rgba(0,0,0,.6));pointer-events:none}
+.cell.blur svg{filter:blur(2.5px);transform:translateY(3px)}
+.cell.win{background:rgba(255,184,0,.30);box-shadow:inset 0 0 0 2px #ffb800;animation:winflash .45s infinite alternate;z-index:1}
+@keyframes winflash{from{box-shadow:inset 0 0 0 2px #ffb800}to{box-shadow:inset 0 0 0 2px #fff0a0}}
+.cell.pop svg{transform:scale(1.28);opacity:0;transition:transform .22s,opacity .22s}
+.cell.drop svg{animation:dropin .3s ease}
+@keyframes dropin{from{transform:translateY(-16px);opacity:.4}to{transform:none;opacity:1}}
+.cell.dim{opacity:.30}
+.cell.scatter-cell{background:rgba(10,4,24,.72)}
+.cell.scatter-cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.cell.scatter-cell .sc-label{position:absolute;left:0;right:0;bottom:0;background:#c89112;color:#1c0d00;font-family:"Arial Black",Arial,sans-serif;font-size:clamp(7px,1.4vw,11px);text-align:center;padding:2px 0;letter-spacing:.6px}
+.orb{position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#bffcff,#169bd6 58%,#075a8a);border:2px solid #d9fbff;color:#fff;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(80,200,255,.8)}
+.win-line{min-height:29px;text-align:center;font-weight:800;font-size:14px;color:#e8d5ff;padding-top:8px;letter-spacing:.4px;text-transform:uppercase}
+.win-line.win{color:#ffd23e}.win-line.ldw{color:#ffb84d;font-size:12.5px;text-transform:none}.win-line.lose{color:#8f76ad;font-size:11.5px}
+.line-info{min-height:19px;text-align:center;font-size:11.5px;color:#b79ad9}
+.line-info b{color:#ffd23e}
+.controls{background:#12041f;border-top:2px solid #c89112;padding:10px 12px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.disp{background:transparent;border:0;border-radius:0;padding:2px 2px;min-width:92px}
+.disp small{display:block;font-size:8.5px;letter-spacing:2px;color:#7d838f;font-weight:700}
+.disp b{font-family:"Courier New",monospace;font-size:19px;color:#fff}
+.disp.credit b{color:#fff}.disp.win b{color:#ffd23e}.disp.betv b{color:#ffd23e}
+.stepper{display:flex;gap:4px;align-items:center}
+.stepper button{width:30px;height:30px;background:#1d1e22;border:1px solid #3a3b41;color:#e8eaee;font-size:16px;font-weight:900;border-radius:2px;border-bottom:3px solid #000}
+.stepper button:active{transform:translateY(1px);border-bottom-width:1px}
+.cbtns{display:flex;gap:6px;margin-left:auto;align-items:center;flex-wrap:wrap}
+.cbtn{background:#1d1e22;border:1px solid #3a3b41;color:#d6dae1;border-radius:2px;border-bottom:3px solid #000;padding:10px 12px;font-size:10.5px;font-weight:900;letter-spacing:.7px;text-transform:uppercase}
+.cbtn.on{background:#3a2c07;border-color:#8a6d1f;color:#ffd23e}
+.cbtn:active{transform:translateY(1px);border-bottom-width:1px}
+.spin{width:78px;height:78px;border-radius:50%;background:#cf2a23;border:3px solid #7e130d;color:#fff;font-weight:900;font-size:15px;box-shadow:inset 0 -7px 0 rgba(0,0,0,.22),0 3px 0 #420806;flex:0 0 78px}
+.spin:active{transform:translateY(4px);box-shadow:0 2px 0 #5e0d0d}
+.stage-foot{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:11.5px;color:var(--muted)}
+.stage-foot b{color:#cfe0f7}
+.exclude-note{display:none;margin-top:10px;background:#0a2415;border:1px solid var(--green);color:#a9e8c2;border-radius:var(--radius);padding:9px 12px;font-size:12.5px}
+.exclude-note.show{display:block}
+.broke{display:none;margin-top:10px;background:#2b0d0d;border:1px solid #7a2222;border-radius:var(--radius);padding:11px 13px;font-size:12.5px}
+.broke.show{display:block}
+
+.side-tabs{display:flex;background:var(--panel);border:1px solid var(--line);border-bottom:0;border-radius:5px 5px 0 0;overflow:hidden}
+.side-tabs button{flex:1;background:none;border:0;color:var(--muted);padding:9px 4px;font-size:11.5px;font-weight:800;text-transform:uppercase;border-bottom:2px solid transparent}
+.side-tabs button.on{color:#fff;background:var(--panel2);border-bottom-color:var(--orange)}
+.side-body{background:var(--panel);border:1px solid var(--line);border-radius:0 0 5px 5px}
+.winner{display:flex;gap:8px;padding:7px 10px;border-bottom:1px solid #152740;align-items:center}
+.winner:last-child{border-bottom:0}
+.winner .av{width:29px;height:29px;border-radius:50%;flex:0 0 29px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:10px;color:#fff}
+.winner .who{font-size:11.5px;line-height:1.3;min-width:0}
+.winner .who b{color:#fff}
+.winner .who span{display:block;color:var(--muted2);font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.winner .amt{margin-left:auto;font-weight:700;color:var(--yellow);font-size:12px;white-space:nowrap}
+.st{display:inline-block;font-size:8.5px;font-weight:900;padding:1px 5px;border-radius:2px;background:#22365a;color:#aebfd9;vertical-align:2px}
+.st.hot{background:#5c2317;color:#ffb59a}.st.chase{background:#4d1730;color:#ff9ecb}.st.quit{background:#0f3d20;color:#7ce8a4}.st.broke{background:#2b0d0d;color:#ff8a8a}
+.truthline{display:none;font-size:10.5px;color:#ff9d8a;padding:0 10px 6px}
+body.reality .truthline{display:block}
+.chat{max-height:312px;overflow-y:auto;padding:6px}
+.chat-item{font-size:11.5px;background:#0a1830;border:1px solid #172c52;border-radius:4px;padding:6px 8px;margin-bottom:5px;color:#c4d2e8;line-height:1.4}
+.chat-item b{color:var(--yellow)}
+.chat-item.sys{background:#191204;border-color:#3a2c08;color:#e8d9ab}
+.chat-item.good{background:#0a2013;border-color:#1d4a2a}
+.chat-item .truth{display:none;color:#ff9d8a;font-size:10.5px;margin-top:2px}
+body.reality .chat-item .truth{display:block}
+.history{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.history-h{padding:8px 12px;background:var(--panel2);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c4d2e8;display:flex;justify-content:space-between}
+table.hist{width:100%;border-collapse:collapse;font-size:11.5px}
+table.hist th{text-align:left;color:var(--muted2);padding:5px 10px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.6px}
+table.hist td{padding:5px 10px;border-bottom:1px solid #122540;color:#b9c8df}
+table.hist td.r{text-align:right;font-family:"Courier New",monospace}
+td.neg{color:#ff8a8a!important}td.pos{color:#7ce8a4!important}
+.related{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin-top:10px}
+@media(max-width:980px){.related{grid-template-columns:repeat(3,1fr)}}
+
+/* modal */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(2,5,11,.82);z-index:120;align-items:center;justify-content:center;padding:16px}
+.modal-bg.show{display:flex}
+.modal{background:#0d1b33;border:1px solid var(--line2);border-radius:6px;max-width:460px;width:100%;overflow:hidden}
+.modal-h{background:var(--panel2);padding:13px 17px;font-weight:900;color:#fff;text-transform:uppercase;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.modal-h button{background:none;border:0;color:var(--muted);font-size:17px}
+.modal-b{padding:16px 17px}
+.amt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:9px 0}
+.amt-grid button{background:#0a1830;border:1px solid var(--line);color:#dbe4f2;border-radius:4px;padding:9px 4px;font-weight:700}
+.amt-grid button.sel{border-color:var(--orange);color:var(--orange)}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.pay-methods button{background:#0a1830;border:1px solid var(--line);color:#dbe4f2;border-radius:4px;padding:10px;text-align:left;font-weight:700;font-size:12px}
+.pay-methods button.sel{border-color:var(--orange)}
+.session-stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:11px 0}
+.session-stats div{background:#0a1830;border:1px solid var(--line);border-radius:4px;padding:9px 11px}
+.session-stats small{display:block;color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.session-stats b{font-size:15px;color:#fff}
+
+/* ================= SORUMLU OYUN (hesap sayfası) ================= */
+.account{display:grid;grid-template-columns:218px minmax(0,1fr);gap:12px;align-items:start}
+@media(max-width:860px){.account{grid-template-columns:1fr}.acc-menu{display:flex;overflow-x:auto}.acc-menu button{white-space:nowrap}}
+.acc-menu{background:var(--panel);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.acc-menu .who{padding:13px;background:var(--panel2);border-bottom:1px solid var(--line)}
+.acc-menu button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #122540;color:#b9c8df;padding:10px 13px;font-size:12.5px}
+.acc-menu button.on{background:#132950;color:#fff;border-left:3px solid var(--orange);font-weight:700}
+.acc-panel{background:#eef0f3;color:#24272c;border-radius:5px;overflow:hidden}
+.acc-head{background:#fff;border-bottom:1px solid #d8dce2;padding:16px 19px}
+.acc-head h1{margin:0;font-size:19px;color:#17202c}
+.acc-head p{margin:4px 0 0;color:#68707c;font-size:12.5px}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 16px}
+@media(max-width:900px){.acc-grid{grid-template-columns:1fr}}
+.acard{background:#fff;border:1px solid #d8dce2;border-radius:5px;padding:14px 15px}
+.acard h3{margin:0 0 4px;font-size:14px;color:#17202c}
+.acard p{font-size:12.5px;color:#68707c;margin:0 0 9px}
+.acard.full{grid-column:1/-1}
+.abtn{background:#fff;border:1px solid #b9bfc9;color:#24272c;border-radius:4px;padding:8px 13px;font-weight:700;font-size:12.5px}
+.abtn:hover{border-color:#137333}
+.abtn-green{background:#137333;border-color:#137333;color:#fff}
+.abtn-red{background:#fdf1f0;border-color:#c9453c;color:#8f1d16}
+.abtn-orange{background:#ffb020;border-color:#e09a00;color:#241a00}
+.score-big{font-size:26px;font-weight:900;color:#123d21;font-family:"Courier New",monospace}
+.offer{display:none;border:2px solid #c22424;background:#fdf3f2;border-radius:5px;padding:13px 14px;margin-top:11px}
+.offer.show{display:block}
+.offer .oh{font-weight:900;font-size:14.5px;color:#8f1414}
+.offer .cdline{color:#8f1414;font-weight:700;font-size:12px}
+.offer p{color:#5c4a48}
+.offer-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.exit-win{display:none;background:#123d21;color:#dff3e2;border-radius:5px;padding:15px;margin-top:13px;text-align:center}
+.exit-win.show{display:block}
+.exit-win .big{font-size:17px;font-weight:900}
+.breath-wrap{text-align:center}
+.breath-circle{width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#bfe6c8,#3d9e5f);margin:9px auto;display:flex;align-items:center;justify-content:center;font-weight:800;color:#0c2d16;transition:transform 3.8s ease-in-out;font-size:12px;padding:9px}
+.breath-circle.hold{background:radial-gradient(circle at 40% 35%,#ffe9a8,#f5b921)}
+select.asel,input.anum{width:100%;padding:8px 10px;border:1px solid #ccd1d9;border-radius:4px;font-size:13px;font-family:inherit;background:#fff;color:#24272c;margin:3px 0 9px}
+label.fl{font-size:11.5px;font-weight:700;color:#68707c}
+.plan-out{display:none;background:#eef6ee;border:1px dashed #137333;border-radius:4px;padding:10px 12px;font-size:13px;margin-top:9px}
+.plan-out.show{display:block}
+.save-out{font-size:13px;background:#eef6ee;border-radius:4px;padding:10px 12px}
+.save-out b{color:#123d21}
+table.stat{width:100%;border-collapse:collapse;font-size:12.5px}
+table.stat td{padding:4.5px 4px;border-bottom:1px solid #e3e6ea;color:#3c424c}
+table.stat td:last-child{text-align:right;font-family:"Courier New",monospace;color:#17202c;font-weight:700}
+table.stat td.neg{color:#b3261e!important}table.stat td.pos{color:#137333!important}
+canvas#chart{width:100%;height:128px;background:#0b1526;border:1px solid #d8dce2;border-radius:4px}
+table.truth{width:100%;border-collapse:collapse;font-size:11.5px}
+table.truth th{text-align:left;color:#68707c;padding:4px 5px;border-bottom:1px solid #d8dce2;font-size:10px;letter-spacing:.6px}
+table.truth td{padding:4.5px 5px;border-bottom:1px solid #e3e6ea;color:#3c424c}
+.resp-list{font-size:12.5px;padding-left:18px;margin:0 0 8px;color:#3c424c}
+.resp-list li{margin:4px 0}
+.urge-track{height:9px;background:#e3e6ea;border-radius:99px;overflow:hidden;margin:6px 0 4px}
+.urge-track i{display:block;height:100%;width:10%;background:linear-gradient(90deg,#3fae5f,#e8c65a,#d92c2c);transition:width .5s}
+
+/* footer */
+footer{background:#050b16;border-top:1px solid var(--line);margin-top:22px}
+.foot-in{max-width:1360px;margin:0 auto;padding:18px 14px 26px;color:#5d6f8c;font-size:11px}
+.payrow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.payrow span{border:1px solid #22365a;border-radius:3px;padding:4px 9px;font-size:10px;font-weight:800;letter-spacing:.5px;color:#8494ae;background:#081426}
+.foot-cols{display:flex;gap:24px;flex-wrap:wrap}
+.foot-cols div{flex:1;min-width:190px}
+.foot-cols b{color:#aebfd9;display:block;margin-bottom:4px;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px}
+.seo{margin-top:13px;border-top:1px solid #101f3a;padding-top:11px;line-height:1.7;color:#48597a}
+.support-bubble{position:fixed;right:16px;bottom:16px;z-index:90;background:var(--green);color:#fff;border:0;border-radius:99px;padding:12px 18px;font-weight:900;font-size:12.5px;box-shadow:0 8px 22px rgba(0,0,0,.5)}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(130px);background:#fff;color:#1c2416;border:1px solid #c9cfd8;border-top:4px solid var(--orange);border-radius:5px;padding:10px 16px;font-size:13px;font-weight:700;z-index:200;transition:transform .3s;max-width:92vw;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.55)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.view{display:none}.view.on{display:block}
+.perde-box{display:none;font-size:11.5px;color:#8f1d16;background:#fdf3f2;border:1px dashed #c9453c;border-radius:4px;padding:7px 9px;margin-top:8px}
+body.reality .perde-box{display:block}
+
+/* ====== GERCEK SITE DETAYLARI: doku, kose, buton, efekt ======
+   Gercek salon arayuzleri: yassi renk, 2px kose, alt kenari kalin
+   fiziksel buton, parlama yok, hover'da ziplama yok. */
+body{
+  background-color:#050a13;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23ffffff' fill-opacity='0.05'/%3E%3Ccircle cx='15' cy='15' r='1' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+.wrap{background:#0a1424;border-left:1px solid #132038;border-right:1px solid #132038;min-height:60vh}
+footer .foot-in{border-left:1px solid #101f3a;border-right:1px solid #101f3a}
+/* koseler: gercek sitede kartlar neredeyse karedir */
+.btn,.balance-box,.promo-main,.promo-small,.winners-strip,.providers span,.game,.jcard,
+.stage,.machine,.screen,.history,.history-h,.side-body,.modal,.acard,.acc-panel,.acc-menu,
+.offer,.exit-win,.plan-out,.save-out,.chat-item,.exclude-note,.broke,.perde-box,.toast,
+.amt-grid button,.pay-methods button,.session-stats div,.icon-btn,.back,.disp,.cbtn,
+input,select,textarea,.stepper button,.lobbybar input,.lobbybar select,.userbox .avatar{
+  border-radius:2px!important;
+}
+.reel{border-radius:3px!important}
+.acc-menu,.acc-panel,.side-tabs{border-radius:2px 2px 0 0!important}
+.side-body{border-radius:0 0 2px 2px!important}
+/* yuvarlak kalmasi gerekenler: sadece fiziksel seyler */
+.spin,.winner .av,.breath-circle{border-radius:50%!important}
+.urge-track{border-radius:99px!important}
+/* butonlar: yassi govde + kalin alt kenar (basma hissi), gradyan yok */
+button{transition:background-color .12s ease,border-color .12s ease}
+.btn{
+  background:#12233f;background-image:none;border:1px solid #29436e;
+  border-bottom:3px solid #081222;box-shadow:none;color:#dbe7f8;
+}
+.btn:hover{background:#182c4f;border-color:#38588c}
+.btn:active{transform:translateY(1px);border-bottom-width:1px}
+.btn-orange{
+  background:#f26d00;background-image:none;border-color:#f26d00;
+  border-bottom:3px solid #9e4600;color:#fff;
+}
+.btn-orange:hover{background:#ff7d14;border-color:#ff7d14}
+.btn-green{
+  background:#009444;background-image:none;border-color:#009444;
+  border-bottom:3px solid #00592a;color:#fff;
+}
+.btn-green:hover{background:#00a84e;border-color:#00a84e}
+.support-bubble{
+  border-radius:2px;border-bottom:3px solid #00592a;
+  box-shadow:0 2px 10px rgba(0,0,0,.45);padding:11px 15px;
+}
+.support-bubble:active{transform:translateY(1px)}
+/* makine butonlari: metal degil, mat plastik */
+.cbtn{
+  background:#211a12;background-image:none;border:1px solid #57462a;
+  border-bottom:3px solid #0d0903;box-shadow:none;
+}
+.cbtn:active{transform:translateY(1px);border-bottom-width:1px}
+.cbtn.on{background:#43320c;border-color:#8a6d1f;color:#ffd23e}
+.stepper button{
+  background:#211a12;background-image:none;border:1px solid #57462a;
+  border-bottom:3px solid #0d0903;box-shadow:none;border-radius:2px;
+}
+.stepper button:active{transform:translateY(1px);border-bottom-width:1px}
+.spin{
+  background:#cf2a23;background-image:none;border:3px solid #7e130d;
+  box-shadow:inset 0 -7px 0 rgba(0,0,0,.22),0 3px 0 #420806;
+  text-shadow:none;
+}
+.spin:active{transform:translateY(2px);box-shadow:inset 0 -3px 0 rgba(0,0,0,.22),0 1px 0 #420806}
+/* gradyanlar kalkar: promosyon, jackpot, makine govdesi duz renk */
+.promo-small.ps1{background:#7e1e42;background-image:none}
+.promo-small.ps2{background:#0d5a40;background-image:none}
+.jcard{background:#0d1a2e;background-image:none;box-shadow:none}
+.machine{background:#250808;background-image:none;box-shadow:none}
+.machine-head{background:#3d0a0a;background-image:none}
+.machine-head .mt{text-shadow:none}
+.stage{background:#000;box-shadow:none}
+.promo-main,.game,.providers span{box-shadow:none}
+/* parlama / glow efektleri kalkar */
+.reel.win{box-shadow:none;outline:3px solid #ffb800;outline-offset:-3px}
+.reel{box-shadow:inset 0 10px 14px rgba(90,75,30,.30),inset 0 -10px 14px rgba(90,75,30,.30)}
+.game:hover{transform:none}
+.machine-head .mt,.win-line.win{text-shadow:none}
+/* paneller: duz zemin, ince cerceve, sol vurgu cizgisi */
+.history-h,.acc-head{background-image:none}
+.side-tabs button.on{border-bottom-color:var(--orange)}
+table.hist tbody tr:hover td,table.stat tr:hover td{background:rgba(255,126,0,.045)}
+.providers span{background:#0a1729;background-image:none}
+.header{box-shadow:none}
+.modal{box-shadow:0 10px 34px rgba(0,0,0,.6)}
+.toast{box-shadow:0 6px 22px rgba(0,0,0,.5)}
+/* nefes halkasi: isikli top degil, duz halka */
+.breath-circle{background:#57a773;background-image:none;border:3px solid #2e7d46;color:#fff}
+.breath-circle.hold{background:#d99a06;background-image:none;border-color:#9e7000}
+/* canli destek: hap degil, dikdortgen sekme */
+#supportBtn{letter-spacing:.3px;text-transform:uppercase;font-size:11.5px}
+/* sorumlu oyun butonlari: resmi form butonu, sus yok */
+.abtn{
+  border-radius:2px;background:#fff;background-image:none;
+  border:1px solid #aeb5bf;border-bottom:3px solid #c3c9d1;box-shadow:none;
+}
+.abtn:active{transform:translateY(1px);border-bottom-width:1px}
+.abtn-green{background:#137333;background-image:none;border-color:#137333;border-bottom:3px solid #0a4420;color:#fff}
+.abtn-orange{background:#f5a400;background-image:none;border-color:#d99a06;border-bottom:3px solid #9e7000;color:#241a00}
+.abtn-red{background:#fdf1f0;background-image:none;border-bottom:3px solid #d8a49f}
+/* girisler: govdeye gomuk, parlak odak halkasi yerine ince cerceve */
+input,select,textarea{box-shadow:none!important}
+input:focus,select:focus{border-color:var(--orange)!important;outline:none}
+/* duyuru ve kazanan seritleri gercek sitede de kayar; hizlari yavaslatildi */
+.announce-in{animation-duration:70s}
+.winners-strip .move{animation-duration:60s}
+/* tek kose kurali: fiziksel yuvarlaklar disinda her sey 2px */
+body *:not(.spin):not(.av):not(.avatar):not(.breath-circle):not(.urge-track):not(.urge-track i){
+  border-radius:2px!important;
+}
+
+/* ====== IKONLAR ====== */
+.ic{width:15px;height:15px;flex:0 0 15px;vertical-align:-3px}
+.ic-lg{width:19px;height:19px;flex:0 0 19px}
+.cbtn,.icon-btn,.back,.buy-btn,.ante-btn,.support-bubble{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.spin{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.spin .ic{width:22px;height:22px}
+#spinBtn.spinning .ic{animation:rot .65s linear infinite}
+#spinBtn.spinning{filter:brightness(1.2)}
+@keyframes rot{to{transform:rotate(360deg)}}
+.game .gprov .fav-ic{width:14px;height:14px;color:#40557a}
+.game:hover .gprov .fav-ic{color:var(--yellow)}
+
+/* ====== ANIMASYONLAR ====== */
+.view.on{animation:viewIn .22s ease}
+@keyframes viewIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.game{animation:cardIn .3s ease both;animation-delay:calc(var(--i,0)*28ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.promo-main .art{transition:opacity .3s ease}
+.promo-main.fading .art{opacity:0}
+.cell svg{transition:transform .16s ease,filter .16s ease}
+.cell.rolling svg{animation:rollJitter .12s linear infinite alternate}
+@keyframes rollJitter{from{transform:translateY(-5px);filter:blur(2px)}to{transform:translateY(6px);filter:blur(2.5px)}}
+.cell.land svg{animation:landBounce .34s ease}
+@keyframes landBounce{0%{transform:translateY(-17px)}62%{transform:translateY(2px)}100%{transform:none}}
+.cell.win svg{animation:winPulse .42s ease-in-out infinite alternate}
+@keyframes winPulse{from{transform:scale(1);filter:brightness(1)}to{transform:scale(1.13);filter:brightness(1.3) drop-shadow(0 0 7px rgba(255,210,62,.85))}}
+.cell.newin svg{animation:newDrop .36s ease}
+@keyframes newDrop{from{transform:translateY(-30px);opacity:0}to{transform:none;opacity:1}}
+.cell.fall svg{animation:fallDrop .32s ease}
+@keyframes fallDrop{from{transform:translateY(-13px)}to{transform:none}}
+.cell.pop{transition:background .2s}
+.cell.pop svg{transform:scale(1.3);opacity:0;transition:transform .2s,opacity .2s}
+.oly-right img.zeus{animation:zeusIdle 16s ease-in-out infinite alternate}
+@keyframes zeusIdle{from{transform:scale(1)}to{transform:scale(1.07) translateY(-5px)}}
+.oly-right.flash img.zeus{animation:zeusFlash .55s ease}
+@keyframes zeusFlash{0%{filter:brightness(1)}28%{filter:brightness(2.1) saturate(1.4)}100%{filter:brightness(1)}}
+.fs-badge.show{animation:badgePop .35s ease}
+@keyframes badgePop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.orb{animation:orbIn .38s ease,orbPulse .8s ease-in-out .4s infinite alternate}
+@keyframes orbIn{from{transform:translate(-50%,-50%) scale(.3);opacity:0}to{transform:translate(-50%,-50%) scale(1);opacity:1}}
+@keyframes orbPulse{from{box-shadow:0 0 9px rgba(80,200,255,.6)}to{box-shadow:0 0 24px rgba(80,200,255,.95)}}
+.bigwin{position:absolute;inset:0;z-index:5;display:none;align-items:center;justify-content:center;background:rgba(18,2,30,.62);text-align:center;pointer-events:none}
+.bigwin.show{display:flex;animation:bigwinIn .3s ease}
+.bigwin .bw-t{font-family:"Arial Black",Arial,sans-serif;font-size:clamp(28px,5.4vw,46px);color:#ffb800;text-shadow:0 3px 0 #5e2b00,0 7px 26px rgba(0,0,0,.8);letter-spacing:.5px}
+.bigwin .bw-a{font-family:"Courier New",monospace;font-size:clamp(19px,3.4vw,29px);color:#fff;font-weight:700}
+@keyframes bigwinIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+
+<!-- Slot sembolleri: tek sprite, hucreler <use> ile cizer -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="gRed" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#ff9a8a"/><stop offset="35%" stop-color="#e62e2e"/><stop offset="100%" stop-color="#8f0f0f"/></radialGradient>
+<radialGradient id="gYellow" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#fff3a0"/><stop offset="45%" stop-color="#ffd21a"/><stop offset="100%" stop-color="#d99400"/></radialGradient>
+<radialGradient id="gOrange" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#ffc46b"/><stop offset="45%" stop-color="#ff8a1e"/><stop offset="100%" stop-color="#c85f00"/></radialGradient>
+<radialGradient id="gGrape" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#c39aff"/><stop offset="45%" stop-color="#7b3fd4"/><stop offset="100%" stop-color="#3d1470"/></radialGradient>
+<linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff0a0"/><stop offset="38%" stop-color="#ffc21a"/><stop offset="62%" stop-color="#f59a00"/><stop offset="100%" stop-color="#ffe680"/></linearGradient>
+<linearGradient id="gBell" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe680"/><stop offset="55%" stop-color="#f5a400"/><stop offset="100%" stop-color="#b96e00"/></linearGradient>
+<symbol id="sym-cherry" viewBox="0 0 100 100">
+  <path d="M42 46 C40 30 48 16 62 10" fill="none" stroke="#5a7d2a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M64 52 C66 36 62 22 62 10" fill="none" stroke="#5a7d2a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M62 10 C74 2 88 6 90 8 C86 20 72 24 62 18 Z" fill="#4e9b35"/>
+  <circle cx="36" cy="66" r="21" fill="url(#gRed)"/><circle cx="66" cy="72" r="17" fill="url(#gRed)"/>
+  <ellipse cx="29" cy="58" rx="7" ry="4.5" fill="#fff" opacity=".75" transform="rotate(-24 29 58)"/>
+  <ellipse cx="60" cy="65" rx="5.5" ry="3.6" fill="#fff" opacity=".7" transform="rotate(-24 60 65)"/>
+</symbol>
+<symbol id="sym-lemon" viewBox="0 0 100 100">
+  <path d="M60 22 C70 8 86 8 92 12 C86 24 70 28 60 22Z" fill="#4e9b35"/>
+  <g transform="rotate(-28 50 55)"><ellipse cx="50" cy="55" rx="36" ry="23" fill="url(#gYellow)"/>
+  <path d="M14 55 L6 55 L14 47 Z" fill="#f2b800"/><path d="M86 55 L94 55 L86 47 Z" fill="#f2b800"/>
+  <ellipse cx="36" cy="46" rx="13" ry="6" fill="#fff" opacity=".55"/></g>
+</symbol>
+<symbol id="sym-orange" viewBox="0 0 100 100">
+  <path d="M52 26 C54 16 62 10 70 8 L66 20 C60 26 54 28 52 26Z" fill="#3f7d24"/>
+  <path d="M50 28 C62 12 78 14 84 16 C80 30 64 34 50 28Z" fill="#4e9b35"/>
+  <circle cx="50" cy="60" r="31" fill="url(#gOrange)"/>
+  <ellipse cx="38" cy="48" rx="10" ry="6" fill="#fff" opacity=".5" transform="rotate(-24 38 48)"/>
+  <circle cx="62" cy="68" r="2" fill="#d96f00"/><circle cx="54" cy="76" r="2" fill="#d96f00"/><circle cx="68" cy="58" r="2" fill="#d96f00"/>
+</symbol>
+<symbol id="sym-plum" viewBox="0 0 100 100">
+  <path d="M52 24 C64 8 82 10 88 12 C84 26 66 30 52 24Z" fill="#4e9b35"/>
+  <circle cx="36" cy="42" r="13" fill="url(#gGrape)"/><circle cx="62" cy="40" r="14" fill="url(#gGrape)"/><circle cx="24" cy="62" r="13" fill="url(#gGrape)"/>
+  <circle cx="49" cy="60" r="15" fill="url(#gGrape)"/><circle cx="74" cy="62" r="13" fill="url(#gGrape)"/><circle cx="36" cy="80" r="12" fill="url(#gGrape)"/><circle cx="62" cy="80" r="12" fill="url(#gGrape)"/>
+  <ellipse cx="31" cy="37" rx="4.5" ry="3" fill="#fff" opacity=".7"/><ellipse cx="57" cy="35" rx="4.5" ry="3" fill="#fff" opacity=".7"/><ellipse cx="44" cy="54" rx="5" ry="3.2" fill="#fff" opacity=".65"/>
+</symbol>
+<symbol id="sym-melon" viewBox="0 0 100 100">
+  <path d="M10 34 A40 40 0 0 0 90 34 Z" fill="#1f7a38"/>
+  <path d="M16 36 A34 34 0 0 0 84 36 Z" fill="#eaf5d0"/>
+  <path d="M21 37 A29 29 0 0 0 79 37 Z" fill="#e63946"/>
+  <ellipse cx="38" cy="48" rx="2.2" ry="3.6" fill="#2b140d"/><ellipse cx="52" cy="56" rx="2.2" ry="3.6" fill="#2b140d"/><ellipse cx="64" cy="47" rx="2.2" ry="3.6" fill="#2b140d"/><ellipse cx="45" cy="42" rx="2" ry="3.2" fill="#2b140d"/>
+  <path d="M72 22 C76 12 86 8 92 10 C88 20 80 24 72 22Z" fill="#4e9b35"/>
+</symbol>
+<symbol id="sym-bell" viewBox="0 0 100 100">
+  <circle cx="50" cy="16" r="6" fill="url(#gBell)" stroke="#8a5200" stroke-width="1.5"/>
+  <path d="M50 20 C34 20 30 38 30 52 C30 64 24 70 20 74 L80 74 C76 70 70 64 70 52 C70 38 66 20 50 20Z" fill="url(#gBell)" stroke="#8a5200" stroke-width="1.5"/>
+  <rect x="20" y="72" width="60" height="7" rx="3" fill="#c47f00"/>
+  <circle cx="50" cy="86" r="7" fill="url(#gBell)" stroke="#8a5200" stroke-width="1.5"/>
+  <path d="M38 34 C35 40 34 48 35 54" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".55"/>
+</symbol>
+<symbol id="sym-seven" viewBox="0 0 100 100">
+  <text x="50" y="76" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="68" font-weight="900" fill="url(#gGold)" stroke="#7a0d00" stroke-width="2.5">7</text>
+</symbol>
+<symbol id="sym-star" viewBox="0 0 100 100">
+  <polygon points="50,8 61,38 93,39 67,59 76,91 50,71 24,91 33,59 7,39 39,38" fill="url(#gGold)" stroke="#a86e00" stroke-width="2" stroke-linejoin="round"/>
+  <polygon points="50,22 56,40 50,50 44,40" fill="#fff" opacity=".5"/>
+</symbol>
+<linearGradient id="gGemBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#aee9ff"/><stop offset="50%" stop-color="#22a8e0"/><stop offset="100%" stop-color="#0b5f9e"/></linearGradient>
+<linearGradient id="gGemGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8ffc9"/><stop offset="50%" stop-color="#2ecc71"/><stop offset="100%" stop-color="#0e7a3d"/></linearGradient>
+<linearGradient id="gGemPurple" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e3b3ff"/><stop offset="50%" stop-color="#9b4dca"/><stop offset="100%" stop-color="#4e1470"/></linearGradient>
+<linearGradient id="gGemRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffb3a0"/><stop offset="50%" stop-color="#e63946"/><stop offset="100%" stop-color="#7c0f16"/></linearGradient>
+<linearGradient id="gGemYellow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff6b0"/><stop offset="50%" stop-color="#ffd21a"/><stop offset="100%" stop-color="#c07f00"/></linearGradient>
+<symbol id="sym-blue" viewBox="0 0 100 100"><polygon points="50,10 86,38 50,92 14,38" fill="url(#gGemBlue)" stroke="#bfefff" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 38 H86 M50 10 L34 38 L50 92 M50 10 L66 38 L50 92" fill="none" stroke="#dff6ff" stroke-width="1.6" opacity=".8"/></symbol>
+<symbol id="sym-green" viewBox="0 0 100 100"><polygon points="50,90 12,24 88,24" fill="url(#gGemGreen)" stroke="#c9ffd9" stroke-width="2.5" stroke-linejoin="round"/><path d="M32 24 L50 58 L68 24 M50 58 L50 90" fill="none" stroke="#eaffef" stroke-width="1.6" opacity=".8"/></symbol>
+<symbol id="sym-purple" viewBox="0 0 100 100"><polygon points="50,10 88,76 12,76" fill="url(#gGemPurple)" stroke="#efccff" stroke-width="2.5" stroke-linejoin="round"/><path d="M32 76 L50 42 L68 76 M50 42 L50 10" fill="none" stroke="#f7e6ff" stroke-width="1.6" opacity=".8"/></symbol>
+<symbol id="sym-red" viewBox="0 0 100 100"><polygon points="30,12 70,12 90,38 50,90 10,38" fill="url(#gGemRed)" stroke="#ffd2c2" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 38 H90 M30 12 L38 38 L50 90 M70 12 L62 38 L50 90" fill="none" stroke="#ffe6de" stroke-width="1.6" opacity=".8"/></symbol>
+<symbol id="sym-yellow" viewBox="0 0 100 100"><polygon points="50,8 88,32 74,84 26,84 12,32" fill="url(#gGemYellow)" stroke="#fff6c2" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 32 H88 M50 8 L38 32 L50 84 M50 8 L62 32 L50 84" fill="none" stroke="#fffbe0" stroke-width="1.6" opacity=".85"/></symbol>
+<symbol id="sym-ring" viewBox="0 0 100 100"><circle cx="50" cy="60" r="27" fill="none" stroke="url(#gGold)" stroke-width="9"/><polygon points="50,6 64,22 50,36 36,22" fill="url(#gGemBlue)" stroke="#dff6ff" stroke-width="2"/></symbol>
+<symbol id="sym-hourglass" viewBox="0 0 100 100"><rect x="24" y="8" width="52" height="8" rx="2" fill="url(#gGold)"/><rect x="24" y="84" width="52" height="8" rx="2" fill="url(#gGold)"/><path d="M32 16 H68 C68 36 56 42 50 50 C56 58 68 64 68 84 H32 C32 64 44 58 50 50 C44 42 32 36 32 16Z" fill="#3a2a6e" stroke="url(#gGold)" stroke-width="3"/><path d="M40 24 H60 C58 34 53 38 50 42 C47 38 42 34 40 24Z" fill="#7de8f5"/><path d="M38 76 H62 C60 68 55 63 50 59 C45 63 40 68 38 76Z" fill="#7de8f5"/></symbol>
+<symbol id="sym-chalice" viewBox="0 0 100 100"><path d="M26 14 H74 V34 C74 48 64 56 50 56 C36 56 26 48 26 34 Z" fill="url(#gGold)" stroke="#a86e00" stroke-width="2"/><rect x="46" y="56" width="8" height="14" fill="#c89112"/><path d="M32 84 H68 L62 70 H38 Z" fill="url(#gGold)" stroke="#a86e00" stroke-width="1.5"/><circle cx="50" cy="30" r="7" fill="url(#gGemRed)"/><path d="M26 22 C14 22 14 38 27 40 M74 22 C86 22 86 38 73 40" fill="none" stroke="#c89112" stroke-width="4"/></symbol>
+<symbol id="sym-crown" viewBox="0 0 100 100"><path d="M14 72 L10 30 L34 48 L50 22 L66 48 L90 30 L86 72 Z" fill="url(#gGold)" stroke="#a86e00" stroke-width="2" stroke-linejoin="round"/><rect x="14" y="72" width="72" height="10" fill="#c89112"/><circle cx="50" cy="58" r="6" fill="url(#gGemRed)"/><circle cx="28" cy="62" r="4.5" fill="url(#gGemBlue)"/><circle cx="72" cy="62" r="4.5" fill="url(#gGemGreen)"/><circle cx="10" cy="26" r="5" fill="url(#gGold)"/><circle cx="50" cy="18" r="5" fill="url(#gGold)"/><circle cx="90" cy="26" r="5" fill="url(#gGold)"/></symbol>
+</defs></svg>
+
+<!-- UI ikonlari: tek sprite, butonlar <use> ile cizer -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="ic-spin" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M20 3v4h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-auto" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/><path d="M4 5v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+<symbol id="ic-turbo" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.8 22 19 10h-6.5z" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+<symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.4" fill="currentColor"/></symbol>
+<symbol id="ic-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="6" rx="6" ry="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 6v6c0 1.7 2.7 3 6 3s6-1.3 6-3V6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 10.2c2.9.3 5 1.5 5 2.8 0 1.7-2.7 3-6 3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 12.2V18c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ic-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-pause" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8.5v7M14 8.5v7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+<symbol id="ic-chev-left" viewBox="0 0 24 24"><path d="M14.5 5 8 12l6.5 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-star" viewBox="0 0 24 24"><path d="m12 3.5 2.5 5.3 5.8.7-4.3 4 1.1 5.7L12 16.4l-5.1 2.8L8 13.5 3.7 9.5l5.8-.7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+<symbol id="ic-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="ic-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8c-1.4 0-2.8-.3-4-1l-5 1.5L5.6 16A8 8 0 1 1 21 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 11h7M8.5 14h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="ic-gift" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 14v7h12v-7M12 10v11M12 10a3 3 0 1 1 3-3c0 2-3 3-3 3Zm0 0a3 3 0 1 0-3-3c0 2 3 3 3 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3 5 5.8v5.4c0 4.6 3 8.3 7 9.8 4-1.5 7-5.2 7-9.8V5.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 11.6 2.2 2.2L15.4 9.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<div class="announce"><span class="announce-in" id="announceText"></span></div>
+
+<header class="header"><div class="header-in">
+  <div class="logo" id="logoHome">VEGA<span>BET</span><small>CASINO · SPORTS · LIVE</small></div>
+  <nav class="hnav">
+    <a href="#" data-nav="lobby" class="on">Casino</a><a href="#" data-nav="lobby">Slot</a><a href="#" data-nav="lobby">Canlı Casino</a>
+    <a href="#" data-nav="lobby">Spor</a><a href="#" data-nav="lobby">Promosyonlar</a><a href="#" data-nav="resp">Sorumlu Oyun</a>
+  </nav>
+  <div class="hright">
+    <div class="balance-box"><div><small>BAKİYE (DEMO)</small><b>₺<span class="js-balance">1.000,00</span></b></div><button class="eye" id="eyeBtn" type="button" title="Bakiyeyi gizle/göster"><svg class="ic"><use href="#ic-eye"/></svg></button></div>
+    <button class="btn btn-green" id="depositBtn" type="button">Para Yatır</button>
+    <div class="userbox"><div class="avatar">K47</div><div class="uname">kullanici_47<br><small style="color:var(--muted)">Hesabım ▾</small></div></div>
+  </div>
+</div></header>
+
+<div class="subnav"><div class="subnav-in" id="catFilters">
+  <button data-f="all" class="on" type="button">Tümü</button>
+  <button data-f="pop" type="button">Popüler</button>
+  <button data-f="new" type="button">Yeni</button>
+  <button data-f="jackpot" type="button">Jackpot</button>
+  <button data-f="fruit" type="button">Meyve</button>
+  <button data-f="classic" type="button">Klasik</button>
+  <button data-f="live" type="button">Canlı Casino</button>
+  <button data-f="table" type="button">Masa Oyunları</button>
+</div></div>
+
+<!-- ============ GÖRÜNÜM: LOBİ ============ -->
+<main class="view on" id="viewLobby"><div class="wrap">
+  <section class="promos">
+    <div class="promo-main" id="promoMain">
+      <img class="art" id="promoArt" src="assets/games/gates-of-olympus.webp" alt="" aria-hidden="true">
+      <div class="copy">
+        <div class="kicker" id="promoKicker">Hoş Geldin Paketi</div>
+        <h2 id="promoTitle">%100 <span>5.000 TL</span>'ye Kadar İlk Yatırım Bonusu</h2>
+        <p id="promoText">Kod: HOSGELDIN100 · Min. yatırım 100 TL · 35x çevrim · Ayrıntılar promosyon sayfasında.</p>
+        <button class="btn btn-orange" id="promoCta" type="button">Bonusu Al</button>
+      </div>
+      <div class="dots" id="promoDots"></div>
+    </div>
+    <div class="promo-side">
+      <div class="promo-small ps1" data-goto-promo><b>100 TL Deneme Bonusu</b><span>Üyelik sonrası, yatırım şartı yok. Çekim öncesi kimlik doğrulama gerekir.</span><br><span class="go">Hemen Al →</span></div>
+      <div class="promo-small ps2" data-goto-promo><b>%20 Kayıp Bonusu</b><span>Her pazartesi 00:00'da otomatik tanımlanır. Üst limit 2.500 TL.</span><br><span class="go">Detaylar →</span></div>
+    </div>
+  </section>
+
+  <div class="winners-strip"><div class="lbl">Son Kazananlar</div><div class="track"><span class="move" id="winnersTicker"></span></div></div>
+
+  <div class="providers"><span>PRAGMATIC PLAY</span><span>EVOLUTION</span><span>NETENT</span><span>PLAY'N GO</span><span>EGT</span><span>RED TIGER</span><span>MICROGAMING</span><span>RELAX GAMING</span></div>
+
+  <div class="lobbybar">
+    <h2>Casino <span>Oyunları</span></h2><span class="count" id="lobbyCount"></span>
+    <div class="search">
+      <select id="provFilter"><option value="">Tüm Sağlayıcılar</option><option>Pragmatic Play</option><option>Play'n GO</option><option>NetEnt</option><option>EGT</option><option>Evolution</option><option>Red Tiger</option></select>
+      <input id="lobbySearch" type="text" placeholder="Oyun ara...">
+    </div>
+  </div>
+  <div class="games" id="games"></div>
+
+  <div class="section-title"><h2>Büyük <span>Jackpotlar</span></h2><a href="#" data-nav="lobby">Tümünü gör</a></div>
+  <div class="jackpot-cards">
+    <div class="jcard"><div><small>MEGA FORTUNE — NETENT</small><b>₺<span class="jp-mega">12.480.390</span></b></div><div class="timer">Son düşüş:<br>14 gün önce</div></div>
+    <div class="jcard"><div><small>AGE OF THE GODS — PLAYTECH</small><b>₺<span class="jp-grand">3.128.450</span></b></div><div class="timer">Son düşüş:<br>3 gün önce</div></div>
+    <div class="jcard"><div><small>SAATLİK DROP — RED TIGER</small><b>₺<span id="jackpot">48.392</span></b></div><div class="timer">Düşmesine:<br><span id="dropTimer">41:07</span></div></div>
+  </div>
+</div></main>
+
+<!-- ============ GÖRÜNÜM: OYUN ODASI ============ -->
+<main class="view" id="viewGame"><div class="wrap">
+  <div class="game-top">
+    <button class="back" id="backLobby" type="button"><svg class="ic"><use href="#ic-chev-left"/></svg> Lobiye Dön</button>
+    <h1>Gates of Olympus <span>· Pragmatic Play · Demo modu — bakiyeniz demo bakiyesidir</span></h1>
+    <div class="tools">
+      <button class="icon-btn" id="molaBtn" type="button"><svg class="ic"><use href="#ic-pause"/></svg> Mola Ver</button>
+      <button class="icon-btn" id="fsBtn" type="button"><svg class="ic"><use href="#ic-expand"/></svg> Tam Ekran</button>
+    </div>
+  </div>
+  <div class="stage-grid">
+    <div>
+      <div class="stage" id="stage">
+        <div class="machine">
+          <span class="frame-corner tl"></span><span class="frame-corner tr"></span><span class="frame-corner bl"></span><span class="frame-corner br"></span>
+          <div class="oly-top"><div class="t1">GATES <span>of</span> OLYMPUS</div><div class="sub">Pragmatic Play · 6×5 · Her Yerde Öder · Tumble</div></div>
+          <div class="oly">
+            <aside class="oly-left">
+              <div class="buy-box"><b>Bonus Satın Al</b><span>8 ücretsiz çevrim + artan çarpan</span><button class="buy-btn" id="buyBtn" type="button"><svg class="ic"><use href="#ic-gift"/></svg> Satın Al · ₺<span id="buyPrice">1000</span></button></div>
+              <div class="ante-box"><b>Ante Bet</b><span>Bahis +%25, Scatter şansı ×2</span><button class="ante-btn" id="anteBtn" type="button"><svg class="ic"><use href="#ic-turbo"/></svg> Kapalı</button></div>
+              <div class="oly-note"><b>Nasıl öder?</b><br>Çizgi yoktur. Aynı sembolden <b>8+</b> tanesi ızgaranın herhangi bir yerinde öder. Kazananlar patlar, üsttekiler düşer (tumble); zincir sürebilir.<br><br><b>Scatter:</b> 4+ Zeus, 8 ücretsiz çevrim verir. Ücretsiz çevrimde çarpan küreleri toplam çarpana eklenir.</div>
+              <button class="cbtn" id="payBtn" type="button" style="width:100%"><svg class="ic"><use href="#ic-info"/></svg> Ödeme Tablosu</button>
+            </aside>
+            <div class="screen">
+              <div class="reels" id="reels"></div>
+              <div class="win-line" id="slotMsg">İYİ ŞANSLAR</div>
+              <div class="line-info" id="lineInfo">8+ aynı sembol her yerde öder · Kazanan semboller düşer</div>
+              <div class="bigwin" id="bigWin"><div><div class="bw-t">BIG WIN</div><div class="bw-a" id="bigWinAmt">₺0</div></div></div>
+            </div>
+            <aside class="oly-right">
+              <img class="zeus" src="assets/games/gates-of-olympus.webp" alt="" aria-hidden="true">
+              <div class="zlock"><span class="g1">Gates of</span><span class="g2">Olympus</span>
+              <span class="fs-badge" id="fsBadge">Ücretsiz Çevrim</span></div>
+            </aside>
+          </div>
+          <div class="controls">
+            <div class="disp credit"><small>Bakiye</small><b>₺<span class="js-balance-num">1000</span></b></div>
+            <div class="disp betv"><small>Toplam Bahis</small><b>₺<span id="betLabel">20</span></b></div>
+            <div class="stepper"><button id="betMinus" type="button" aria-label="Bahsi azalt">−</button><button id="betPlus" type="button" aria-label="Bahsi artır">+</button></div>
+            <div class="disp win"><small>Kazanç</small><b>₺<span id="lcdWin">0</span></b></div>
+            <div class="cbtns">
+              <button class="cbtn" id="maxBetBtn" type="button"><svg class="ic"><use href="#ic-coins"/></svg> Max Bet</button>
+              <button class="cbtn" id="autoBtn" type="button"><svg class="ic"><use href="#ic-auto"/></svg> Auto</button>
+              <button class="cbtn" id="turboBtn" type="button"><svg class="ic"><use href="#ic-turbo"/></svg> Turbo</button>
+              <button class="spin" id="spinBtn" type="button"><svg class="ic"><use href="#ic-spin"/></svg><span>SPIN</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="stage-foot" style="padding:9px 12px">
+          <span>Oyun ID: <b>PP-GO-1000</b></span><span>Izgara: <b>6 × 5 · Her yerde öder</b></span>
+          <span>Bahis aralığı: <b>₺20 – ₺400</b></span><span>Çevrim başı beklenen kayıp (taban oyun): <b id="evLabel" style="color:#ff8a8a">₺1,72</b></span>
+          <span id="streakLabel"></span>
+        </div>
+        <div class="exclude-note" id="excludedNote"></div>
+        <div class="broke" id="brokeBox">
+          <b style="color:#ffb0a6">Kredi yetersiz.</b> <span style="color:#c9a9a4">Gerçek oyunda bu ekran kart bilgisi ister. Demo kasadan ücretsiz kredi alabilir veya oturumu kapatabilirsiniz. Toplam netiniz, yüklemeyle silinmez.</span>
+          <div style="margin-top:8px;display:flex;gap:7px;flex-wrap:wrap">
+            <button class="btn btn-orange" id="reloadBtn" type="button">Demo Kasadan ₺1.000 Al</button>
+            <button class="btn" id="brokeQuitBtn" type="button">Oturumu Kapat</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <div class="history-h"><span>Bahis Geçmişim — Bu Oturum</span><span id="histNet">Net: ₺0</span></div>
+        <table class="hist"><thead><tr><th>Saat</th><th>Bahis</th><th>Sonuç</th><th style="text-align:right">Dönüş</th><th style="text-align:right">Net</th></tr></thead>
+        <tbody id="histBody"><tr><td colspan="5" style="color:var(--muted2)">Henüz bahis yok.</td></tr></tbody></table>
+      </div>
+
+      <div class="section-title"><h2>Benzer <span>Oyunlar</span></h2></div>
+      <div class="related" id="relatedGames"></div>
+    </div>
+
+    <aside>
+      <div class="side-tabs">
+        <button class="on" data-side="winners" type="button">Kazananlar</button>
+        <button data-side="chat" type="button">Sohbet</button>
+      </div>
+      <div class="side-body">
+        <div id="sideWinners"><div id="players"></div>
+          <div class="perde-box" style="margin:8px">Perde arkası açık: listenin göstermediği satır bu — her oyuncunun toplam bahsi ve ömür boyu neti.</div>
+        </div>
+        <div id="sideChat" style="display:none"><div class="chat" id="chat"></div></div>
+      </div>
+      <div class="history" style="margin-top:10px">
+        <div class="history-h"><span>Oyun Bilgisi</span></div>
+        <table class="hist"><tbody>
+          <tr><td>Sağlayıcı</td><td class="r">Pragmatic Play</td></tr>
+          <tr><td>Izgara / Ödeme</td><td class="r">6 × 5 · Her yerde öder</td></tr>
+          <tr><td>Volatilite</td><td class="r">Yüksek</td></tr>
+          <tr><td>Geri dönüş (taban oyun)</td><td class="r">~%91 (simüle)</td></tr>
+          <tr><td>En yüksek ödeme</td><td class="r">12+ Taç = bahis ×80</td></tr>
+          <tr><td>Scatter</td><td class="r">4+ Zeus = 8 ücretsiz çevrim</td></tr>
+        </tbody></table>
+      </div>
+    </aside>
+  </div>
+</div></main>
+
+<!-- ============ GÖRÜNÜM: HESAP / SORUMLU OYUN ============ -->
+<main class="view" id="viewResp"><div class="wrap">
+  <div class="account">
+    <aside class="acc-menu">
+      <div class="who"><b style="color:#fff">kullanici_47</b><br><small style="color:var(--muted)">Üyelik: Demo · Seviye: Standart</small></div>
+      <button type="button">Hesap Özetim</button>
+      <button type="button">Para Yatırma</button>
+      <button type="button">Para Çekme</button>
+      <button type="button">Bahis Geçmişim</button>
+      <button type="button">Bonuslarım</button>
+      <button type="button" class="on">Sorumlu Oyun</button>
+      <button type="button" id="accCloseMenu">Hesabı Kapatma</button>
+      <button type="button" id="accBackLobby">‹ Lobiye Dön</button>
+    </aside>
+
+    <section class="acc-panel">
+      <div class="acc-head"><h1>Sorumlu Oyun</h1>
+        <p>Limitler, gerçeklik kontrolü, mola ve kendini men etme araçları. Bu sayfada promosyon dili kullanılmaz; buradaki hiçbir buton size bonus teklif etmez — aşağıdaki “hesabı kapatma” provası hariç, o da neyle karşılaşacağınızı önceden görmeniz için etiketlenmiştir.</p></div>
+      <div class="acc-grid">
+        <div class="acard"><h3>Oturum Özeti</h3>
+          <p id="realitySummary">Henüz çevrim yok.</p>
+          <button class="abtn" id="refreshReality" type="button">Güncelle</button>
+          <label style="display:flex;gap:7px;align-items:center;font-size:12.5px;margin-top:11px;color:#3c424c"><input type="checkbox" id="realityToggle" style="accent-color:#137333;width:16px;height:16px"> Perde arkası — oyuncuların gizli toplamlarını göster</label>
+        </div>
+        <div class="acard"><h3>Bırakma Karnesi</h3>
+          <div class="score-big"><span id="qClarity">0</span> <span style="font-size:13px">kontrol puanı</span></div>
+          <p>Tamamlanan temiz oturum: <b id="qDays">0</b> · Reddedilen elde tutma teklifi: <b id="qOffers">0</b> · Alınan mola: <b id="qBreaks">0</b><br>
+          Kontrol puanı bakiyeye çevrilemez, bonus satın almaz. Tek işe yarar: burada birikir.</p>
+          <button class="abtn" id="sharePlanBtn" type="button">Özetimi kopyala</button>
+          <span id="copyMsg" style="font-size:12px;color:#137333;font-weight:700"></span>
+        </div>
+
+        <div class="acard"><h3>Oynama İsteği İzleme</h3>
+          <p>Kazançlar, “neredeyse”ler ve başkalarının kazançları isteği yükseltir; süre ve mesafe düşürür.</p>
+          <div style="display:flex;align-items:baseline;gap:6px"><b style="font-size:22px;color:#17202c" id="urgeNum">10</b><span style="color:#68707c;font-size:12px">/ 100</span><span id="urgeLabel" style="font-size:12.5px;color:#3c424c"></span></div>
+          <div class="urge-track"><i id="urgeBar"></i></div>
+          <ul id="urgeTips" style="font-size:12px;color:#68707c;margin:6px 0 0;padding-left:17px"></ul>
+        </div>
+
+        <div class="acard"><h3>Oturum İstatistikleri</h3>
+          <table class="stat">
+            <tr><td>Süre</td><td id="rTime">0:00</td></tr>
+            <tr><td>Toplam çevrim</td><td id="sSpins">0</td></tr>
+            <tr><td>Toplam bahis</td><td id="sWagered">₺0</td></tr>
+            <tr><td>Toplam dönüş</td><td id="sReturned">₺0</td></tr>
+            <tr><td>Ömür boyu net (yüklemeler silmez)</td><td id="sNet">₺0</td></tr>
+            <tr><td>Gerçekleşen RTP</td><td id="sRtp">—</td></tr>
+            <tr><td>Kazanç sanılan zarar / “neredeyse”</td><td><span id="sLdw">0</span> / <span id="sNear">0</span></td></tr>
+            <tr><td>Demo kasa yüklemesi</td><td id="sReloads">0</td></tr>
+            <tr><td>Kasanın sizden aldığı</td><td id="sHouse" class="neg">₺0</td></tr>
+          </table>
+        </div>
+
+        <div class="acard full"><h3>Bakiye Grafiği ve Kasanın Toplamı</h3>
+          <p>Kısa sıçramalar anlatılır, uzun eğim yaşanır. <span id="houseMath" style="font-weight:700;color:#b3261e"></span> <span id="houseText"></span></p>
+          <canvas id="chart" width="900" height="260"></canvas>
+          <div style="font-size:11.5px;color:#68707c;margin-top:5px" id="chartNote"></div>
+          <table class="truth" style="margin-top:10px"><thead><tr><th>Simüle oyuncu</th><th>Toplam bahis</th><th>Ömür boyu net</th><th>Yükleme</th></tr></thead><tbody id="truthBody"></tbody></table>
+          <p style="font-size:11.5px">Bu tabloda siz yoksunuz; sizinki yukarıda. Masadaki herkesin toplamında kazanan tek satır, kasanınkidir: toplam bahis <b id="hWagered">₺0</b>, toplam dönüş <b id="hReturned">₺0</b>.</p>
+          <div style="display:none"><span id="sBig">0</span><span id="seenNear"></span><span id="seenLdw"></span><span id="seenChase"></span><span id="seenMaya"></span><span id="seenOffers"></span><span id="tSpins"></span><span id="tNet"></span><span id="tClarity"></span><span id="tTime"></span></div>
+        </div>
+
+        <div class="acard full"><h3>Hesabı Kapatma Provası</h3>
+          <p>Gerçek bir sitede hesabı kapatmak istediğinizde karşınıza çıkan sıra genelde şöyledir: hediye bakiye, “kaçırdığınız” kazanç haberi, kişiselleştirilmiş şans iddiası. Üçünü de burada, her biri yönteminin adıyla etiketli olarak reddetmeyi deneyin. Kabul etmek başarısızlık değildir; bedelini okuyup kapıya geri dönmek de provanın parçasıdır.</p>
+          <button class="abtn abtn-green" id="startQuitBtn" type="button" style="font-size:13.5px;padding:10px 18px">Hesabımı kapatmak istiyorum</button>
+          <div class="offer" id="offer0">
+            <div class="oh"> elde tutma 1/3 — Hesabınıza ₺500 bonus tanımlayalım</div>
+            <div class="cdline">Teklif <span class="cd">0:59</span> içinde geçerlidir.</div>
+            <p>Yöntem: <b>bedava para kancası + sahte aciliyet.</b> Bonus bakiye de bu makinede döner; çevrim şartı, onu ve devamında sizinkini geri toplamak için tasarlanır.</p>
+            <div class="offer-btns"><button class="abtn abtn-orange" data-accept="0" type="button">₺500 bonusu kabul et</button><button class="abtn abtn-green" data-refuse="0" type="button">Hayır, hesabı kapat</button></div>
+          </div>
+          <div class="offer" id="offer1">
+            <div class="oh">elde tutma 2/3 — Az önce bir üye ₺24.000 kazandı</div>
+            <div class="cdline">Jackpot penceresi kapanıyor: <span class="cd">0:59</span></div>
+            <p>Yöntem: <b>kalabalık kanıtı + kaçırma korkusu.</b> Duyurulan tek kazanç; duyurulmayan binlerce kayıp yukarıdaki tabloda.</p>
+            <div class="offer-btns"><button class="abtn abtn-orange" data-accept="1" type="button">Kapatmayı ertele</button><button class="abtn abtn-green" data-refuse="1" type="button">Hayır, hesabı kapat</button></div>
+          </div>
+          <div class="offer" id="offer2">
+            <div class="oh">elde tutma 3/3 — Hesap hareketleriniz şansınızın döndüğünü gösteriyor</div>
+            <div class="cdline">“Şanslı pencereniz” kapanıyor: <span class="cd">0:59</span></div>
+            <p>Yöntem: <b>kişiselleştirilmiş kumarbaz yanılgısı.</b> Geçmiş çevrimler bir sonrakinin fiyatını değiştirmez. Tespit edilen şey şansınız değil, ayrılmak üzere olduğunuzdur.</p>
+            <div class="offer-btns"><button class="abtn abtn-orange" data-accept="2" type="button">Bir süre daha oyna</button><button class="abtn abtn-green" data-refuse="2" type="button">Hayır, hesabı kapat</button></div>
+          </div>
+          <div class="exit-win" id="exitWin"><div class="big">Hesap kapatma tamamlandı (prova).</div>
+            <p style="margin:6px 0 0;color:#bfe3c6">+30 kontrol puanı. Yapmadığınız çevrim, bu oyundaki en değerli hareketti. Şimdi aşağıdan kilidi de koyun: mola zamanlayıcısı ve kendini men etme.</p></div>
+        </div>
+
+        <div class="acard breath-wrap"><h3>Mola Zamanlayıcısı</h3>
+          <p>Çalışırken oyundaki SPIN kilitlenir. Başlangıçta isteğinize 0–10 arası bir sayı verin; sonda karşılaştırın. İstekler beslenmediğinde tepe yapıp düşen dalgalardır.</p>
+          <label class="fl" for="breathLen">Süre</label>
+          <select class="asel" id="breathLen"><option value="30">30 saniye (prova)</option><option value="60">60 saniye</option><option value="120">2 dakika</option></select>
+          <div class="breath-circle" id="breathCircle">hazır</div>
+          <div id="breathText" style="font-weight:700;min-height:22px;font-size:12.5px"></div>
+          <div id="breathTimer" style="font-size:12px;color:#68707c"></div>
+          <p><button class="abtn abtn-green" id="breathBtn" type="button">Molayı başlat</button> <button class="abtn" id="breathStop" type="button" disabled>Durdur</button></p>
+          <button class="abtn" id="molaQuickBtn" type="button">Oyun ekranından da mola verilebilir — oraya git</button>
+        </div>
+
+        <div class="acard"><h3>Kendini Men Etme ve Limitler</h3>
+          <p>İrade, zayıf bir güvenlik sistemidir; mesafe daha iyi çalışır. Gerçek karşılığı: ulusal kendini kapatma kaydı, engelleme yazılımı, banka kumar engeli ve bir kişiye söylemek.</p>
+          <p style="display:flex;gap:7px;flex-wrap:wrap">
+            <button class="abtn" data-exclude="60" type="button">1 dakika kilitle</button>
+            <button class="abtn" data-exclude="300" type="button">5 dakika kilitle</button>
+            <button class="abtn" data-exclude="session" type="button">Bu oturumu kilitle</button>
+          </p>
+          <div id="excludeStatus" style="font-size:12.5px;font-weight:700;color:#123d21"></div>
+          <h3 style="margin-top:15px">“Olursa — O Zaman” Planı</h3>
+          <label class="fl" for="triggerSel">Tetikleyici</label>
+          <select class="asel" id="triggerSel">
+            <option>Gece sıkılıp telefonda gezinirsem</option><option>Stresli, öfkeli veya kötü bir gün geçirirsem</option>
+            <option>Kumar reklamı, yayını veya tüyosu görürsem</option><option>Maaş / para hesabıma yatarsa</option>
+            <option>Arkadaşlar oynuyor ve dışarıda kalmış hissedersem</option><option>Büyük bir kazancı hatırlayıp geri istersem</option>
+          </select>
+          <label class="fl" for="actionSel">Onun yerine</label>
+          <select class="asel" id="actionSel">
+            <option>telefonu bırakıp 10 dakika yürüyüşe çıkacağım</option><option>bıraktığımı söylediğim kişiye mesaj atacağım</option>
+            <option>çay / yemek yapıp bir podcast açacağım</option><option>bu sayfadaki oturum özetimi okuyacağım</option>
+            <option>2 dakikalık mola zamanlayıcısını çalıştırıp sonra yeniden karar vereceğim</option><option>parayı kumar oynayamadığım hesaba aktaracağım</option>
+          </select>
+          <button class="abtn abtn-green" id="planBtn" type="button">Planı kaydet</button>
+          <div class="plan-out" id="planOut"></div>
+        </div>
+
+        <div class="acard"><h3>Bırakmanın Karşılığı</h3>
+          <label class="fl" for="calcSpins">Günde dürüstçe kaç çevrim?</label>
+          <input class="anum" type="number" id="calcSpins" value="60" min="1" max="5000">
+          <label class="fl" for="calcBet">Çevrim başı ortalama bahis (₺)</label>
+          <input class="anum" type="number" id="calcBet" value="25" min="1" max="100000">
+          <div class="save-out" id="saveOut"></div>
+        </div>
+
+        <div class="acard"><h3>Destek</h3>
+          <p>Bu sayfa bir eğitim simülasyonudur; tanı koymaz, tedavi yerine geçmez. Kumar size para, zaman, uyku, ilişki veya huzur kaybettiriyorsa:</p>
+          <ul class="resp-list">
+            <li><b>YEDAM (Yeşilay Danışmanlık Merkezi) — 115</b>, ücretsiz.</li>
+            <li><b>Gamblers Anonymous</b> — dünya çapında akran desteği, yüz yüze ve çevrimiçi.</li>
+            <li><b>BeGambleAware.org</b> ve <b>1-800-GAMBLER</b> (ABD, gizli, 7/24).</li>
+            <li>Bankanızdan <b>kumar işlemi engeli</b>; güvendiğiniz birinden “duraklatma butonunuz” olmasını isteyin.</li>
+          </ul>
+          <p style="font-size:12px">Tekrar başlamak bir hüküm değil, veridir. Her bırakma denemesi, bir sonrakinin kullanacağı kası çalıştırır.</p>
+          <button class="abtn abtn-red" id="resetBtn" type="button">Tüm demo verilerini sıfırla</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div></main>
+
+<footer><div class="foot-in">
+  <div class="payrow"><span>PAPARA</span><span>PAYFIX</span><span>VISA</span><span>MASTERCARD</span><span>BANKA HAVALESİ</span><span>BTC</span><span>ETH</span><span>USDT</span><span style="border-color:#7a2222;color:#ff8a8a">18+</span></div>
+  <div class="foot-cols">
+    <div><b>Vegabet</b><a href="#" data-nav="lobby">Casino</a><br><a href="#" data-nav="lobby">Slot Oyunları</a><br><a href="#" data-nav="lobby">Canlı Casino</a><br><a href="#" data-nav="resp">Sorumlu Oyun</a></div>
+    <div><b>Yardım</b>Canlı Destek 7/24<br>Sık Sorulan Sorular<br>Para Yatırma / Çekme<br>Bonus Şartları</div>
+    <div><b>Popüler Oyunlar</b>Sweet Bonanza<br>Gates of Olympus<br>Big Bass Bonanza<br>Book of Dead<br>Burning Hot (demo)</div>
+  </div>
+  <p class="seo">Vegabet; slot, canlı casino ve masa oyunlarını tek lobide sunan bir <b>demo arayüzüdür</b>. Bu sitede gerçek para ile oyun oynanamaz, gerçek kazanç elde edilemez ve hiçbir gerçek bahis sitesine yönlendirme yapılmaz. Lobide adı geçen oyunlar ve sağlayıcılar, gerçek bir salon lobisinin nasıl göründüğünü göstermek için anılır; oynanabilir tek makine Gates of Olympus demosudur; taban oyunu simülasyonda yaklaşık %90 geri verir, ücretsiz çevrimler seyrek tetiklenir. Kazananlar akışındaki kişiler simüle edilmiştir. Kumar, eğlence sınırını aştığında maddi ve psikolojik zarara yol açabilir; destek için YEDAM 115'i arayabilirsiniz. 18 yaşından küçükler için uygun değildir.</p>
+  <div style="margin-top:10px">© 2026 Vegabet Demo. Lisans: bu bir lisans değildir — eğitim amaçlı arayüz maketidir.</div>
+</div></footer>
+
+<button class="support-bubble" id="supportBtn" type="button"><svg class="ic"><use href="#ic-chat"/></svg> Canlı Destek · 7/24</button>
+
+<!-- para yatırma modalı -->
+<div class="modal-bg" id="depositModal"><div class="modal">
+  <div class="modal-h">Para Yatırma — Papara <button data-close="depositModal" type="button">✕</button></div>
+  <div class="modal-b">
+    <div style="font-size:12px;color:var(--muted)">Yöntem</div>
+    <div class="pay-methods" style="margin-top:6px">
+      <button class="sel" type="button">Papara <small style="display:block;color:var(--muted)">Anında · Komisyonsuz</small></button>
+      <button type="button">Banka Havalesi <small style="display:block;color:var(--muted)">5–15 dk</small></button>
+      <button type="button">Kripto (USDT) <small style="display:block;color:var(--muted)">TRC20</small></button>
+      <button type="button">Kredi Kartı <small style="display:block;color:var(--muted)">3D Secure</small></button>
+    </div>
+    <div style="font-size:12px;color:var(--muted);margin-top:12px">Tutar (₺)</div>
+    <div class="amt-grid"><button type="button">100</button><button class="sel" type="button">250</button><button type="button">500</button><button type="button">1.000</button></div>
+    <button class="btn btn-green" id="depositGo" type="button" style="width:100%;padding:12px">Yatırım Talebi Oluştur</button>
+    <p style="font-size:11px;color:var(--muted);margin:10px 0 0">Demo bilgilendirmesi: Bu buton gerçekte, sitenin en az sürtünmeyle tasarlanmış ekranına çıkar — para yatırmak saniyeler sürer, çekmek günler sürebilir. Bu asimetri tesadüf değildir. Bu simülasyonda talep oluşturulmaz.</p>
+  </div>
+</div></div>
+
+<!-- ödeme tablosu modalı -->
+<div class="modal-bg" id="payModal"><div class="modal" style="max-width:560px">
+  <div class="modal-h">Gates of Olympus — Ödeme Tablosu <button data-close="payModal" type="button">✕</button></div>
+  <div class="modal-b">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Ödemeler <b style="color:#fff">toplam bahsin</b> katıdır. Aynı sembolden 8+ tanesi ızgaranın herhangi bir yerinde öder; kazananlar patlar ve semboller düşer (tumble).</div>
+    <div id="payRows"></div>
+    <div style="font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6">
+      <b style="color:#ffd23e">Scatter (Zeus):</b> 4+ scatter, 8 ücretsiz çevrim verir. Ücretsiz çevrimde çarpan küreleri (x2–x10) toplam çarpana eklenir ve sonraki kazançlara uygulanır.<br>
+      <b style="color:#ffd23e">Tumble:</b> her kazançtan sonra kazanan semboller silinir, üsttekiler düşer, boşluklar dolar. Zincir, kazanç kalmayana dek sürer ve hepsi tek çevrim sayılır.<br>
+      Taban oyunun simüle geri dönüşü yaklaşık <b style="color:#fff">%91</b>'dir; ücretsiz çevrimler bunun üstüne eklenir ama tetiklenme sıklığı düşüktür (Ante Bet bunu artırıp çevrimin fiyatını da artırır). Uzun vadede her ₺100'luk bahsin tamamı geri dönmez — volatilite yüksektir ve tekil oturumlar ortalamadan sert sapar.
+    </div>
+  </div>
+</div></div>
+
+<!-- oturum uyarısı modalı -->
+<div class="modal-bg" id="sessionModal"><div class="modal">
+  <div class="modal-h">Oturum Bildirimi <button data-close="sessionModal" type="button">✕</button></div>
+  <div class="modal-b">
+    <div style="font-size:13px;color:#c4d2e8">Bir süredir oynuyorsunuz. Gerçek salonların çoğunun göstermediği özet:</div>
+    <div class="session-stats">
+      <div><small>Oturum süresi</small><b id="mTime">0:00</b></div>
+      <div><small>Toplam çevrim</small><b id="mSpins">0</b></div>
+      <div><small>Toplam bahis</small><b id="mWagered">₺0</b></div>
+      <div><small>Oturum neti</small><b id="mNet">₺0</b></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" data-close="sessionModal" type="button">Oyuna Devam Et</button>
+      <button class="btn btn-green" id="sessionQuitBtn" type="button">Oturumu Sonlandır</button>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin:10px 0 0">“Oturumu Sonlandır” sizi Sorumlu Oyun sayfasına götürür. Orada hesabı kapatma provası ve kilitler var.</p>
+  </div>
+</div></div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const fmt=n=>Math.round(n).toLocaleString("tr-TR");
+const fmtTL=n=>"₺"+fmt(n);
+const BETS=[20,40,100,200,400];
+function load(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+/* ---------- görünüm geçişleri ---------- */
+function showView(name){
+  $$(".view").forEach(v=>v.classList.remove("on"));
+  $("#view"+name).classList.add("on");
+  $$(".hnav a").forEach(a=>a.classList.toggle("on",a.dataset.nav===(name==="Resp"?"resp":"lobby")));
+  window.scrollTo({top:0});
+}
+$("#logoHome").addEventListener("click",()=>showView("Lobby"));
+$$("[data-nav]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();showView(a.dataset.nav==="resp"?"Resp":"Lobby");}));
+$("#backLobby").addEventListener("click",()=>showView("Lobby"));
+$("#accBackLobby").addEventListener("click",()=>showView("Lobby"));
+$("#accCloseMenu").addEventListener("click",()=>{ $("#startQuitBtn").scrollIntoView({behavior:"smooth",block:"center"}); toast("Hesabı kapatma provası aşağıda. Üç teklif gelecek; üçü de etiketli."); });
+$("#brokeQuitBtn").addEventListener("click",()=>showView("Resp"));
+$("#fsBtn").addEventListener("click",()=>{ const el=$("#stage"); if(document.fullscreenElement)document.exitFullscreen(); else if(el.requestFullscreen)el.requestFullscreen(); });
+$("#eyeBtn").addEventListener("click",()=>{ const b=$(".js-balance"); b.textContent=b.textContent.includes("•")?fmt(S.balance)+",00":"••••••"; });
+
+/* ---------- promosyon vitrini ---------- */
+const PROMOS=[
+ {k:"Hoş Geldin Paketi",t:'%100 <span>5.000 TL</span>\'ye Kadar İlk Yatırım Bonusu',d:"Kod: HOSGELDIN100 · Min. yatırım 100 TL · 35x çevrim · Ayrıntılar promosyon sayfasında.",img:"assets/games/gates-of-olympus.webp"},
+ {k:"Slot Turnuvası",t:'250.000 TL <span>Ödül Havuzu</span> — Her Çevrim Puan',d:"Sweet Bonanza, Gates of Olympus ve Sugar Rush'ta geçerli. Sıralama her saat güncellenir.",img:"assets/games/sweet-bonanza.webp"},
+ {k:"Balık Sezonu",t:'Big Bass\'te <span>Ücretsiz Çevrim</span> Yağmuru',d:"Her gün ilk yatırıma özel ücretsiz çevrimler. Şartlar promosyon sayfasında.",img:"assets/games/big-bass.webp"},
+];
+let promoIdx=0;
+function renderPromo(){
+  const p=PROMOS[promoIdx], main=$(".promo-main"), img=$("#promoArt");
+  main.classList.add("fading");
+  setTimeout(()=>{
+    img.src=p.img;
+    $("#promoKicker").textContent=p.k; $("#promoTitle").innerHTML=p.t; $("#promoText").textContent=p.d;
+    main.classList.remove("fading");
+  },190);
+  $("#promoDots").innerHTML=PROMOS.map((_,i)=>`<button type="button" class="${i===promoIdx?"on":""}" data-promo="${i}" aria-label="Promosyon ${i+1}"></button>`).join("");
+  $$("#promoDots button").forEach(b=>b.addEventListener("click",()=>{promoIdx=+b.dataset.promo;renderPromo();}));
+}
+renderPromo();
+setInterval(()=>{ promoIdx=(promoIdx+1)%PROMOS.length; renderPromo(); },6000);
+$("#promoCta").addEventListener("click",()=>toast("Demo bilgilendirmesi: Bonusun 35x çevrim şartı, bonusu çekilebilir paraya çevirmek için bonusun 35 katı bahis çevirmeniz demektir. bu makinede o yolculuğun beklenen bedeli, bonusun kendisinden büyüktür."));
+$$("[data-goto-promo]").forEach(el=>el.addEventListener("click",()=>toast("Demo bilgilendirmesi: “Yatırım şartsız” deneme bonuslarında çekim, genelde kimlik doğrulama ve üst limit şartına bağlanır. Şartlar sayfası, butondan bilerek daha zor bulunur.")));
+
+/* ---------- lobi ---------- */
+const GAMES=[
+ {name:"Sweet Bonanza",prov:"Pragmatic Play",img:"sweet-bonanza.webp",logo:["Sweet","Bonanza"],accent:"#ff6aa9",cats:"pop",ribbon:"HOT",jp:"₺12.400",rtp:"%96,5"},
+ {name:"Gates of Olympus",prov:"Pragmatic Play",img:"gates-of-olympus.webp",logo:["Gates of","Olympus"],accent:"#ffd23e",cats:"pop jackpot",ribbon:"DEMO AÇIK",jp:"₺86.250",rtp:"%91*",play:true},
+ {name:"Big Bass Bonanza",prov:"Pragmatic Play",img:"big-bass.webp",logo:["Big Bass","Bonanza"],accent:"#ffb03a",cats:"pop fruit",ribbon:"",jp:"",rtp:"%96,7"},
+ {name:"Book of Dead",prov:"Play'n GO",img:"book-of-dead.webp",logo:["Book","of Dead"],accent:"#f2c94c",cats:"classic pop",ribbon:"",jp:"",rtp:"%96,2"},
+ {name:"Starburst",prov:"NetEnt",img:"starburst.webp",logo:["Star","burst"],accent:"#7de8f5",cats:"classic",ribbon:"",jp:"",rtp:"%96,1"},
+ {name:"Sugar Rush",prov:"Pragmatic Play",img:"sugar-rush.webp",logo:["Sugar","Rush"],accent:"#ff8fab",cats:"pop new",ribbon:"YENİ",jp:"",rtp:"%96,5"},
+ {name:"The Dog House",prov:"Pragmatic Play",img:"dog-house.webp",logo:["The Dog","House"],accent:"#ffc46b",cats:"pop",ribbon:"",jp:"",rtp:"%96,5"},
+ {name:"Buffalo King",prov:"Pragmatic Play",img:"buffalo-king.webp",logo:["Buffalo","King"],accent:"#ffb03a",cats:"jackpot",ribbon:"",jp:"₺31.900",rtp:"%96,0"},
+ {name:"Burning Hot",prov:"EGT",img:"burning-hot.webp",logo:["Burning","Hot"],accent:"#ffcf3f",cats:"fruit classic",ribbon:"",jp:"",rtp:"%95,6"},
+ {name:"Gates of Hades",prov:"Pragmatic Play",img:"gates-of-hades.webp",logo:["Gates of","Hades"],accent:"#ff7a6e",cats:"new jackpot",ribbon:"YENİ",jp:"₺54.120",rtp:"%96,5"},
+ {name:"John Hunter",prov:"Pragmatic Play",img:"john-hunter.webp",logo:["John","Hunter"],accent:"#d9c27a",cats:"classic",ribbon:"",jp:"",rtp:"%96,5"},
+ {name:"Fruit Party",prov:"Pragmatic Play",img:"fruit-party.webp",logo:["Fruit","Party"],accent:"#a7e05a",cats:"fruit pop",ribbon:"",jp:"",rtp:"%96,5"},
+];
+function gameCard(g,idx){
+  const single=g.logo.length===1||!g.logo[1];
+  return `<button class="game" type="button" style="--i:${idx||0}" data-playing="${g.play?1:0}" data-name="${g.name}">
+    ${g.ribbon?`<span class="ribbon ${g.ribbon==="YENİ"?"new":g.ribbon==="DEMO AÇIK"?"demo":""}">${g.ribbon}</span>`:""}
+    <div class="thumb"><img src="assets/games/${g.img}" alt="${g.name} kapak görseli" ${idx!==undefined&&idx<8?'loading="eager" fetchpriority="high"':"loading=\"lazy\""}>
+    ${g.jp?`<span class="jp-amt">JACKPOT ${g.jp}</span>`:""}
+    <span class="cover-logo ${single?"single":""}"><span class="l1">${g.logo[0]}</span>${g.logo[1]?`<span class="l2" style="color:${g.accent}">${g.logo[1]}</span>`:""}</span>
+    <span class="hoverlay"><span class="play">${g.play?"Hemen Oyna":"Oyunu Aç"}</span><span class="demo">Ücretsiz Demo</span></span></div>
+    <div class="meta"><div class="gname">${g.name}</div><div class="gprov"><span>${g.prov}</span><span class="rtptag">RTP ${g.rtp}</span><svg class="fav-ic"><use href="#ic-star"/></svg></div></div></button>`;
+}
+function currentFilter(){ return $$("#catFilters button").find(b=>b.classList.contains("on"))?.dataset.f||"all"; }
+function renderGames(){
+  const f=currentFilter(), q=$("#lobbySearch").value.toLocaleLowerCase("tr").trim(), prov=$("#provFilter").value;
+  const list=GAMES.filter(g=>(f==="all"||g.cats.includes(f))&&(!q||g.name.toLocaleLowerCase("tr").includes(q))&&(!prov||g.prov===prov));
+  $("#games").innerHTML=list.map((g,i)=>gameCard(g,i)).join("")||'<div style="color:var(--muted);padding:14px;font-size:12.5px">Aramanıza uygun oyun bulunamadı.</div>';
+  $("#relatedGames").innerHTML=GAMES.filter(g=>g.name!=="Gates of Olympus").slice(0,6).map((g,i)=>gameCard(g,i)).join("");
+  $("#lobbyCount").textContent=list.length+" oyun listeleniyor · toplam 1.284 oyun";
+  $$(".game").forEach(b=>b.addEventListener("click",()=>{
+    if(b.dataset.playing==="1"){ showView("Game"); }
+    else toast("“"+b.dataset.name+"” bu makette kapalı. Açık olan tek makine Gates of Olympus — çünkü bu simülasyonun konusu kapak resmi değil, ödeme matematiği. Lobideki diğer her kart da aynı matematiğin başka resmi.");
+  }));
+}
+$$("#catFilters button").forEach(b=>b.addEventListener("click",()=>{ $$("#catFilters button").forEach(x=>x.classList.toggle("on",x===b)); renderGames(); }));
+$("#lobbySearch").addEventListener("input",renderGames);
+$("#provFilter").addEventListener("change",renderGames);
+renderGames();
+
+/* duyuru + kazanan şeridi */
+$("#announceText").innerHTML="Değerli üyelerimiz, <b>02:00–04:00</b> saatleri arasında planlı bakım yapılacaktır &nbsp;·&nbsp; Papara ile minimum çekim tutarı <b>₺250</b> olarak güncellenmiştir &nbsp;·&nbsp; Hafta sonuna özel slot turnuvasında ödül havuzu <b>₺250.000</b> &nbsp;·&nbsp; Hesap güvenliği için şifrenizi kimseyle paylaşmayınız &nbsp;·&nbsp; ";
+function tickerText(items){ return items.map(t=>`<b>${t[0]}</b> ${t[1]} oyununda <span class="amt">₺${fmt(t[2])}</span> kazandı`).join(" &nbsp;•&nbsp; ")+" &nbsp;•&nbsp; "; }
+$("#winnersTicker").innerHTML=tickerText([["Ah*** K.","Sweet Bonanza",12450],["Me*** S.","Gates of Olympus",8620],["Se*** D.","Gates of Olympus",3110],["Mu*** Y.","Big Bass Bonanza",5980],["El*** A.","Sugar Rush",2240]]);
+
+/* ---------- durum ---------- */
+let S={
+  balance:1000, bet:20, spins:0, wagered:0, returned:0, big:0, ldw:0, near:0, reloads:0, lastWin:0,
+  streak:0, worstStreak:0, history:[1000], urge:10, clarity:load("vb_clarity",0),
+  clearSessions:load("vb_clear",0), offersResisted:load("vb_offers",0), breaks:load("vb_breaks",0),
+  excludedUntil:0, sessionLock:false, started:Date.now(), auto:false, turbo:false, autoLeft:0, sessionPopupShown:false
+};
+let soundOn=false, audioCtx=null;
+function beep(f,d){ if(!soundOn)return; try{ audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+  const o=audioCtx.createOscillator(),g=audioCtx.createGain(); o.frequency.value=f; o.type="sine";
+  g.gain.setValueAtTime(.06,audioCtx.currentTime); g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+(d||.12));
+  o.connect(g); g.connect(audioCtx.destination); o.start(); o.stop(audioCtx.currentTime+(d||.12)); }catch(e){} }
+function toast(msg,ms){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),ms||4600); }
+
+/* ---------- simüle oyuncular ---------- */
+const RENK=["#8a4a1d","#5b3a8a","#1d6a72","#8a7a1d","#4a5568","#7a2a3a","#2a6a3a"];
+const BRAG=["vurdum {w}!! makine açık bugün","{w} tek spinde geldi, dedim size bu masa sıcak","işte bu {w}!! sistem çalışıyor görüyorsunuz","{w} aldım, kasaya selam olsun"];
+const CHASE=["kötü gidiyorum. tek büyük vuruş her şeyi düzeltir","dönmek üzere hissediyorum, ikiye katlıyorum","son 6 spin boş, istatistik olarak SIRA BENDE","yeniden yükledim. bu sefer iki katında kalkacağım. bu sefer"];
+const NEARP=["İKİ 7 GELDİ üçüncüsü limon. GELİYOR BU","yine bir sembol farkla kaçtı. bir sonraki. BİR SONRAKİ","makine benimle oynuyor yemin ederim"];
+let players=[
+ {name:"Marco K.",mask:"Ma*** K.",ava:"MK",style:"Yüksek bahis",bal:2400,start:2400,bet:100,wag:0,ret:0,reloads:0,status:"hot",chat:.5},
+ {name:"Lena S.",mask:"Le*** S.",ava:"LS",style:"Uğurlu koltuk inancı",bal:1750,start:1750,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.35},
+ {name:"Devran Y.",mask:"De*** Y.",ava:"DY",style:"Martingale “sistemi”",bal:3100,start:3100,bet:50,wag:0,ret:0,reloads:0,status:"calm",chat:.45},
+ {name:"Sofia A.",mask:"So*** A.",ava:"SA",style:"VIP · yüksek bahis",bal:8900,start:8900,bet:250,wag:0,ret:0,reloads:0,status:"hot",chat:.3},
+ {name:"Tomas R.",mask:"To*** R.",ava:"TR",style:"Sessiz · auto-spin",bal:960,start:960,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.08},
+ {name:"Rex D.",mask:"Re*** D.",ava:"RD",style:"Batıp yükleyen",bal:600,start:1600,bet:100,wag:5200,ret:4200,reloads:3,status:"chase",chat:.4},
+ {name:"Maya E.",mask:"Ma*** E.",ava:"ME",style:"Zararını açıkça sayıyor",bal:1180,start:1500,bet:25,wag:900,ret:580,reloads:0,status:"calm",chat:.3,willQuit:true},
+];
+const ST={hot:"SICAK",calm:"OYUNDA",tilt:"SİNİRLİ",chase:"KOVALIYOR",broke:"BATTI",quit:"AYRILDI"};
+let mayaQuit=false, mayaTimer=0;
+function renderPlayers(){
+  $("#players").innerHTML=players.map((p,i)=>{ const net=p.ret-p.wag;
+    return `<div><div class="winner"><div class="av" style="background:${RENK[i]}">${p.ava}</div>
+      <div class="who"><b>${p.mask}</b> <span class="st ${p.status}">${ST[p.status]||"OYUNDA"}</span><span>${p.style} · Gates of Olympus</span></div>
+      <div class="amt">₺${fmt(p.bal)}<span style="display:block;font-size:9px;color:var(--muted2);font-weight:400">BAKİYE</span></div></div>
+      <div class="truthline">Ömür boyu: bahis ₺${fmt(p.wag)} · net ${net<0?"−₺":"₺"}${fmt(Math.abs(net))} · yükleme ${p.reloads}</div></div>`; }).join("");
+  $("#truthBody").innerHTML=players.map(p=>{const net=p.ret-p.wag;return `<tr><td>${p.name}</td><td>₺${fmt(p.wag)}</td><td class="${net<0?"neg":"pos"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</td><td>${p.reloads}</td></tr>`;}).join("");
+}
+function addChat(name,text,cls,truth){
+  const c=$("#chat"); const d=document.createElement("div"); d.className="chat-item "+(cls||"");
+  d.innerHTML=`<b>${name}:</b> ${text}`+(truth?`<span class="truth">${truth}</span>`:"");
+  c.appendChild(d); while(c.children.length>40)c.firstChild.remove(); c.scrollTop=c.scrollHeight;
+}
+let jackpotN=48392, megaN=12480390, grandN=3128450, dropSec=2467;
+function botOutcome(bet){ const r=Math.random();
+  if(r<.008)return bet*25; if(r<.03)return bet*10; if(r<.08)return bet*4;
+  if(r<.18)return Math.round(bet*1.2); if(r<.34)return Math.round(bet*.5); return 0; }
+function botTick(){
+  jackpotN+=Math.floor(Math.random()*40)+5; megaN+=Math.floor(Math.random()*900)+120; grandN+=Math.floor(Math.random()*260)+40;
+  $("#jackpot").textContent=fmt(jackpotN);
+  $$(".jp-mega").forEach(e=>e.textContent=fmt(megaN)); $$(".jp-grand").forEach(e=>e.textContent=fmt(grandN));
+  players.forEach(p=>{
+    if(p.status==="quit")return;
+    if(Math.random()>.55)return;
+    if(p.bal<p.bet){ p.bal+=1000; p.reloads++; p.status="chase";
+      addChat(p.mask,"1.000 yükledim. temiz sayfa, bu sefer sonu farklı","", "Perde arkası: ömür boyu neti sıfırlanmadı, yalnızca hafızası sıfırlandı.");
+      renderPlayers(); updateHouse(); return; }
+    const out=botOutcome(p.bet); p.bal+=out-p.bet; p.wag+=p.bet; p.ret+=out;
+    const net=p.ret-p.wag;
+    if(out>=p.bet*10){ p.status="hot";
+      addChat(p.mask,BRAG[Math.floor(Math.random()*BRAG.length)].replace("{w}","₺"+fmt(out)),"",
+        `Perde arkası: bu dönüş ₺${fmt(p.wag)} bahisten sonra geldi. Ömür boyu net: ${net<0?"−₺":"₺"}${fmt(Math.abs(net))}.`);
+      $("#winnersTicker").innerHTML=tickerText(players.filter(x=>x.ret>0).slice(0,5).map(x=>[x.mask,"Gates of Olympus",Math.max(x.bet*4,250)]));
+    } else if(out===0&&Math.random()<.3){ p.status=Math.random()<.5?"tilt":"chase";
+      if(Math.random()<p.chat)addChat(p.mask,(Math.random()<.4?NEARP[Math.floor(Math.random()*NEARP.length)]:CHASE[Math.floor(Math.random()*CHASE.length)]));
+    }
+    if(p.bal<p.bet*3)p.status="chase";
+  });
+  const maya=players.find(p=>p.willQuit);
+  if(maya&&!mayaQuit){ mayaTimer++;
+    if(mayaTimer===8)addChat("Ma*** E.","dürüst olayım: oturduğumdan beri eksi ₺"+fmt(maya.wag-maya.ret)+"yim. sohbet sadece kazançlarımı duyuyor");
+    if(mayaTimer===16){ mayaQuit=true; maya.status="quit";
+      const sm=$("#seenMaya"); if(sm)sm.textContent="oturum ortasında ayrıldı";
+      addChat("Ma*** E.","çıkıyorum. kalan ₺"+fmt(maya.bal)+"yi bırakıp bu gece uygulamayı siliyorum. toplam eksi ₺"+fmt(maya.wag-maya.ret)+" — bu ders bundan ucuz olmayacaktı","good");
+      toast("Ma*** E. oyundan ayrıldı. Sohbet sekmesinde mesajlarını okuyun; Hesabım > Sorumlu Oyun'da kapatma provası var."); }
+  } else if(mayaQuit&&Math.random()<.16){
+    const tips=["3. gün, spin yok. istek akşam 8 gibi tepe yaptı ve gitti","neden bıraktığımı sordular. ömür boyu netimi gösterdim, konu kapandı","hâlâ içimden geliyor. yürüyüş + çay yapıyorum, 10 dakikada geçiyor","sıcak masa haberlerini hiç özlemiyorum, tuhaf"];
+    addChat("Ma*** E.",tips[Math.floor(Math.random()*tips.length)],"good");
+  }
+  renderPlayers(); updateHouse();
+}
+
+/* ---------- makine: 6x5, her yerde oder, tumble ----------
+   Odeme tablosu + agirliklar tumble dahil simule edildi (taban oyun). */
+const SYM=[
+ {id:"blue",name:"Mavi Taş",w:17},{id:"green",name:"Yeşil Taş",w:16},{id:"purple",name:"Mor Taş",w:15},
+ {id:"red",name:"Kırmızı Taş",w:14},{id:"yellow",name:"Sarı Taş",w:12},{id:"ring",name:"Yüzük",w:9},
+ {id:"hourglass",name:"Kum Saati",w:8},{id:"chalice",name:"Kupa",w:6},{id:"crown",name:"Taç",w:4},
+ {id:"scatter",name:"Zeus Scatter",w:1.5},
+];
+const PAY={ /* toplam bahis kati: 8-9 / 10-11 / 12+ */
+ crown:{8:20,10:40,12:80}, hourglass:{8:12,10:24,12:50}, chalice:{8:8,10:16,12:32},
+ ring:{8:4,10:10,12:20}, yellow:{8:2.5,10:6,12:16}, red:{8:2,10:5,12:12},
+ purple:{8:1.5,10:4,12:10}, green:{8:1,10:3,12:8}, blue:{8:0.8,10:2.5,12:6},
+};
+let ANTE=false;
+function totalW(){ return SYM.reduce((a,s)=>a+(s.id==="scatter"&&ANTE?s.w*2:s.w),0); }
+function pickSym(){ let r=Math.random()*totalW(); for(const s of SYM){ const w=s.id==="scatter"&&ANTE?s.w*2:s.w; if((r-=w)<0) return s.id; } return "blue"; }
+function symName(id){ return SYM.find(s=>s.id===id).name; }
+function genGrid(){ return Array.from({length:6},()=>Array.from({length:5},pickSym)); } /* grid[col][row] */
+function tierOf(n){ return n>=12?12:n>=10?10:8; }
+function evaluate(grid,bet){
+  const counts={}, cells={};
+  grid.forEach((col,c)=>col.forEach((s,r)=>{ if(s==="scatter")return; counts[s]=(counts[s]||0)+1; (cells[s]=cells[s]||[]).push([c,r]); }));
+  const wins=Object.keys(counts).filter(id=>counts[id]>=8).map(id=>({sym:id,count:counts[id],amount:PAY[id][tierOf(counts[id])]*bet,cells:cells[id]}));
+  const scatters=[]; grid.forEach((col,c)=>col.forEach((s,r)=>{ if(s==="scatter")scatters.push([c,r]); }));
+  const nearSym=Object.values(counts).some(n=>n===7);
+  return { wins, pay:wins.reduce((a,w)=>a+w.amount,0), scatterCount:scatters.length, near:!wins.length&&nearSym };
+}
+let currentGrid=genGrid();
+let FS={active:false,left:0,total:0,mult:0,bet:20};
+function cellEl(col,row){ return document.querySelector(`.cell[data-col="${col}"][data-row="${row}"]`); }
+function cellHTML(id){
+  if(id==="scatter") return `<img src="assets/games/gates-of-olympus.webp" alt=""><span class="sc-label">SCATTER</span>`;
+  return `<svg aria-label="${symName(id)}"><use href="#sym-${id}"/></svg>`;
+}
+function renderGrid(grid,anim){
+  const host=$("#reels"); if(!host)return;
+  let html="";
+  for(let row=0;row<5;row++) for(let col=0;col<6;col++)
+    html+=`<div class="cell ${grid[col][row]==="scatter"?"scatter-cell":""} ${anim?anim[col+","+row]||"":""}" data-col="${col}" data-row="${row}">${cellHTML(grid[col][row])}</div>`;
+  host.innerHTML=html;
+}
+function countUpWin(amount){
+  const el=$("#lcdWin"); if(!el)return;
+  if(!amount){ el.textContent="0"; return; }
+  const t0=performance.now(), dur=Math.min(850,260+amount*1.5);
+  (function frame(t){ const p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,3);
+    el.textContent=fmt(amount*e);
+    if(p<1)requestAnimationFrame(frame); else el.textContent=fmt(amount);
+  })(t0);
+}
+function clearWinFx(){ $$(".cell").forEach(c=>c.classList.remove("win","dim","pop")); }
+let spinning=false;
+function setUrge(v,why){
+  S.urge=Math.max(0,Math.min(100,Math.round(v)));
+  $("#urgeNum").textContent=S.urge; $("#urgeBar").style.width=S.urge+"%";
+  const L=S.urge<30?["— düşük",[ "Şu an bırakmak kolay. Bunu fark edin; bırakma araçları en iyi buradan başlar."]]
+    :S.urge<55?["— yükseliyor",["Adını koyun: bu bir istek, talimat değil.","Oda değiştirin, bir şey için, mola zamanlayıcısını açın."]]
+    :S.urge<80?["— yüksek",["Makinenin başında pazarlık etmeyin; mola zamanlayıcısını başlatın.","Birine mesaj atın. Başparmağı değil, telefonu hareket ettirin."]]
+    :["— tepede",["Elinizi butondan çekin. Dalgalar dakikalar içinde düşer.","Kolay tıklanırken kilidi koyun: kendini men etme."]];
+  $("#urgeLabel").textContent=L[0]+(why?" · Tetikleyici: "+why:"");
+  $("#urgeTips").innerHTML=L[1].map(t=>`<li>${t}</li>`).join("");
+}
+function isExcluded(){ return S.sessionLock||Date.now()<S.excludedUntil; }
+function addHistory(bet,ev,note){
+  const tb=$("#histBody");
+  if(tb.querySelector("td[colspan]"))tb.innerHTML="";
+  const net=ev.pay-bet;
+  const desc=ev.wins.length? ev.wins.map(w=>`${w.count}× ${symName(w.sym)}`).join(" · ") : "Kazanç yok";
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${new Date().toLocaleTimeString("tr-TR")}</td><td>₺${fmt(bet)}</td><td>${desc}${note?" · "+note:""}</td><td class="r">₺${fmt(ev.pay)}</td><td class="r ${net<0?"neg":net>0?"pos":""}">${net<0?"−₺":net>0?"₺":""}${net?fmt(Math.abs(net)):"0"}</td>`;
+  tb.prepend(tr); while(tb.children.length>12)tb.lastChild.remove();
+  $("#histNet").textContent="Net: "+(S.returned-S.wagered<0?"−₺":"₺")+fmt(Math.abs(S.returned-S.wagered));
+}
+const sleepMs=ms=>new Promise(r=>setTimeout(r,ms));
+function stakeOf(){ return ANTE? S.bet*1.25 : S.bet; }
+function updateFsBadge(){
+  const b=$("#fsBadge"); if(!b)return;
+  if(FS.active){ b.textContent=`Ücretsiz Çevrim ${FS.left} · Toplam ₺${fmt(FS.total)}${FS.mult?` · Çarpan x${FS.mult}`:""}`; b.classList.add("show"); }
+  else b.classList.remove("show");
+}
+/* tek cevirim: tumble zinciri dahil. free=true ise bahis alinmaz. */
+async function playOne(bet,free){
+  clearWinFx();
+  $("#spinBtn").classList.add("spinning"); $("#spinBtn").disabled=true;
+  let grid=genGrid();
+  renderGrid(grid);
+  const msg=$("#slotMsg"); msg.textContent=""; msg.className="win-line";
+  $("#lcdWin").textContent="0";
+  /* makaralar soldan saga kademeli durur; duran sutun sekerek oturur */
+  const finalGrid=genGrid(), t0=Date.now(), base=S.turbo?230:430, step=S.turbo?75:125;
+  const iv=setInterval(()=>{
+    const elapsed=Date.now()-t0;
+    for(let c=0;c<6;c++){
+      const stopped=elapsed>=base+c*step;
+      for(let r=0;r<5;r++){
+        const el=cellEl(c,r); if(!el)continue;
+        if(!stopped){ el.classList.add("rolling"); const id=pickSym(); el.classList.toggle("scatter-cell",id==="scatter"); el.innerHTML=cellHTML(id); }
+        else if(!el.dataset.landed){
+          el.dataset.landed="1"; el.classList.remove("rolling"); el.classList.add("land");
+          const id=finalGrid[c][r]; el.classList.toggle("scatter-cell",id==="scatter"); el.innerHTML=cellHTML(id);
+        }
+      }
+    }
+  },70);
+  await sleepMs(base+5*step+140); clearInterval(iv);
+  grid=finalGrid; currentGrid=grid; renderGrid(grid);
+  const scatterCount=grid.flat().filter(s=>s==="scatter").length;
+  let totalPay=0, orbSpawned=false, lastEv={wins:[],pay:0,near:false};
+  for(let chain=0; chain<25; chain++){
+    const ev=evaluate(grid,bet); lastEv=ev;
+    if(!ev.wins.length)break;
+    totalPay+=ev.pay;
+    ev.wins.forEach(w=>w.cells.forEach(([c,r])=>{ const el=cellEl(c,r); if(el)el.classList.add("win"); }));
+    $("#lineInfo").innerHTML=ev.wins.map(w=>`<b>${w.count}× ${symName(w.sym)}</b> ₺${fmt(w.amount)}`).join(" · ")+(chain?` · Tumble ${chain+1}`:"");
+    beep(660,.1);
+    await sleepMs(S.turbo?300:720);
+    /* ucretsiz cevirimde carpan kuresi */
+    if(free&&!orbSpawned&&Math.random()<.30){
+      orbSpawned=true; const orb=[2,2,3,3,5,10][Math.floor(Math.random()*6)];
+      FS.mult+=orb;
+      const all=$$(".cell"); const host=all[Math.floor(Math.random()*all.length)];
+      if(host)host.insertAdjacentHTML("beforeend",`<span class="orb">x${orb}</span>`);
+      $("#lineInfo").innerHTML+=` · <b>Çarpan küresi x${orb}</b> — toplam çarpan x${FS.mult}`;
+      await sleepMs(650);
+    }
+    ev.wins.forEach(w=>w.cells.forEach(([c,r])=>{ const el=cellEl(c,r); if(el)el.classList.add("pop"); }));
+    await sleepMs(240);
+    const winSyms=new Set(ev.wins.map(w=>w.sym)), anim={};
+    grid=grid.map((col,c)=>{
+      const kept=col.map((s,r)=>({s,r})).filter(x=>!winSyms.has(x.s));
+      const fresh=5-kept.length;
+      kept.forEach((x,j)=>{ if(fresh+j>x.r)anim[c+","+(fresh+j)]="fall"; });
+      for(let r=0;r<fresh;r++)anim[c+","+r]="newin";
+      return [...Array.from({length:fresh},pickSym),...kept.map(x=>x.s)];
+    });
+    currentGrid=grid; renderGrid(grid,anim);
+    await sleepMs(S.turbo?170:360);
+  }
+  let pay=totalPay;
+  if(free&&FS.mult>0&&pay>0)pay=pay*FS.mult;
+  renderGrid(grid);
+  $("#spinBtn").classList.remove("spinning");
+  $("#spinBtn").disabled=FS.active||isExcluded()||S.balance<S.bet;
+  return { pay, wins:lastEv.wins, scatterCount, near:totalPay===0&&lastEv.near };
+}
+async function runFreeSpins(bet){
+  FS.active=true; FS.left=8; FS.total=0; FS.mult=0; FS.bet=bet; updateFsBadge();
+  toast("Scatter! 8 ücretsiz çevrim başladı. Çarpan kürelerini Zeus panelinde izleyin.");
+  while(FS.left>0){
+    FS.left--; updateFsBadge();
+    const ev=await playOne(bet,true);
+    FS.total+=ev.pay; S.returned+=ev.pay; S.big=Math.max(S.big,ev.pay);
+    countUpWin(ev.pay);
+    $("#slotMsg").textContent=ev.pay>0?`ÜCRETSİZ ÇEVRİM KAZANCI ₺${fmt(ev.pay)}`:"";
+    $("#slotMsg").className="win-line "+(ev.pay>0?"win":"lose");
+    addHistory(0,{pay:ev.pay,wins:ev.wins},"Ücretsiz çevrim"+(FS.mult?` · çarpan x${FS.mult}`:""));
+    updateHUD();
+    await sleepMs(650);
+  }
+  S.balance+=FS.total; FS.active=false; updateFsBadge(); updateHUD();
+  $("#lineInfo").innerHTML=`Ücretsiz çevrimler bitti — toplam <b>₺${fmt(FS.total)}</b>${FS.mult?` (çarpan x${FS.mult} dahil)`:""}. Zeus'un verdiği de aynı makinenin parasıdır: bedeli, buraya gelene kadar çevrilenlerde ödenmiştir.`;
+  toast("Ücretsiz çevrimler bitti: toplam ₺"+fmt(FS.total));
+}
+async function spin(){
+  if(spinning||FS.active)return;
+  if(isExcluded()){ toast("Makine, kendi koyduğunuz kilitle kapalı. Kilit Hesabım > Sorumlu Oyun'dan yönetilir."); return; }
+  const stake=stakeOf();
+  if(S.balance<stake){ $("#brokeBox").classList.add("show"); $("#spinBtn").disabled=true; return; }
+  spinning=true; S.autoLeft=Math.max(0,S.autoLeft-1);
+  const bet=S.bet;
+  S.balance-=stake; S.wagered+=stake; S.spins++;
+  updateHUD(); beep(200,.07);
+  const ev=await playOne(bet,false);
+  S.balance+=ev.pay; S.returned+=ev.pay; S.big=Math.max(S.big,ev.pay); S.lastWin=ev.pay;
+  countUpWin(ev.pay);
+  if(ev.pay>=stake*15&&ev.pay>0){
+    $("#bigWinAmt").textContent="₺"+fmt(ev.pay);
+    const bw=$("#bigWin"); bw.classList.add("show"); setTimeout(()=>bw.classList.remove("show"),1700);
+  }
+  if(ev.scatterCount>=3){
+    const zr=document.querySelector(".oly-right");
+    if(zr){ zr.classList.remove("flash"); void zr.offsetWidth; zr.classList.add("flash"); setTimeout(()=>zr.classList.remove("flash"),600); }
+  }
+  const msg=$("#slotMsg"), net=ev.pay-stake;
+  if(ev.pay>stake){ S.streak=0; msg.textContent="TOPLAM KAZANÇ ₺"+fmt(ev.pay); msg.className="win-line win"; beep(660,.14); setTimeout(()=>beep(880,.18),120); setUrge(S.urge+14,"kazanç sonrası devam isteği"); }
+  else if(ev.pay>0){ S.ldw++; S.streak++; msg.textContent="Kazanç ₺"+fmt(ev.pay)+" — bahis ₺"+fmt(stake); msg.className="win-line ldw";
+    $("#lineInfo").innerHTML=`Dönüş, bahisten küçük: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. Makine bunu da "kazanç" hanesine yazar.`; beep(520,.1); setUrge(S.urge+8,"bahisten küçük dönüşün kazanç diye sunulması"); }
+  else { S.streak++; msg.textContent="KAZANÇ YOK"; msg.className="win-line lose";
+    if(ev.near){ S.near++; $("#lineInfo").textContent="Bir sembolden 7 tane geldi — ödeme 8'den başlar. Ödemesi, en kötü çevrimle aynı: ₺0."; }
+    setUrge(S.urge+(S.streak>=3?10:5),S.streak>=3?"kayıp serisini kovalama":"kayıp"); }
+  if(S.streak>0)$("#streakLabel").innerHTML="Kayıp serisi: <b>"+S.streak+"</b>"; else $("#streakLabel").textContent="";
+  S.worstStreak=Math.max(S.worstStreak,S.streak);
+  S.history.push(S.balance); if(S.history.length>220)S.history.shift();
+  addHistory(stake,ev,ev.scatterCount>=4?"Scatter "+ev.scatterCount:"");
+  if(S.balance<stake)$("#brokeBox").classList.add("show");
+  updateHUD(); drawChart(); realityText();
+  spinning=false;
+  if(ev.scatterCount>=4&&!isExcluded()){ await runFreeSpins(bet); }
+  if(S.spins===15&&!S.sessionPopupShown){ S.sessionPopupShown=true; openSessionPopup(); }
+  else if(S.spins>0&&S.spins%40===0)openSessionPopup();
+  if(S.auto&&S.autoLeft>0&&S.balance>=stakeOf()&&!isExcluded()&&!FS.active)setTimeout(spin,900);
+  else { S.auto=false; $("#autoBtn").classList.remove("on"); }
+}
+
+/* ---------- HUD ---------- */
+function updateHUD(){
+  $$(".js-balance").forEach(e=>e.textContent=fmt(S.balance)+",00");
+  $$(".js-balance-num").forEach(e=>e.textContent=fmt(S.balance));
+  const net=S.returned-S.wagered;
+  $("#sSpins").textContent=S.spins; $("#sWagered").textContent=fmtTL(S.wagered); $("#sReturned").textContent=fmtTL(S.returned);
+  const sn=$("#sNet"); sn.textContent=(net<0?"−₺":"₺")+fmt(Math.abs(net)); sn.className=net<0?"neg":"pos";
+  $("#sRtp").textContent=S.wagered?("%"+Math.round(S.returned/S.wagered*100)+" (taban oyun ~%90)"):"—";
+  $("#sLdw").textContent=S.ldw; $("#sNear").textContent=S.near; $("#sReloads").textContent=S.reloads;
+  $("#sHouse").textContent=fmtTL(Math.max(0,-net));
+  $("#qClarity").textContent=S.clarity; $("#qDays").textContent=S.clearSessions;
+  $("#qOffers").textContent=S.offersResisted; $("#qBreaks").textContent=S.breaks;
+  $("#spinBtn").disabled=isExcluded()||S.balance<S.bet;
+  save("vb_clarity",S.clarity); save("vb_clear",S.clearSessions); save("vb_offers",S.offersResisted); save("vb_breaks",S.breaks);
+}
+function updateHouse(){
+  let wag=S.wagered, ret=S.returned;
+  players.forEach(p=>{wag+=p.wag;ret+=p.ret});
+  $("#hWagered").textContent=fmtTL(wag); $("#hReturned").textContent=fmtTL(ret);
+  $("#houseMath").textContent="Bu masanın kasada bıraktığı: ₺"+fmt(wag-ret)+".";
+  $("#houseText").textContent=wag>2000?"Sohbet bu sırada çoğunlukla kazançları konuştu. Kasaya şans gerekmez; hacim gerekir.":"";
+}
+function drawChart(){
+  const cv=$("#chart"); if(!cv||!$("#viewResp").classList.contains("on")&&S.history.length<2){}
+  const ctx=cv.getContext("2d"),W=cv.width,H=cv.height; ctx.clearRect(0,0,W,H);
+  ctx.fillStyle="#0b1526"; ctx.fillRect(0,0,W,H);
+  const max=Math.max(...S.history,1100),min=Math.min(...S.history,900),pad=30;
+  const X=i=>pad+i/Math.max(1,(S.history.length-1))*(W-2*pad), Y=v=>H-pad-(v-min)/Math.max(1,(max-min))*(H-2*pad);
+  ctx.strokeStyle="#24365a";ctx.beginPath();ctx.moveTo(pad,Y(1000));ctx.lineTo(W-pad,Y(1000));ctx.stroke();
+  ctx.fillStyle="#8494ae";ctx.font="17px Arial";ctx.fillText("başlangıç ₺1.000",pad+4,Y(1000)-8);
+  if(S.history.length>1){ ctx.strokeStyle="#ffb800";ctx.lineWidth=3;ctx.beginPath();
+    S.history.forEach((v,i)=>i?ctx.lineTo(X(i),Y(v)):ctx.moveTo(X(i),Y(v)));ctx.stroke();
+    ctx.fillStyle="#e62e2e";ctx.beginPath();ctx.arc(X(S.history.length-1),Y(S.balance),6,0,7);ctx.fill(); }
+  const net=S.returned-S.wagered;
+  $("#chartNote").textContent="Şu an ₺"+fmt(S.balance)+" · "+S.spins+" çevrimde ömür boyu net "+(net<0?"−₺":"₺")+fmt(Math.abs(net))+".";
+}
+function realityText(){
+  const mins=Math.floor((Date.now()-S.started)/60000), net=S.returned-S.wagered;
+  $("#realitySummary").innerHTML=S.spins===0?"Henüz çevrim yok. Birkaç çevrimden sonra burada süreniz, toplam bahsiniz ve netiniz; sohbet kutlama yaparken kasanın aldıklarıyla birlikte yazacak.":
+   `<b>${mins} dakikada ${S.spins} çevrim</b>, toplam <b>₺${fmt(S.wagered)}</b> bahis, ömür boyu net <b style="color:${net<0?"#b3261e":"#137333"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</b>. Makine <b>${S.ldw}</b> zararı kazanç gibi sundu, <b>${S.near}</b> kez bir sembol farkla kaybettirdi. `+
+   (net<0?`Bunu bu makinede geri kazanmak için yaklaşık <b>₺${fmt(Math.abs(net)/.101)}</b> daha çevirmek gerekir; onun da yaklaşık %10'unu kaybetmeyi bekleyerek.`:`Öndesiniz; her yeni çevrimin fiyatı yaklaşık −%10 beklenen değer olduğu için (ücretsiz çevrimler bunu kısmen dengeler) istatistiksel olarak durmanın en doğru anı burası.`);
+}
+
+/* kontroller */
+function setBet(v){
+  S.bet=v; $("#betLabel").textContent=v;
+  $("#buyPrice").textContent=fmt(v*50);
+  $("#evLabel").textContent="₺"+(v*.101).toFixed(2).replace(".",",");
+  const cb=$("#calcBet"); if(cb)cb.value=v; calc(); updateHUD();
+}
+$("#betPlus").addEventListener("click",()=>setBet(BETS[Math.min(BETS.length-1,BETS.indexOf(S.bet)+1)]));
+$("#betMinus").addEventListener("click",()=>setBet(BETS[Math.max(0,BETS.indexOf(S.bet)-1)]));
+$("#maxBetBtn").addEventListener("click",()=>setBet(400));
+$("#spinBtn").addEventListener("click",spin);
+$("#payBtn").addEventListener("click",()=>$("#payModal").classList.add("show"));
+$("#anteBtn").addEventListener("click",()=>{
+  ANTE=!ANTE; const b=$("#anteBtn");
+  b.classList.toggle("on",ANTE); b.innerHTML='<svg class="ic"><use href="#ic-turbo"/></svg> '+(ANTE?"Açık · Bahis ₺"+fmt(stakeOf()):"Kapalı");
+  $("#lineInfo").innerHTML=ANTE?"Ante Bet açık: çevrim ₺"+fmt(stakeOf())+", Scatter ağırlığı ×2. Fiyat arttı; ödeme tablosu aynı.":"Ante Bet kapalı.";
+});
+$("#buyBtn").addEventListener("click",async()=>{
+  if(spinning||FS.active)return;
+  if(isExcluded()){ toast("Makine kilitli. Bonus satın almak da bir bahistir; kilit onu da kapsar."); return; }
+  const price=S.bet*50;
+  if(S.balance<price){ toast("Bonus için ₺"+fmt(price)+" gerekir. Bakiyeniz yetersiz — bu butonun gerçek sitedeki işi tam olarak bu anı zorlaştırmaktır."); return; }
+  if(!confirm("Bonus satın alınsın mı? ₺"+fmt(price)+" karşılığında 8 ücretsiz çevrim. Beklenen dönüş, fiyattan genelde düşüktür; Zeus garantisi yoktur."))return;
+  spinning=true;
+  S.balance-=price; S.wagered+=price; updateHUD();
+  toast("Bonus satın alındı: −₺"+fmt(price)+". 8 ücretsiz çevrim başlıyor; sonunda bu fiyatla karşılaştırın.");
+  await runFreeSpins(S.bet);
+  S.history.push(S.balance); updateHUD(); drawChart(); realityText();
+  spinning=false;
+});
+$("#payRows").innerHTML=SYM.filter(s=>s.id!=="scatter").map(s=>{
+  const p=PAY[s.id], f=n=>String(n).replace(".",",");
+  return `<div style="display:flex;align-items:center;gap:11px;padding:6px 4px;border-bottom:1px solid #1c2f50">
+    <svg style="width:38px;height:38px;flex:0 0 38px"><use href="#sym-${s.id}"/></svg>
+    <b style="color:#fff;min-width:84px">${s.name}</b>
+    <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">8-9 <b style="color:#ffd23e">x${f(p[8])}</b> · 10-11 <b style="color:#ffd23e">x${f(p[10])}</b> · 12+ <b style="color:#ffd23e">x${f(p[12])}</b></span></div>`;
+}).join("")+`<div style="display:flex;align-items:center;gap:11px;padding:6px 4px">
+    <span style="width:38px;height:38px;flex:0 0 38px;border-radius:2px;overflow:hidden"><img src="assets/games/gates-of-olympus.webp" style="width:100%;height:100%;object-fit:cover;object-position:center 20%"></span>
+    <b style="color:#fff;min-width:84px">Zeus</b><span style="font-size:11px;color:var(--muted)">SCATTER</span>
+    <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">4+ = <b style="color:#ffd23e">8 ücretsiz çevrim</b></span></div>`;
+$("#autoBtn").addEventListener("click",()=>{ S.auto=!S.auto; $("#autoBtn").classList.toggle("on",S.auto);
+  if(S.auto){ S.autoLeft=10; if(!spinning)spin(); } });
+$("#turboBtn").addEventListener("click",()=>{ S.turbo=!S.turbo; $("#turboBtn").classList.toggle("on",S.turbo); });
+$("#reloadBtn").addEventListener("click",()=>{ S.balance+=1000; S.reloads++; S.history.push(S.balance);
+  $("#brokeBox").classList.remove("show"); setUrge(S.urge+10,"kasa yüklemesi"); updateHUD(); drawChart(); realityText();
+  toast("Demo kasadan ₺1.000 eklendi. Bakiye yenilendi; ömür boyu netiniz Sorumlu Oyun sayfasında aynen duruyor."); });
+$("#realityToggle").addEventListener("change",e=>{ document.body.classList.toggle("reality",e.target.checked);
+  if(e.target.checked)toast("Perde arkası açık: Kazananlar listesinde ve sohbette gizli toplamlar görünüyor."); });
+$("#refreshReality").addEventListener("click",realityText);
+$("#resetBtn").addEventListener("click",()=>{ if(!confirm("Tüm demo verileri sıfırlansın mı?"))return;
+  ["vb_clarity","vb_clear","vb_offers","vb_breaks","vb_plan"].forEach(k=>localStorage.removeItem(k)); location.reload(); });
+
+/* yan sekmeler */
+$$("[data-side]").forEach(b=>b.addEventListener("click",()=>{
+  $$("[data-side]").forEach(x=>x.classList.toggle("on",x===b));
+  $("#sideWinners").style.display=b.dataset.side==="winners"?"":"none";
+  $("#sideChat").style.display=b.dataset.side==="chat"?"":"none";
+}));
+
+/* modallar */
+$$("[data-close]").forEach(b=>b.addEventListener("click",()=>$("#"+b.dataset.close).classList.remove("show")));
+$("#depositBtn").addEventListener("click",()=>$("#depositModal").classList.add("show"));
+$("#depositGo").addEventListener("click",()=>{ $("#depositModal").classList.remove("show"); toast("Talep oluşturulmadı. Demo kasası yalnızca bakiyeniz bittiğinde, oyun ekranından çalışır."); });
+$$(".amt-grid button").forEach(b=>b.addEventListener("click",()=>{ $$(".amt-grid button").forEach(x=>x.classList.toggle("sel",x===b)); }));
+$$(".pay-methods button").forEach(b=>b.addEventListener("click",()=>{ $$(".pay-methods button").forEach(x=>x.classList.toggle("sel",x===b)); }));
+$("#supportBtn").addEventListener("click",()=>toast("Canlı Destek (demo): Ortalama yanıt süresi vaadi 30 saniyedir; para çekme sorularında aynı hızı beklemeyin. Gerçek destek için YEDAM: 115."));
+function openSessionPopup(){
+  const s=Math.floor((Date.now()-S.started)/1000), net=S.returned-S.wagered;
+  $("#mTime").textContent=Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+  $("#mSpins").textContent=S.spins; $("#mWagered").textContent=fmtTL(S.wagered);
+  const mn=$("#mNet"); mn.textContent=(net<0?"−₺":"₺")+fmt(Math.abs(net)); mn.style.color=net<0?"#ff8a8a":"#7ce8a4";
+  $("#sessionModal").classList.add("show");
+}
+$("#sessionQuitBtn").addEventListener("click",()=>{ $("#sessionModal").classList.remove("show"); showView("Resp"); });
+
+/* mola kısayolu (oyun ekranı) */
+$("#molaBtn").addEventListener("click",()=>{ showView("Resp"); setTimeout(()=>$("#breathBtn").scrollIntoView({behavior:"smooth",block:"center"}),60); });
+$("#molaQuickBtn").addEventListener("click",()=>showView("Game"));
+
+/* ---------- hesabı kapatma provası ---------- */
+let offerTimers=[];
+function addClarity(n){ S.clarity+=n; updateHUD(); }
+function showOffer(i){
+  $$(".offer").forEach(o=>o.classList.remove("show")); $("#exitWin").classList.remove("show");
+  if(i>2){ S.clearSessions++; document.body.classList.add("calming"); $("#exitWin").classList.add("show"); addClarity(30); updateHUD();
+    toast("Kapatma provası tamamlandı: +30 kontrol puanı. Şimdi mola ve kilitlerle devam edin."); return; }
+  const el=$("#offer"+i); el.classList.add("show"); el.scrollIntoView({behavior:"smooth",block:"center"});
+  let left=59; const cd=el.querySelector(".cd"); cd.textContent="0:59"; clearInterval(offerTimers[i]);
+  offerTimers[i]=setInterval(()=>{ left--; if(left<0){clearInterval(offerTimers[i]);cd.textContent="0:00 (geçince sessizce yenilenir)";return;} cd.textContent="0:"+String(left).padStart(2,"0"); },1000);
+}
+$("#startQuitBtn").addEventListener("click",()=>{ realityText(); showOffer(0); });
+$$("[data-refuse]").forEach(b=>b.addEventListener("click",()=>{
+  clearInterval(offerTimers[+b.dataset.refuse]); S.offersResisted++; addClarity(10); updateHUD();
+  toast("+10 kontrol puanı. Kötü bir şey olmadı; süresi dolmak üzere olan şey zaten gerçek bir kayıp değildi."); showOffer(+b.dataset.refuse+1); }));
+$$("[data-accept]").forEach(b=>b.addEventListener("click",()=>{
+  const i=+b.dataset.accept; clearInterval(offerTimers[i]); $$(".offer").forEach(o=>o.classList.remove("show"));
+  if(i===0){ S.balance+=500; S.history.push(S.balance); updateHUD(); drawChart(); toast("₺500 bonus bakiyeye eklendi. Çevrim şartıyla birlikte: bonusu çekilebilir yapmak, bu makinede bonusun katbekat üstünde bahis çevirmek demek. Kapı aşağıda hâlâ açık."); }
+  else toast("Kapatma ertelendi. Bu, provanın başarısızlığı değil; gerçek kapatmaların çoğu ikinci, üçüncü denemede tutar. Kapı aşağıda hâlâ açık.");
+}));
+
+/* ---------- mola zamanlayıcısı ---------- */
+let breathIv=null, breathPhaseIv=null;
+$("#breathBtn").addEventListener("click",()=>{
+  const total=+$("#breathLen").value; let left=total;
+  const circle=$("#breathCircle"), txt=$("#breathText");
+  $("#breathBtn").disabled=true; $("#breathStop").disabled=false; $("#spinBtn").disabled=true;
+  txt.textContent="İsteğiniz şu an 0–10 arası kaç? Sayıyı tutun.";
+  const phases=[["nefes al",3800,1.32],["tut",1800,1.32],["nefes ver",3800,.86],["dinlen",1200,.86]];
+  let pi=0;
+  const runPhase=()=>{ const [label,dur,scale]=phases[pi%phases.length]; pi++;
+    circle.textContent=label; circle.style.transform=`scale(${scale})`; circle.classList.toggle("hold",label==="tut");
+    txt.textContent=label==="nefes al"?"Nefes alın — istek orada dursun, siz izleyin":label==="tut"?"Tutun — istekler tepe yapar, izin var":label==="nefes ver"?"Nefes verin — dalgalar beslenmeden de düşer":"Dinlenin. Sayı kıpırdadı mı?";
+    breathPhaseIv=setTimeout(runPhase,dur); };
+  runPhase();
+  $("#breathTimer").textContent=left+" sn · SPIN bu süre boyunca kilitli";
+  breathIv=setInterval(()=>{ left--; $("#breathTimer").textContent=left+" sn · SPIN bu süre boyunca kilitli"; if(left<=0)stopBreath(true); },1000);
+  function stopBreath(done){
+    clearInterval(breathIv); clearTimeout(breathPhaseIv);
+    $("#breathBtn").disabled=false; $("#breathStop").disabled=true;
+    $("#spinBtn").disabled=isExcluded()||S.balance<S.bet;
+    circle.style.transform="scale(1)"; circle.textContent=done?"dalga geçti":"durduruldu";
+    if(done){ S.breaks++; addClarity(15); setUrge(Math.max(5,S.urge-25)); updateHUD();
+      txt.textContent="Mola tamamlandı: +15 kontrol puanı. İsteğin şimdiki sayısını baştakiyle karşılaştırın.";
+      toast("Mola tamamlandı: +15 kontrol puanı. İstek, spinsiz düştü."); }
+    else txt.textContent="Erken durduruldu; 10 saniyelik gecikme bile otomatik döngüyü zayıflatır.";
+  }
+  $("#breathStop").onclick=()=>stopBreath(false);
+});
+
+/* ---------- kendini men etme ---------- */
+$$("[data-exclude]").forEach(b=>b.addEventListener("click",()=>{
+  const v=b.dataset.exclude;
+  if(v==="session"){ S.sessionLock=true; $("#excludeStatus").textContent="Bu oturum için kilitlendi. Kararı geçmişteki siz verdi; şimdiki siz her saat yeniden vermek zorunda değil."; }
+  else { S.excludedUntil=Date.now()+ +v*1000; $("#excludeStatus").textContent=(+v/60)+" dakikalığına kilitlendi. Makine döndüğünüzde de aynı olacak; bekleyebilir, kaybedecek şeyi olan o değil."; }
+  S.breaks++; addClarity(10); document.body.classList.add("calming"); updateHUD(); tickClock();
+  toast("Kendini men etme etkin: +10 kontrol puanı. SPIN artık direnilecek değil, ulaşılamayacak durumda.");
+}));
+function tickClock(){
+  const el=$("#excludedNote"); if(!el)return;
+  if(S.sessionLock){ el.textContent="Kendini men etme etkin (bu oturum). Sorumlu Oyun araçları çalışmaya devam eder."; el.classList.add("show"); $("#spinBtn").disabled=true; return; }
+  const left=Math.ceil((S.excludedUntil-Date.now())/1000);
+  if(left>0){ el.textContent=`Kendini men etme: ${Math.floor(left/60)}:${String(left%60).padStart(2,"0")} kaldı.`; el.classList.add("show"); $("#spinBtn").disabled=true; }
+  else { el.classList.remove("show"); if(!spinning)$("#spinBtn").disabled=S.balance<S.bet; }
+}
+
+/* ---------- plan / hesap / özet ---------- */
+const savedPlan=load("vb_plan",null);
+if(savedPlan){ $("#planOut").textContent=savedPlan; $("#planOut").classList.add("show"); }
+$("#planBtn").addEventListener("click",()=>{
+  const plan=`EĞER ${$("#triggerSel").value}, O ZAMAN ${$("#actionSel").value}. (Vegabet kapatma provası sonrası yazıldı — reddedilen teklif: ${S.offersResisted}.)`;
+  $("#planOut").textContent=plan; $("#planOut").classList.add("show"); save("vb_plan",plan); addClarity(5);
+  toast("Plan kaydedildi (+5). İstek anındaki karardan, önceden yazılmış plan güçlüdür.");
+});
+function calc(){
+  const spins=+($("#calcSpins")?.value||0), bet=+($("#calcBet")?.value||0), daily=spins*bet, el=$("#saveOut");
+  if(!el)return;
+  el.innerHTML=`<b>30 gün:</b> çevirmediğiniz <b>₺${fmt(daily*30)}</b> bahis; yaklaşık %10'luk kasayla sizde kalan beklenen <b>₺${fmt(daily*30*.101)}</b> ve vermek zorunda kalmadığınız ${fmt(spins*30)} karar.<br><b>1 yıl:</b> çevirmediğiniz <b>₺${fmt(daily*365)}</b> · beklenen tasarruf ≈<b>₺${fmt(daily*365*.101)}</b> · spine gitmeyen yaklaşık <b>${Math.round(spins*365*4/3600)} saat</b>.`;
+}
+$("#calcSpins").addEventListener("input",calc); $("#calcBet").addEventListener("input",calc);
+$("#sharePlanBtn").addEventListener("click",async()=>{
+  const net=S.returned-S.wagered;
+  const text=`Vegabet bırakma özetim — demo bakiye, gerçek dersler.\nÇevrim: ${S.spins} · Ömür boyu net: ${net} TL · Kazanç sanılan zarar: ${S.ldw} · Bir farkla kayıp: ${S.near}\nKontrol puanı: ${S.clarity} · Temiz oturum: ${S.clearSessions} · Reddedilen teklif: ${S.offersResisted} · Mola: ${S.breaks}\nPlanım: ${$("#planOut").textContent||"(henüz yazılmadı)"}`;
+  try{ await navigator.clipboard.writeText(text); $("#copyMsg").textContent="Kopyalandı."; }
+  catch(e){ $("#copyMsg").textContent="Kopyalama engellendi — özet yukarıdaki kartlarda."; }
+  setTimeout(()=>$("#copyMsg").textContent="",3000);
+});
+
+/* ---------- saatler ---------- */
+setInterval(()=>{ const s=Math.floor((Date.now()-S.started)/1000);
+  const rt=$("#rTime"); if(rt)rt.textContent=Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+  dropSec=Math.max(0,dropSec-1); const dt=$("#dropTimer"); if(dt)dt.textContent=Math.floor(dropSec/60)+":"+String(dropSec%60).padStart(2,"0");
+  tickClock();
+  if(!spinning&&S.urge>5&&Math.random()<.3)setUrge(S.urge-1);
+},1000);
+setInterval(botTick,2100);
+
+/* init */
+setBet(20);
+renderGrid(currentGrid);
+renderPlayers(); updateHUD(); updateHouse(); drawChart(); setUrge(10); calc(); realityText();
+addChat("Salon","Gates of Olympus demo açıldı. Oyuncular simüle, bakiye demo.","sys");
+addChat("Le*** S.","yeni koltuk yeni şans, bu masa bugün benim");
+addChat("De*** Y.","bu makineyi modelledim. martingale kaybetmez, izleyin öğrenin");
+addChat("Ma*** E.","selam. kendime kural koydum: gerçek toplamımı yüksek sesle söyleyebildiğim an kalkacağım");
+setTimeout(()=>toast("Lobiden Gates of Olympus'a girin, birkaç spin atın. 15. spinde oturum bildirimi gelecek; bırakma araçları Hesabım > Sorumlu Oyun'da."),700);
+</script>
+</body>
+</html>
