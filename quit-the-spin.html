@@ -52,6 +52,9 @@ a:hover{color:#fff}
 .btn-orange{background:#f26d00;border-color:#f26d00;border-bottom:3px solid #9e4600;color:#fff;text-transform:uppercase}
 .btn-green{background:#009444;border-color:#009444;border-bottom:3px solid #00592a;color:#fff;text-transform:uppercase}
 .btn-dark{background:#0d1c36}
+.lang-switch{display:flex;border:1px solid var(--line2);border-radius:2px;overflow:hidden}
+.lang-switch button{background:#0d1c36;border:0;color:#8494ae;padding:8px 11px;font-weight:900;font-size:11.5px;letter-spacing:.6px}
+.lang-switch button.on{background:var(--orange);color:#fff}
 .userbox{display:flex;align-items:center;gap:8px;font-size:12px;color:#b9c8df}
 .userbox .avatar{width:31px;height:31px;border-radius:50%;background:#1d3f73;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;border:1px solid var(--line2)}
 @media(max-width:640px){.userbox .uname{display:none}.balance-box small{display:none}}
@@ -620,6 +623,9 @@ body *:not(.spin):not(.av):not(.avatar):not(.breath-circle):not(.urge-track):not
     <a href="#" data-nav="lobby">Spor</a><a href="#" data-nav="lobby">Promosyonlar</a><a href="#" data-nav="resp">Sorumlu Oyun</a>
   </nav>
   <div class="hright">
+    <div class="lang-switch" role="group" aria-label="Language / Dil">
+      <button type="button" id="langTr" class="on">TR</button><button type="button" id="langEn">EN</button>
+    </div>
     <div class="balance-box"><div><small>BAKİYE (DEMO)</small><b>₺<span class="js-balance">1.000,00</span></b></div><button class="eye" id="eyeBtn" type="button" title="Bakiyeyi gizle/göster"><svg class="ic"><use href="#ic-eye"/></svg></button></div>
     <button class="btn btn-green" id="depositBtn" type="button">Para Yatır</button>
     <div class="userbox"><div class="avatar">K47</div><div class="uname">kullanici_47<br><small style="color:var(--muted)">Hesabım ▾</small></div></div>
@@ -998,11 +1004,115 @@ body *:not(.spin):not(.av):not(.avatar):not(.breath-circle):not(.urge-track):not
 <script>
 "use strict";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const fmt=n=>Math.round(n).toLocaleString("tr-TR");
+const fmt=n=>Math.round(n).toLocaleString(typeof LANG!=="undefined"&&LANG==="en"?"en-US":"tr-TR");
 const fmtTL=n=>"₺"+fmt(n);
 const BETS=[20,40,100,200,400];
 function load(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}}
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+/* ---------- dil / language ---------- */
+let LANG=load("vb_lang","tr");
+function T(tr,en){ return LANG==="en"?en:tr; }
+const I18N={
+"Canlı Casino":"Live Casino","Spor":"Sports","Promosyonlar":"Promotions","Sorumlu Oyun":"Responsible Gaming",
+"BAKİYE (DEMO)":"BALANCE (DEMO)","Para Yatır":"Deposit","Hesabım ▾":"My Account ▾","Tümü":"All","Popüler":"Popular",
+"Yeni":"New","Meyve":"Fruit","Klasik":"Classic","Masa Oyunları":"Table Games","Hoş Geldin Paketi":"Welcome Package",
+"Bonusu Al":"Claim Bonus","100 TL Deneme Bonusu":"₺100 Trial Bonus","Hemen Al →":"Claim Now →","%20 Kayıp Bonusu":"20% Loss Bonus",
+"Detaylar →":"Details →","Son Kazananlar":"Latest Winners","Oyunları":"Games","Tüm Sağlayıcılar":"All Providers",
+"Büyük":"Big","Jackpotlar":"Jackpots","Tümünü gör":"View all","Son düşüş:":"Last drop:","Düşmesine:":"Drops in:",
+"14 gün önce":"14 days ago","3 gün önce":"3 days ago","Lobiye Dön":"Back to Lobby","Mola Ver":"Take a Break","Tam Ekran":"Fullscreen",
+"Bonus Satın Al":"Buy Bonus","8 ücretsiz çevrim + artan çarpan":"8 free spins + rising multiplier","Ante Bet":"Ante Bet",
+"Bahis +%25, Scatter şansı ×2":"Bet +25%, Scatter chance ×2","Kapalı":"Off","Nasıl öder?":"How does it pay?",
+"Çizgi yoktur. Aynı sembolden":"There are no paylines. Eight or more of the same symbol",
+"tanesi ızgaranın herhangi bir yerinde öder. Kazananlar patlar, üsttekiler düşer (tumble); zincir sürebilir.":"anywhere on the grid pays. Winners explode, symbols above drop down (tumble); the chain can continue.",
+"4+ Zeus, 8 ücretsiz çevrim verir. Ücretsiz çevrimde çarpan küreleri toplam çarpana eklenir.":"4+ Zeus awards 8 free spins. In free spins, multiplier orbs add to a global multiplier.",
+"Ödeme Tablosu":"Paytable","İYİ ŞANSLAR":"GOOD LUCK","8+ aynı sembol her yerde öder · Kazanan semboller düşer":"8+ matching symbols pay anywhere · Winners tumble down",
+"DR. OLASILIK · CANLI YORUM":"DR. PROBABILITY · LIVE COMMENTARY","Ücretsiz Çevrim":"Free Spins","Bakiye":"Balance",
+"Toplam Bahis":"Total Bet","Kazanç":"Win","Oyun ID:":"Game ID:","Izgara:":"Grid:","6 × 5 · Her yerde öder":"6 × 5 · Pays anywhere",
+"Bahis aralığı:":"Bet range:","Çevrim başı beklenen kayıp (taban oyun):":"Expected loss per spin (base game):",
+"Kredi yetersiz.":"Insufficient credit.","Demo Kasadan ₺1.000 Al":"Get ₺1,000 from Demo Cashier","Oturumu Kapat":"End Session",
+"Bahis Geçmişim — Bu Oturum":"My Bet History — This Session","Saat":"Time","Bahis":"Bet","Sonuç":"Result","Dönüş":"Return",
+"Henüz bahis yok.":"No bets yet.","Benzer":"Similar","Kazananlar":"Winners","Sohbet":"Chat",
+"Perde arkası açık: listenin göstermediği satır bu — her oyuncunun toplam bahsi ve ömür boyu neti.":"Behind the curtain is on: this is the row the list hides — each player's total wager and lifetime net.",
+"Oyun Bilgisi":"Game Info","Sağlayıcı":"Provider","Izgara / Ödeme":"Grid / Payout","Volatilite":"Volatility","Yüksek":"High",
+"Geri dönüş (taban oyun)":"Return (base game)","~%91 (simüle)":"~91% (simulated)","En yüksek ödeme":"Max payout",
+"12+ Taç = bahis ×80":"12+ Crowns = bet ×80","4+ Zeus = 8 ücretsiz çevrim":"4+ Zeus = 8 free spins",
+"Üyelik: Demo · Seviye: Standart":"Membership: Demo · Tier: Standard","Hesap Özetim":"Account Summary","Para Yatırma":"Deposits",
+"Para Çekme":"Withdrawals","Bahis Geçmişim":"My Bet History","Bonuslarım":"My Bonuses","Hesabı Kapatma":"Close Account",
+"‹ Lobiye Dön":"‹ Back to Lobby","Oturum Özeti":"Session Summary","Henüz çevrim yok.":"No spins yet.","Güncelle":"Refresh",
+"Perde arkası — oyuncuların gizli toplamlarını göster":"Behind the curtain — show players' hidden totals",
+"Bırakma Karnesi":"Quitting Report Card","kontrol puanı":"control points","Özetimi kopyala":"Copy my summary",
+"Oynama İsteği İzleme":"Urge Monitor","Kazançlar, “neredeyse”ler ve başkalarının kazançları isteği yükseltir; süre ve mesafe düşürür.":"Wins, near-misses and other people's wins push the urge up; time and distance pull it down.",
+"Oturum İstatistikleri":"Session Statistics","Süre":"Duration","Toplam çevrim":"Total spins","Toplam bahis":"Total wagered",
+"Toplam dönüş":"Total returned","Ömür boyu net (yüklemeler silmez)":"Lifetime net (reloads don't erase it)","Gerçekleşen RTP":"Actual RTP",
+"Kazanç sanılan zarar / “neredeyse”":"Losses disguised as wins / near-misses","Demo kasa yüklemesi":"Demo cashier reloads","Kasanın sizden aldığı":"Taken from you by the house",
+"Bakiye Grafiği ve Kasanın Toplamı":"Balance Chart & the House Total","Kısa sıçramalar anlatılır, uzun eğim yaşanır.":"Short spikes get told; the long slope gets lived.",
+"Simüle oyuncu":"Simulated player","Ömür boyu net":"Lifetime net","Yükleme":"Reloads","Hesabı Kapatma Provası":"Account Closure Rehearsal",
+"Hesabımı kapatmak istiyorum":"I want to close my account","Yöntem:":"Method:","₺500 bonusu kabul et":"Accept the ₺500 bonus",
+"Hayır, hesabı kapat":"No, close the account","Jackpot penceresi kapanıyor:":"The jackpot window is closing:","Kapatmayı ertele":"Postpone closing",
+"Bir süre daha oyna":"Play a little longer","Hesap kapatma tamamlandı (prova).":"Account closure complete (rehearsal).",
+"Mola Zamanlayıcısı":"Break Timer","30 saniye (prova)":"30 seconds (practice)","60 saniye":"60 seconds","2 dakika":"2 minutes",
+"hazır":"ready","Molayı başlat":"Start the break","Durdur":"Stop","Oyun ekranından da mola verilebilir — oraya git":"You can also take a break from the game screen — go there",
+"Kendini Men Etme ve Limitler":"Self-Exclusion & Limits","1 dakika kilitle":"Lock for 1 minute","5 dakika kilitle":"Lock for 5 minutes",
+"Bu oturumu kilitle":"Lock this session","“Olursa — O Zaman” Planı":"“If — Then” Plan","Tetikleyici":"Trigger","Onun yerine":"Instead, I will",
+"Planı kaydet":"Save my plan","Bırakmanın Karşılığı":"What Quitting Is Worth","Günde dürüstçe kaç çevrim?":"Honestly, how many spins a day?",
+"Çevrim başı ortalama bahis (₺)":"Average bet per spin (₺)","Destek":"Support","Tüm demo verilerini sıfırla":"Reset all demo data",
+"BANKA HAVALESİ":"BANK TRANSFER","Slot Oyunları":"Slot Games","Yardım":"Help","Canlı Destek 7/24":"Live Support 24/7",
+"Sık Sorulan Sorular":"FAQ","Para Yatırma / Çekme":"Deposits / Withdrawals","Bonus Şartları":"Bonus Terms","Popüler Oyunlar":"Popular Games",
+"Canlı Destek · 7/24":"Live Support · 24/7","Para Yatırma — Papara":"Deposit — Papara","Yöntem":"Method",
+"Anında · Komisyonsuz":"Instant · No fee","Banka Havalesi":"Bank Transfer","Kredi Kartı":"Credit Card","Tutar (₺)":"Amount (₺)",
+"Yatırım Talebi Oluştur":"Create Deposit Request","Oturum Bildirimi":"Session Notice","Oturum süresi":"Session duration",
+"Oturum neti":"Session net","Oyuna Devam Et":"Continue Playing","Oturumu Sonlandır":"End Session",
+"“Oturumu Sonlandır” sizi Sorumlu Oyun sayfasına götürür. Orada hesabı kapatma provası ve kilitler var.":"“End Session” takes you to the Responsible Gaming page, with the closure rehearsal and locks.",
+"Teklif":"Offer expires in","içinde geçerlidir.":"","bedava para kancası + sahte aciliyet.":"free-money hook + fake urgency.",
+"kalabalık kanıtı + kaçırma korkusu.":"social proof + fear of missing out.","kişiselleştirilmiş kumarbaz yanılgısı.":"personalised gambler's fallacy.",
+"Kontrol puanı bakiyeye çevrilemez, bonus satın almaz. Tek işe yarar: burada birikir.":"Control points can't be converted to balance or buy bonuses. Their only job is to pile up here.",
+"Bir süredir oynuyorsunuz. Gerçek salonların çoğunun göstermediği özet:":"You've been playing for a while. The summary most real casinos never show:",
+"Tamamlanan temiz oturum:":"Clean sessions completed:","· Reddedilen elde tutma teklifi:":"· Retention offers refused:","· Alınan mola:":"· Breaks taken:",
+"Tekrar başlamak bir hüküm değil, veridir. Her bırakma denemesi, bir sonrakinin kullanacağı kası çalıştırır.":"A relapse is data, not a verdict. Every quit attempt trains the muscle the next one uses."
+};
+const REV_I18N=Object.fromEntries(Object.entries(I18N).map(([k,v])=>[v,k]));
+const BLOCK_EN=[
+ [".oly-note","<b>How does it pay?</b><br>There are no paylines. Eight or more of the same symbol <b>anywhere</b> on the grid pays. Winners explode, symbols above drop down (tumble); the chain can continue.<br><br><b>Scatter:</b> 4+ Zeus awards 8 free spins. In free spins, multiplier orbs add to a global multiplier."],
+ [".acc-head p","Limits, reality checks, breaks and self-exclusion tools. This page deliberately uses no sales language and no button here will offer you a bonus — except the labelled closure rehearsal below, which exists so you can see exactly what you'll face."],
+ ["#payModal .modal-b > div:last-child","<b style=\"color:#ffd23e\">Scatter (Zeus):</b> 4+ scatters award 8 free spins. In free spins, multiplier orbs (x2–x10) add to a global multiplier applied to later wins.<br><b style=\"color:#ffd23e\">Tumble:</b> after every win, winning symbols vanish, symbols above drop, and gaps refill. The chain runs until no win remains — all within one spin.<br>The base game's simulated return is about <b style=\"color:#fff\">90%</b>; free spins add on top but trigger rarely (Ante Bet raises that frequency — and the price per spin). Over the long run, not all of every ₺100 wagered comes back — volatility is high and single sessions can swing hard."],
+];
+let origBlocks=null;
+function translateStatic(){
+  if(!origBlocks){ origBlocks=BLOCK_EN.map(([sel])=>{ const el=document.querySelector(sel); return el?el.innerHTML:null; }); }
+  BLOCK_EN.forEach(([sel,en],i)=>{ const el=document.querySelector(sel); if(!el)return;
+    el.innerHTML = LANG==="en" ? en : (origBlocks[i]??el.innerHTML); });
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>{
+    if(n.parentElement.closest("script,style,svg"))return NodeFilter.FILTER_REJECT;
+    return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT; }});
+  const nodes=[]; while(walker.nextNode())nodes.push(walker.currentNode);
+  const dict = LANG==="en"?I18N:REV_I18N;
+  nodes.forEach(n=>{
+    const raw=n.nodeValue, core=raw.trim();
+    if(dict[core]!==undefined&&dict[core]!=="")n.nodeValue=raw.replace(core,dict[core]);
+    else if(dict[core]==="")n.nodeValue=raw.replace(core,"");
+  });
+  document.title=T("VEGABET — Casino, Slot Oyunları, Canlı Casino","VEGABET — Casino, Slot Games, Live Casino");
+  document.documentElement.lang=LANG;
+  const si=$("#lobbySearch"); if(si)si.placeholder=T("Oyun ara...","Search games...");
+  $("#langTr").classList.toggle("on",LANG==="tr");
+  $("#langEn").classList.toggle("on",LANG==="en");
+}
+$("#langTr").addEventListener("click",()=>setLang("tr"));
+$("#langEn").addEventListener("click",()=>setLang("en"));
+function setLang(l){
+  LANG=l; save("vb_lang",l);
+  translateStatic();
+  if(typeof renderPromo==="function"){ promoIdx=promoIdx; renderPromo(); }
+  if(typeof renderGames==="function")renderGames();
+  if(typeof renderPlayers==="function")renderPlayers();
+  if(typeof setBet==="function")setBet(S.bet);
+  if(typeof updateFsBadge==="function")updateFsBadge();
+  if(typeof realityText==="function")realityText();
+  if(typeof calc==="function")calc();
+  if(typeof buildPayRows==="function")buildPayRows();
+  if(typeof roast==="function")roast("start");
+}
 
 /* ---------- görünüm geçişleri ---------- */
 function showView(name){
@@ -1022,9 +1132,9 @@ $("#eyeBtn").addEventListener("click",()=>{ const b=$(".js-balance"); b.textCont
 
 /* ---------- promosyon vitrini ---------- */
 const PROMOS=[
- {k:"Hoş Geldin Paketi",t:'%100 <span>5.000 TL</span>\'ye Kadar İlk Yatırım Bonusu',d:"Kod: HOSGELDIN100 · Min. yatırım 100 TL · 35x çevrim · Ayrıntılar promosyon sayfasında.",img:"assets/games/gates-of-olympus.webp"},
- {k:"Slot Turnuvası",t:'250.000 TL <span>Ödül Havuzu</span> — Her Çevrim Puan',d:"Sweet Bonanza, Gates of Olympus ve Sugar Rush'ta geçerli. Sıralama her saat güncellenir.",img:"assets/games/sweet-bonanza.webp"},
- {k:"Balık Sezonu",t:'Big Bass\'te <span>Ücretsiz Çevrim</span> Yağmuru',d:"Her gün ilk yatırıma özel ücretsiz çevrimler. Şartlar promosyon sayfasında.",img:"assets/games/big-bass.webp"},
+ {k:"Hoş Geldin Paketi",ken:"Welcome Package",t:'%100 <span>5.000 TL</span>\'ye Kadar İlk Yatırım Bonusu',ten:'Up to <span>₺5,000</span> First Deposit Bonus — 100%',d:"Kod: HOSGELDIN100 · Min. yatırım 100 TL · 35x çevrim · Ayrıntılar promosyon sayfasında.",den:"Code: HOSGELDIN100 · Min. deposit ₺100 · 35x wagering · Details on the promotions page.",img:"assets/games/gates-of-olympus.webp"},
+ {k:"Slot Turnuvası",ken:"Slot Tournament",t:'250.000 TL <span>Ödül Havuzu</span> — Her Çevrim Puan',ten:'<span>₺250,000</span> Prize Pool — Every Spin Scores',d:"Sweet Bonanza, Gates of Olympus ve Sugar Rush'ta geçerli. Sıralama her saat güncellenir.",den:"Valid on Sweet Bonanza, Gates of Olympus and Sugar Rush. Leaderboard updates hourly.",img:"assets/games/sweet-bonanza.webp"},
+ {k:"Balık Sezonu",ken:"Fishing Season",t:'Big Bass\'te <span>Ücretsiz Çevrim</span> Yağmuru',ten:'Free Spin Shower on <span>Big Bass</span>',d:"Her gün ilk yatırıma özel ücretsiz çevrimler. Şartlar promosyon sayfasında.",den:"Free spins with your first deposit every day. Terms on the promotions page.",img:"assets/games/big-bass.webp"},
 ];
 let promoIdx=0;
 function renderPromo(){
@@ -1032,7 +1142,8 @@ function renderPromo(){
   main.classList.add("fading");
   setTimeout(()=>{
     img.src=p.img;
-    $("#promoKicker").textContent=p.k; $("#promoTitle").innerHTML=p.t; $("#promoText").textContent=p.d;
+    $("#promoKicker").textContent=T(p.k,p.ken); $("#promoTitle").innerHTML=T(p.t,p.ten); $("#promoText").textContent=T(p.d,p.den);
+    $("#promoCta").textContent=T("Bonusu Al","Claim Bonus");
     main.classList.remove("fading");
   },190);
   $("#promoDots").innerHTML=PROMOS.map((_,i)=>`<button type="button" class="${i===promoIdx?"on":""}" data-promo="${i}" aria-label="Promosyon ${i+1}"></button>`).join("");
@@ -1061,23 +1172,23 @@ const GAMES=[
 function gameCard(g,idx){
   const single=g.logo.length===1||!g.logo[1];
   return `<button class="game" type="button" style="--i:${idx||0}" data-playing="${g.play?1:0}" data-name="${g.name}">
-    ${g.ribbon?`<span class="ribbon ${g.ribbon==="YENİ"?"new":g.ribbon==="DEMO AÇIK"?"demo":""}">${g.ribbon}</span>`:""}
-    <div class="thumb"><img src="assets/games/${g.img}" alt="${g.name} kapak görseli" ${idx!==undefined&&idx<8?'loading="eager" fetchpriority="high"':"loading=\"lazy\""}>
+    ${g.ribbon?`<span class="ribbon ${g.ribbon==="YENİ"?"new":g.ribbon==="DEMO AÇIK"?"demo":""}">${T(g.ribbon,g.ribbon==="YENİ"?"NEW":g.ribbon==="DEMO AÇIK"?"DEMO OPEN":g.ribbon)}</span>`:""}
+    <div class="thumb"><img src="assets/games/${g.img}" alt="${g.name}" ${idx!==undefined&&idx<8?'loading="eager" fetchpriority="high"':"loading=\"lazy\""}>
     ${g.jp?`<span class="jp-amt">JACKPOT ${g.jp}</span>`:""}
     <span class="cover-logo ${single?"single":""}"><span class="l1">${g.logo[0]}</span>${g.logo[1]?`<span class="l2" style="color:${g.accent}">${g.logo[1]}</span>`:""}</span>
-    <span class="hoverlay"><span class="play">${g.play?"Hemen Oyna":"Oyunu Aç"}</span><span class="demo">Ücretsiz Demo</span></span></div>
+    <span class="hoverlay"><span class="play">${g.play?T("Hemen Oyna","Play Now"):T("Oyunu Aç","Open Game")}</span><span class="demo">${T("Ücretsiz Demo","Free Demo")}</span></span></div>
     <div class="meta"><div class="gname">${g.name}</div><div class="gprov"><span>${g.prov}</span><span class="rtptag">RTP ${g.rtp}</span><svg class="fav-ic"><use href="#ic-star"/></svg></div></div></button>`;
 }
 function currentFilter(){ return $$("#catFilters button").find(b=>b.classList.contains("on"))?.dataset.f||"all"; }
 function renderGames(){
   const f=currentFilter(), q=$("#lobbySearch").value.toLocaleLowerCase("tr").trim(), prov=$("#provFilter").value;
   const list=GAMES.filter(g=>(f==="all"||g.cats.includes(f))&&(!q||g.name.toLocaleLowerCase("tr").includes(q))&&(!prov||g.prov===prov));
-  $("#games").innerHTML=list.map((g,i)=>gameCard(g,i)).join("")||'<div style="color:var(--muted);padding:14px;font-size:12.5px">Aramanıza uygun oyun bulunamadı.</div>';
+  $("#games").innerHTML=list.map((g,i)=>gameCard(g,i)).join("")||'<div style="color:var(--muted);padding:14px;font-size:12.5px">'+T("Aramanıza uygun oyun bulunamadı.","No games match your search.")+'</div>';
   $("#relatedGames").innerHTML=GAMES.filter(g=>g.name!=="Gates of Olympus").slice(0,6).map((g,i)=>gameCard(g,i)).join("");
-  $("#lobbyCount").textContent=list.length+" oyun listeleniyor · toplam 1.284 oyun";
+  $("#lobbyCount").textContent=list.length+T(" oyun listeleniyor · toplam 1.284 oyun"," games listed · 1,284 in total");
   $$(".game").forEach(b=>b.addEventListener("click",()=>{
     if(b.dataset.playing==="1"){ showView("Game"); }
-    else toast("“"+b.dataset.name+"” bu makette kapalı. Açık olan tek makine Gates of Olympus — çünkü bu simülasyonun konusu kapak resmi değil, ödeme matematiği. Lobideki diğer her kart da aynı matematiğin başka resmi.");
+    else toast(T("“"+b.dataset.name+"” bu makette kapalı. Açık olan tek makine Gates of Olympus — çünkü bu simülasyonun konusu kapak resmi değil, ödeme matematiği. Lobideki diğer her kart da aynı matematiğin başka resmi.","\""+b.dataset.name+"\" is closed in this mock. The only open machine is Gates of Olympus — because this simulation is about payout maths, not cover art. Every other card in the lobby is the same maths in a different picture."));
   }));
 }
 $$("#catFilters button").forEach(b=>b.addEventListener("click",()=>{ $$("#catFilters button").forEach(x=>x.classList.toggle("on",x===b)); renderGames(); }));
@@ -1110,22 +1221,23 @@ const BRAG=["vurdum {w}!! makine açık bugün","{w} tek spinde geldi, dedim siz
 const CHASE=["kötü gidiyorum. tek büyük vuruş her şeyi düzeltir","dönmek üzere hissediyorum, ikiye katlıyorum","son 6 spin boş, istatistik olarak SIRA BENDE","yeniden yükledim. bu sefer iki katında kalkacağım. bu sefer"];
 const NEARP=["İKİ 7 GELDİ üçüncüsü limon. GELİYOR BU","yine bir sembol farkla kaçtı. bir sonraki. BİR SONRAKİ","makine benimle oynuyor yemin ederim"];
 let players=[
- {name:"Marco K.",mask:"Ma*** K.",ava:"MK",style:"Yüksek bahis",bal:2400,start:2400,bet:100,wag:0,ret:0,reloads:0,status:"hot",chat:.5},
- {name:"Lena S.",mask:"Le*** S.",ava:"LS",style:"Uğurlu koltuk inancı",bal:1750,start:1750,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.35},
- {name:"Devran Y.",mask:"De*** Y.",ava:"DY",style:"Martingale “sistemi”",bal:3100,start:3100,bet:50,wag:0,ret:0,reloads:0,status:"calm",chat:.45},
- {name:"Sofia A.",mask:"So*** A.",ava:"SA",style:"VIP · yüksek bahis",bal:8900,start:8900,bet:250,wag:0,ret:0,reloads:0,status:"hot",chat:.3},
- {name:"Tomas R.",mask:"To*** R.",ava:"TR",style:"Sessiz · auto-spin",bal:960,start:960,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.08},
- {name:"Rex D.",mask:"Re*** D.",ava:"RD",style:"Batıp yükleyen",bal:600,start:1600,bet:100,wag:5200,ret:4200,reloads:3,status:"chase",chat:.4},
- {name:"Maya E.",mask:"Ma*** E.",ava:"ME",style:"Zararını açıkça sayıyor",bal:1180,start:1500,bet:25,wag:900,ret:580,reloads:0,status:"calm",chat:.3,willQuit:true},
+ {name:"Marco K.",mask:"Ma*** K.",ava:"MK",style:"Yüksek bahis",styleEn:"High stakes",bal:2400,start:2400,bet:100,wag:0,ret:0,reloads:0,status:"hot",chat:.5},
+ {name:"Lena S.",mask:"Le*** S.",ava:"LS",style:"Uğurlu koltuk inancı",styleEn:"Believes in a lucky seat",bal:1750,start:1750,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.35},
+ {name:"Devran Y.",mask:"De*** Y.",ava:"DY",style:"Martingale “sistemi”",styleEn:"Has a martingale “system”",bal:3100,start:3100,bet:50,wag:0,ret:0,reloads:0,status:"calm",chat:.45},
+ {name:"Sofia A.",mask:"So*** A.",ava:"SA",style:"VIP · yüksek bahis",styleEn:"VIP · high stakes",bal:8900,start:8900,bet:250,wag:0,ret:0,reloads:0,status:"hot",chat:.3},
+ {name:"Tomas R.",mask:"To*** R.",ava:"TR",style:"Sessiz · auto-spin",styleEn:"Quiet · auto-spin",bal:960,start:960,bet:25,wag:0,ret:0,reloads:0,status:"calm",chat:.08},
+ {name:"Rex D.",mask:"Re*** D.",ava:"RD",style:"Batıp yükleyen",styleEn:"Busts and reloads",bal:600,start:1600,bet:100,wag:5200,ret:4200,reloads:3,status:"chase",chat:.4},
+ {name:"Maya E.",mask:"Ma*** E.",ava:"ME",style:"Zararını açıkça sayıyor",styleEn:"Counts her losses out loud",bal:1180,start:1500,bet:25,wag:900,ret:580,reloads:0,status:"calm",chat:.3,willQuit:true},
 ];
 const ST={hot:"SICAK",calm:"OYUNDA",tilt:"SİNİRLİ",chase:"KOVALIYOR",broke:"BATTI",quit:"AYRILDI"};
+const ST_EN={hot:"HOT",calm:"PLAYING",tilt:"TILTING",chase:"CHASING",broke:"BUST",quit:"QUIT"};
 let mayaQuit=false, mayaTimer=0;
 function renderPlayers(){
   $("#players").innerHTML=players.map((p,i)=>{ const net=p.ret-p.wag;
     return `<div><div class="winner"><div class="av" style="background:${RENK[i]}">${p.ava}</div>
-      <div class="who"><b>${p.mask}</b> <span class="st ${p.status}">${ST[p.status]||"OYUNDA"}</span><span>${p.style} · Gates of Olympus</span></div>
-      <div class="amt">₺${fmt(p.bal)}<span style="display:block;font-size:9px;color:var(--muted2);font-weight:400">BAKİYE</span></div></div>
-      <div class="truthline">Ömür boyu: bahis ₺${fmt(p.wag)} · net ${net<0?"−₺":"₺"}${fmt(Math.abs(net))} · yükleme ${p.reloads}</div></div>`; }).join("");
+      <div class="who"><b>${p.mask}</b> <span class="st ${p.status}">${(LANG==="en"?ST_EN:ST)[p.status]||"OYUNDA"}</span><span>${T(p.style,p.styleEn||p.style)} · Gates of Olympus</span></div>
+      <div class="amt">₺${fmt(p.bal)}<span style="display:block;font-size:9px;color:var(--muted2);font-weight:400">${T("BAKİYE","BALANCE")}</span></div></div>
+      <div class="truthline">${T("Ömür boyu: bahis","Lifetime: wagered")} ₺${fmt(p.wag)} · net ${net<0?"−₺":"₺"}${fmt(Math.abs(net))} · ${T("yükleme","reloads")} ${p.reloads}</div></div>`; }).join("");
   $("#truthBody").innerHTML=players.map(p=>{const net=p.ret-p.wag;return `<tr><td>${p.name}</td><td>₺${fmt(p.wag)}</td><td class="${net<0?"neg":"pos"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</td><td>${p.reloads}</td></tr>`;}).join("");
 }
 function addChat(name,text,cls,truth){
@@ -1175,10 +1287,10 @@ function botTick(){
 /* ---------- makine: 6x5, her yerde oder, tumble ----------
    Odeme tablosu + agirliklar tumble dahil simule edildi (taban oyun). */
 const SYM=[
- {id:"blue",name:"Mavi Taş",w:17},{id:"green",name:"Yeşil Taş",w:16},{id:"purple",name:"Mor Taş",w:15},
- {id:"red",name:"Kırmızı Taş",w:14},{id:"yellow",name:"Sarı Taş",w:12},{id:"ring",name:"Yüzük",w:9},
- {id:"hourglass",name:"Kum Saati",w:8},{id:"chalice",name:"Kupa",w:6},{id:"crown",name:"Taç",w:4},
- {id:"scatter",name:"Zeus Scatter",w:1.5},
+ {id:"blue",name:"Mavi Taş",nameEn:"Blue Gem",w:17},{id:"green",name:"Yeşil Taş",nameEn:"Green Gem",w:16},{id:"purple",name:"Mor Taş",nameEn:"Purple Gem",w:15},
+ {id:"red",name:"Kırmızı Taş",nameEn:"Red Gem",w:14},{id:"yellow",name:"Sarı Taş",nameEn:"Yellow Gem",w:12},{id:"ring",name:"Yüzük",nameEn:"Ring",w:9},
+ {id:"hourglass",name:"Kum Saati",nameEn:"Hourglass",w:8},{id:"chalice",name:"Kupa",nameEn:"Chalice",w:6},{id:"crown",name:"Taç",nameEn:"Crown",w:4},
+ {id:"scatter",name:"Zeus Scatter",nameEn:"Zeus Scatter",w:1.5},
 ];
 const PAY={ /* toplam bahis kati: 8-9 / 10-11 / 12+ */
  crown:{8:20,10:40,12:80}, hourglass:{8:12,10:24,12:50}, chalice:{8:8,10:16,12:32},
@@ -1188,7 +1300,7 @@ const PAY={ /* toplam bahis kati: 8-9 / 10-11 / 12+ */
 let ANTE=false;
 function totalW(){ return SYM.reduce((a,s)=>a+(s.id==="scatter"&&ANTE?s.w*2:s.w),0); }
 function pickSym(){ let r=Math.random()*totalW(); for(const s of SYM){ const w=s.id==="scatter"&&ANTE?s.w*2:s.w; if((r-=w)<0) return s.id; } return "blue"; }
-function symName(id){ return SYM.find(s=>s.id===id).name; }
+function symName(id){ const x=SYM.find(s=>s.id===id); return LANG==="en"?(x.nameEn||x.name):x.name; }
 function genGrid(){ return Array.from({length:6},()=>Array.from({length:5},pickSym)); } /* grid[col][row] */
 function tierOf(n){ return n>=12?12:n>=10?10:8; }
 function evaluate(grid,bet){
@@ -1282,9 +1394,27 @@ const ROASTS={
   ["Kapıdan çıktınız. Zeus arkanızdan bakıyor; siz bakmayın. Bugün kasadan aldığınız en değerli şey para değil, bu cümleyi okuyacak kadar dışarıda olmanız.","Araştırmalar, önceden yazılmış 'olursa-o zaman' planlarının dürtü anındaki kararlardan daha iyi çalıştığını gösterir. Planınız aşağıda; dürtü gelince karar vermeyin, planı okuyun."],
  ],
 };
+const ROASTS_EN={
+ start:[["Welcome. I'll be commentating on every spin, politely. The politely part is not guaranteed.","This machine's base game returns ~90% in simulation. Over the long run ~₺90 of every ₺100 comes back; the rest pays for the building you're reading this in."]],
+ win:[["You won. Screenshot this moment; the machine usually finances the sequel. Walking away right now is statistically your most profitable move of the day.","Dopamine peaks in <b>anticipation</b>, not at the reward. Your brain is having fun when you press SPIN, not when you win — and that exact moment is what the machine sells."],
+ ["Congratulations: the house handed back part of your own money and you called it a win. The toxic one in this relationship isn't you.","Spins right after a win are the fastest ones players make; a win feels like it makes the next spin 'free'. That feeling is itemised in the price list too."]],
+ bigwin:[["BIG WIN! Even Zeus raised an eyebrow. One note: big wins are famous for making people play longest afterwards. Your brain will rent this moment out across the next few hours.","Losses hurt roughly twice as much as equal wins feel good (Kahneman). That's why after a win, what usually drives you isn't greed — it's fear of losing it back."]],
+ ldw:[["YOU WON!!! (Net: negative.) All this confetti for getting back less than you bet. Do you celebrate like this when the supermarket gives you change? At least there you got bread.","Dixon and colleagues found players <b>believe</b> they won on returns smaller than their bet. Sound + lights + the word WIN record a loss as a win. Hence the name: a loss disguised as a win."]],
+ near:[["Seven symbols! One more and... there wasn't one more. That 'one more' feeling is this machine's best-selling product; it doesn't manufacture symbols, it manufactures that feeling.","Clark et al. (Cambridge, 2009): near-misses activate win-related brain regions despite being losses, and increase the urge to continue. That feeling isn't an accident — it's a measured effect."]],
+ streak:[["Three losses in a row. Your inner voice says 'it's about to turn'. Let me introduce you to that voice's data source: none.","Monte Carlo, 18 August 1913: roulette landed black 26 times in a row. Gamblers bet fortunes on red being 'due' — and lost. The ball had no memory; neither do these reels."],
+ ["The streak grows and you're still here. So were Skinner's pigeons: never knowing when the reward would come, they couldn't stop pressing the pedal. At least their reward was edible.","Variable-ratio reinforcement is the schedule under which behaviour is hardest to extinguish. 'Reward at an unknown time' is this machine's operating principle."]],
+ broke:[["Balance: zero. Congratulations — you've seen the end of the game. Most players mistake this screen for the middle of it; at least you recognised the finale.","Terry Watanabe reportedly lost an estimated $127 million in Las Vegas in 2007. To a casino there is no 'unlucky player' — only a player who sat too long."]],
+ reload:[["A fresh ₺1,000, spotless. Your old net? Still waiting for you on the Responsible Gaming page. Wiping memory is a cashier feature, not a bug in you.","The sunk-cost fallacy: money gone cannot justify the next decision. But the brain loves 'we've come this far'. So does the house."]],
+ auto:[["Auto is on. You don't even need to decide anymore; the machine can lose on your behalf too. Peak efficiency.","Automation deletes the one moment where you ask 'should I press again?'. Every protective tool ever built is, at heart, a way of giving that question back."]],
+ ante:[["Ante Bet is on: you paid 25% more for the word 'maybe'. Scatter odds rose; the maths still plays for the same team.","Extra stake doesn't change the paytable; it raises the price per spin. Seeing bonuses more often and playing more cheaply are not the same thing."]],
+ buy:[["You bought a bonus: you paid money for 'free' spins. The free part is from marketing; the invoice is yours.","Buying a bonus buys a package whose average return is usually below its price. What you're actually purchasing is skipping the wait."]],
+ fsend:[["Free spins over. The 'free' part was paid for by everything you spun to get here; this machine is not a charity, just a good storyteller.","The feeling of free makes the running total invisible. To see the total, there's the lifetime net line on the Responsible Gaming page — it doesn't tell stories."]],
+ milestone:[["{spins} spins in. Your net: {net}. Had you started learning a language instead, you could probably order a beer in it by now.","Real casinos famously lack windows and clocks; it's not a coincidence. As time perception fades, sessions stretch. That's why your session time stays in front of you on this page."]],
+ quit:[["You walked out. Zeus is watching you leave; don't look back. The most valuable thing you took from the house today isn't money — it's being outside long enough to read this sentence.","Pre-written 'if–then' plans outperform in-the-moment decisions against urges. Yours is below; when the urge comes, don't decide — read the plan."]],
+};
 let lastRoast="";
 function roast(kind){
-  const pool=ROASTS[kind]; if(!pool)return;
+  const pool=(LANG==="en"?ROASTS_EN:ROASTS)[kind]; if(!pool)return;
   let pick=pool[Math.floor(Math.random()*pool.length)];
   if(pool.length>1&&pick[0]===lastRoast)pick=pool[(pool.indexOf(pick)+1)%pool.length];
   lastRoast=pick[0];
@@ -1292,7 +1422,7 @@ function roast(kind){
   const fill=t=>t.replace("{spins}",S.spins).replace("{net}",(net<0?"−₺":"₺")+fmt(Math.abs(net)));
   const box=$("#roastBox"); if(!box)return;
   $("#roastText").innerHTML=fill(pick[0]);
-  $("#roastFact").innerHTML="<b>Bilimsel gerçek:</b> "+fill(pick[1]);
+  $("#roastFact").innerHTML="<b>"+T("Bilimsel gerçek:","The science:")+"</b> "+fill(pick[1]);
   box.classList.remove("pop"); void box.offsetWidth; box.classList.add("pop");
 }
 function isExcluded(){ return S.sessionLock||Date.now()<S.excludedUntil; }
@@ -1300,7 +1430,7 @@ function addHistory(bet,ev,note){
   const tb=$("#histBody");
   if(tb.querySelector("td[colspan]"))tb.innerHTML="";
   const net=ev.pay-bet;
-  const desc=ev.wins.length? ev.wins.map(w=>`${w.count}× ${symName(w.sym)}`).join(" · ") : "Kazanç yok";
+  const desc=ev.wins.length? ev.wins.map(w=>`${w.count}× ${symName(w.sym)}`).join(" · ") : T("Kazanç yok","No win");
   const tr=document.createElement("tr");
   tr.innerHTML=`<td>${new Date().toLocaleTimeString("tr-TR")}</td><td>₺${fmt(bet)}</td><td>${desc}${note?" · "+note:""}</td><td class="r">₺${fmt(ev.pay)}</td><td class="r ${net<0?"neg":net>0?"pos":""}">${net<0?"−₺":net>0?"₺":""}${net?fmt(Math.abs(net)):"0"}</td>`;
   tb.prepend(tr); while(tb.children.length>12)tb.lastChild.remove();
@@ -1310,7 +1440,7 @@ const sleepMs=ms=>new Promise(r=>setTimeout(r,ms));
 function stakeOf(){ return ANTE? S.bet*1.25 : S.bet; }
 function updateFsBadge(){
   const b=$("#fsBadge"); if(!b)return;
-  if(FS.active){ b.textContent=`Ücretsiz Çevrim ${FS.left} · Toplam ₺${fmt(FS.total)}${FS.mult?` · Çarpan x${FS.mult}`:""}`; b.classList.add("show"); }
+  if(FS.active){ b.textContent=(LANG==="en"?`Free Spins ${FS.left} · Total ₺${fmt(FS.total)}${FS.mult?` · Multiplier x${FS.mult}`:""}`:`Ücretsiz Çevrim ${FS.left} · Toplam ₺${fmt(FS.total)}${FS.mult?` · Çarpan x${FS.mult}`:""}`); b.classList.add("show"); }
   else b.classList.remove("show");
 }
 /* tek cevirim: tumble zinciri dahil. free=true ise bahis alinmaz. */
@@ -1355,7 +1485,7 @@ async function playOne(bet,free){
       FS.mult+=orb;
       const all=$$(".cell"); const host=all[Math.floor(Math.random()*all.length)];
       if(host)host.insertAdjacentHTML("beforeend",`<span class="orb">x${orb}</span>`);
-      $("#lineInfo").innerHTML+=` · <b>Çarpan küresi x${orb}</b> — toplam çarpan x${FS.mult}`;
+      $("#lineInfo").innerHTML+=` · <b>${T("Çarpan küresi","Multiplier orb")} x${orb}</b> — ${T("toplam çarpan","global multiplier")} x${FS.mult}`;
       await sleepMs(650);
     }
     ev.wins.forEach(w=>w.cells.forEach(([c,r])=>{ const el=cellEl(c,r); if(el)el.classList.add("pop"); }));
@@ -1380,25 +1510,25 @@ async function playOne(bet,free){
 }
 async function runFreeSpins(bet){
   FS.active=true; FS.left=8; FS.total=0; FS.mult=0; FS.bet=bet; updateFsBadge();
-  toast("Scatter! 8 ücretsiz çevrim başladı. Çarpan kürelerini Zeus panelinde izleyin.");
+  toast(T("Scatter! 8 ücretsiz çevrim başladı. Çarpan kürelerini Zeus panelinde izleyin.","Scatter! 8 free spins started. Watch the multiplier orbs on the Zeus panel."));
   while(FS.left>0){
     FS.left--; updateFsBadge();
     const ev=await playOne(bet,true);
     FS.total+=ev.pay; S.returned+=ev.pay; S.big=Math.max(S.big,ev.pay);
     countUpWin(ev.pay);
-    $("#slotMsg").textContent=ev.pay>0?`ÜCRETSİZ ÇEVRİM KAZANCI ₺${fmt(ev.pay)}`:"";
+    $("#slotMsg").textContent=ev.pay>0?(LANG==="en"?`FREE SPIN WIN ₺${fmt(ev.pay)}`:`ÜCRETSİZ ÇEVRİM KAZANCI ₺${fmt(ev.pay)}`):"";
     $("#slotMsg").className="win-line "+(ev.pay>0?"win":"lose");
-    addHistory(0,{pay:ev.pay,wins:ev.wins},"Ücretsiz çevrim"+(FS.mult?` · çarpan x${FS.mult}`:""));
+    addHistory(0,{pay:ev.pay,wins:ev.wins},T("Ücretsiz çevrim","Free spin")+(FS.mult?` · ${T("çarpan","multiplier")} x${FS.mult}`:""));
     updateHUD();
     await sleepMs(650);
   }
   S.balance+=FS.total; FS.active=false; updateFsBadge(); updateHUD();
-  $("#lineInfo").innerHTML=`Ücretsiz çevrimler bitti — toplam <b>₺${fmt(FS.total)}</b>${FS.mult?` (çarpan x${FS.mult} dahil)`:""}. Zeus'un verdiği de aynı makinenin parasıdır: bedeli, buraya gelene kadar çevrilenlerde ödenmiştir.`;
-  toast("Ücretsiz çevrimler bitti: toplam ₺"+fmt(FS.total)); roast("fsend");
+  $("#lineInfo").innerHTML=LANG==="en"?`Free spins over — total <b>₺${fmt(FS.total)}</b>${FS.mult?` (multiplier x${FS.mult} included)`:""}. What Zeus gives is the same machine's money: it was paid for by everything spun to get here.`:`Ücretsiz çevrimler bitti — toplam <b>₺${fmt(FS.total)}</b>${FS.mult?` (çarpan x${FS.mult} dahil)`:""}. Zeus'un verdiği de aynı makinenin parasıdır: bedeli, buraya gelene kadar çevrilenlerde ödenmiştir.`;
+  toast(T("Ücretsiz çevrimler bitti: toplam ₺","Free spins over: total ₺")+fmt(FS.total)); roast("fsend");
 }
 async function spin(){
   if(spinning||FS.active)return;
-  if(isExcluded()){ toast("Makine, kendi koyduğunuz kilitle kapalı. Kilit Hesabım > Sorumlu Oyun'dan yönetilir."); return; }
+  if(isExcluded()){ toast(T("Makine, kendi koyduğunuz kilitle kapalı. Kilit Hesabım > Sorumlu Oyun'dan yönetilir.","The machine is closed by your own lock. Manage it under My Account > Responsible Gaming.")); return; }
   const stake=stakeOf();
   if(S.balance<stake){ $("#brokeBox").classList.add("show"); $("#spinBtn").disabled=true; return; }
   spinning=true; S.autoLeft=Math.max(0,S.autoLeft-1);
@@ -1417,15 +1547,15 @@ async function spin(){
     if(zr){ zr.classList.remove("flash"); void zr.offsetWidth; zr.classList.add("flash"); setTimeout(()=>zr.classList.remove("flash"),600); }
   }
   const msg=$("#slotMsg"), net=ev.pay-stake;
-  if(ev.pay>stake){ S.streak=0; msg.textContent="TOPLAM KAZANÇ ₺"+fmt(ev.pay); msg.className="win-line win"; beep(660,.14); setTimeout(()=>beep(880,.18),120); setUrge(S.urge+14,"kazanç sonrası devam isteği"); roast(ev.pay>=stake*15?"bigwin":"win"); }
-  else if(ev.pay>0){ S.ldw++; S.streak++; msg.textContent="Kazanç ₺"+fmt(ev.pay)+" — bahis ₺"+fmt(stake); msg.className="win-line ldw";
-    $("#lineInfo").innerHTML=`Dönüş, bahisten küçük: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. Makine bunu da "kazanç" hanesine yazar.`; beep(520,.1); setUrge(S.urge+8,"bahisten küçük dönüşün kazanç diye sunulması"); roast("ldw"); }
-  else { S.streak++; msg.textContent="KAZANÇ YOK"; msg.className="win-line lose";
-    if(ev.near){ S.near++; $("#lineInfo").textContent="Bir sembolden 7 tane geldi — ödeme 8'den başlar. Ödemesi, en kötü çevrimle aynı: ₺0."; roast("near"); }
+  if(ev.pay>stake){ S.streak=0; msg.textContent=T("TOPLAM KAZANÇ ₺","TOTAL WIN ₺")+fmt(ev.pay); msg.className="win-line win"; beep(660,.14); setTimeout(()=>beep(880,.18),120); setUrge(S.urge+14,"kazanç sonrası devam isteği"); roast(ev.pay>=stake*15?"bigwin":"win"); }
+  else if(ev.pay>0){ S.ldw++; S.streak++; msg.textContent=T("Kazanç ₺","Win ₺")+fmt(ev.pay)+T(" — bahis ₺"," — bet ₺")+fmt(stake); msg.className="win-line ldw";
+    $("#lineInfo").innerHTML=LANG==="en"?`The return is smaller than the bet: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. The machine still files it under "win".`:`Dönüş, bahisten küçük: net <b style="color:#ffb84d">−₺${fmt(stake-ev.pay)}</b>. Makine bunu da "kazanç" hanesine yazar.`; beep(520,.1); setUrge(S.urge+8,"bahisten küçük dönüşün kazanç diye sunulması"); roast("ldw"); }
+  else { S.streak++; msg.textContent=T("KAZANÇ YOK","NO WIN"); msg.className="win-line lose";
+    if(ev.near){ S.near++; $("#lineInfo").textContent=T("Bir sembolden 7 tane geldi — ödeme 8'den başlar. Ödemesi, en kötü çevrimle aynı: ₺0.","Seven of one symbol — payouts start at eight. It pays exactly what the worst spin pays: ₺0."); roast("near"); }
     else if(S.streak===3||S.streak===6){ roast("streak");
       addChat(["Ma*** K.","De*** Y.","Re*** D."][Math.floor(Math.random()*3)],"@kullanici_47 kulübe hoş geldin, biz de 'dönmek üzere' diyerek geldik. aylardır dönmedi.","", "Perde arkası: bu masanın ömür boyu tablosu aşağıda. 'Dönmek üzere' diyenlerin toplamı orada yazıyor."); }
     setUrge(S.urge+(S.streak>=3?10:5),S.streak>=3?"kayıp serisini kovalama":"kayıp"); }
-  if(S.streak>0)$("#streakLabel").innerHTML="Kayıp serisi: <b>"+S.streak+"</b>"; else $("#streakLabel").textContent="";
+  if(S.streak>0)$("#streakLabel").innerHTML=T("Kayıp serisi: ","Losing streak: ")+"<b>"+S.streak+"</b>"; else $("#streakLabel").textContent="";
   S.worstStreak=Math.max(S.worstStreak,S.streak);
   S.history.push(S.balance); if(S.history.length>220)S.history.shift();
   addHistory(stake,ev,ev.scatterCount>=4?"Scatter "+ev.scatterCount:"");
@@ -1478,13 +1608,22 @@ function drawChart(){
 }
 function eqText(amount){
   const a=Math.abs(amount);
-  const items=[[20,"bardak çay"],[90,"filtre kahve"],[250,"sinema bileti"],[350,"kitap"],[1500,"haftalık market alışverişi"]];
+  const items=LANG==="en"?[[20,"cups of tea"],[90,"filter coffees"],[250,"cinema tickets"],[350,"books"],[1500,"weekly grocery shops"]]
+    :[[20,"bardak çay"],[90,"filtre kahve"],[250,"sinema bileti"],[350,"kitap"],[1500,"haftalık market alışverişi"]];
   const it=items.filter(([p])=>a>=p).pop()||items[0];
   const n=Math.max(1,Math.round(a/it[0]));
-  return ` Günlük dile çevirirsek: Zeus'a yaklaşık <b>${fmt(n)} ${it[1]}</b> ısmarlamış oldunuz; o hâlâ tok, siz hâlâ susadınız.`;
+  return LANG==="en"
+    ? ` In everyday terms: you've treated Zeus to roughly <b>${fmt(n)} ${it[1]}</b>. He's still full; you're still thirsty.`
+    : ` Günlük dile çevirirsek: Zeus'a yaklaşık <b>${fmt(n)} ${it[1]}</b> ısmarlamış oldunuz; o hâlâ tok, siz hâlâ susadınız.`;
 }
 function realityText(){
   const mins=Math.floor((Date.now()-S.started)/60000), net=S.returned-S.wagered;
+  if(LANG==="en"){
+    $("#realitySummary").innerHTML=S.spins===0?"No spins yet. After a few spins this fills in with your time, total wager and net — alongside what the house took while the chat was celebrating.":
+     `<b>${S.spins} spins in ${mins} min</b>, <b>₺${fmt(S.wagered)}</b> wagered, lifetime net <b style="color:${net<0?"#b3261e":"#137333"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</b>. The machine dressed <b>${S.ldw}</b> losses up as wins and missed by one symbol <b>${S.near}</b> times. `+
+     (net<0?`Winning it back on this machine would take roughly <b>₺${fmt(Math.abs(net)/.101)}</b> more wagering — expecting to lose about 10% of that too.`+eqText(net):`You're ahead; with every new spin priced at about −10% expected value (free spins partly offset this), statistically this is exactly the right moment to stop.`);
+    return;
+  }
   $("#realitySummary").innerHTML=S.spins===0?"Henüz çevrim yok. Birkaç çevrimden sonra burada süreniz, toplam bahsiniz ve netiniz; sohbet kutlama yaparken kasanın aldıklarıyla birlikte yazacak.":
    `<b>${mins} dakikada ${S.spins} çevrim</b>, toplam <b>₺${fmt(S.wagered)}</b> bahis, ömür boyu net <b style="color:${net<0?"#b3261e":"#137333"}">${net<0?"−₺":"₺"}${fmt(Math.abs(net))}</b>. Makine <b>${S.ldw}</b> zararı kazanç gibi sundu, <b>${S.near}</b> kez bir sembol farkla kaybettirdi. `+
    (net<0?`Bunu bu makinede geri kazanmak için yaklaşık <b>₺${fmt(Math.abs(net)/.101)}</b> daha çevirmek gerekir; onun da yaklaşık %10'unu kaybetmeyi bekleyerek.`+eqText(net):`Öndesiniz; her yeni çevrimin fiyatı yaklaşık −%10 beklenen değer olduğu için (ücretsiz çevrimler bunu kısmen dengeler) istatistiksel olarak durmanın en doğru anı burası.`);
@@ -1504,33 +1643,36 @@ $("#spinBtn").addEventListener("click",spin);
 $("#payBtn").addEventListener("click",()=>$("#payModal").classList.add("show"));
 $("#anteBtn").addEventListener("click",()=>{
   ANTE=!ANTE; const b=$("#anteBtn");
-  b.classList.toggle("on",ANTE); b.innerHTML='<svg class="ic"><use href="#ic-turbo"/></svg> '+(ANTE?"Açık · Bahis ₺"+fmt(stakeOf()):"Kapalı");
-  $("#lineInfo").innerHTML=ANTE?"Ante Bet açık: çevrim ₺"+fmt(stakeOf())+", Scatter ağırlığı ×2. Fiyat arttı; ödeme tablosu aynı.":"Ante Bet kapalı.";
+  b.classList.toggle("on",ANTE); b.innerHTML='<svg class="ic"><use href="#ic-turbo"/></svg> '+(ANTE?T("Açık · Bahis ₺","On · Bet ₺")+fmt(stakeOf()):T("Kapalı","Off"));
+  $("#lineInfo").innerHTML=ANTE?T("Ante Bet açık: çevrim ₺","Ante Bet on: spin ₺")+fmt(stakeOf())+T(", Scatter ağırlığı ×2. Fiyat arttı; ödeme tablosu aynı.",", Scatter weight ×2. The price rose; the paytable didn't."):T("Ante Bet kapalı.","Ante Bet off.");
   if(ANTE)roast("ante");
 });
 $("#buyBtn").addEventListener("click",async()=>{
   if(spinning||FS.active)return;
   if(isExcluded()){ toast("Makine kilitli. Bonus satın almak da bir bahistir; kilit onu da kapsar."); return; }
   const price=S.bet*50;
-  if(S.balance<price){ toast("Bonus için ₺"+fmt(price)+" gerekir. Bakiyeniz yetersiz — bu butonun gerçek sitedeki işi tam olarak bu anı zorlaştırmaktır."); return; }
-  if(!confirm("Bonus satın alınsın mı? ₺"+fmt(price)+" karşılığında 8 ücretsiz çevrim. Beklenen dönüş, fiyattan genelde düşüktür; Zeus garantisi yoktur."))return;
+  if(S.balance<price){ toast(T("Bonus için ₺","The bonus needs ₺")+fmt(price)+T(" gerekir. Bakiyeniz yetersiz — bu butonun gerçek sitedeki işi tam olarak bu anı zorlaştırmaktır.",". Your balance is short — making this exact moment harder is this button's real job on a real site.")); return; }
+  if(!confirm(T("Bonus satın alınsın mı? ₺","Buy the bonus? ₺")+fmt(price)+T(" karşılığında 8 ücretsiz çevrim. Beklenen dönüş, fiyattan genelde düşüktür; Zeus garantisi yoktur."," for 8 free spins. The expected return is usually below the price; Zeus offers no guarantees.")))return;
   spinning=true;
   S.balance-=price; S.wagered+=price; updateHUD();
-  toast("Bonus satın alındı: −₺"+fmt(price)+". 8 ücretsiz çevrim başlıyor; sonunda bu fiyatla karşılaştırın."); roast("buy");
+  toast(T("Bonus satın alındı: −₺","Bonus bought: −₺")+fmt(price)+T(". 8 ücretsiz çevrim başlıyor; sonunda bu fiyatla karşılaştırın.",". 8 free spins starting; compare the result with this price at the end.")); roast("buy");
   await runFreeSpins(S.bet);
   S.history.push(S.balance); updateHUD(); drawChart(); realityText();
   spinning=false;
 });
+function buildPayRows(){
 $("#payRows").innerHTML=SYM.filter(s=>s.id!=="scatter").map(s=>{
   const p=PAY[s.id], f=n=>String(n).replace(".",",");
   return `<div style="display:flex;align-items:center;gap:11px;padding:6px 4px;border-bottom:1px solid #1c2f50">
     <svg style="width:38px;height:38px;flex:0 0 38px"><use href="#sym-${s.id}"/></svg>
-    <b style="color:#fff;min-width:84px">${s.name}</b>
+    <b style="color:#fff;min-width:84px">${symName(s.id)}</b>
     <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">8-9 <b style="color:#ffd23e">x${f(p[8])}</b> · 10-11 <b style="color:#ffd23e">x${f(p[10])}</b> · 12+ <b style="color:#ffd23e">x${f(p[12])}</b></span></div>`;
 }).join("")+`<div style="display:flex;align-items:center;gap:11px;padding:6px 4px">
     <span style="width:38px;height:38px;flex:0 0 38px;border-radius:2px;overflow:hidden"><img src="assets/games/gates-of-olympus.webp" style="width:100%;height:100%;object-fit:cover;object-position:center 20%"></span>
     <b style="color:#fff;min-width:84px">Zeus</b><span style="font-size:11px;color:var(--muted)">SCATTER</span>
-    <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">4+ = <b style="color:#ffd23e">8 ücretsiz çevrim</b></span></div>`;
+    <span style="margin-left:auto;font-family:'Courier New',monospace;color:#c4d2e8;font-size:12px">4+ = <b style="color:#ffd23e">${T("8 ücretsiz çevrim","8 free spins")}</b></span></div>`;
+}
+buildPayRows();
 $("#autoBtn").addEventListener("click",()=>{ S.auto=!S.auto; $("#autoBtn").classList.toggle("on",S.auto);
   if(S.auto){ S.autoLeft=10; roast("auto"); if(!spinning)spin(); } });
 $("#turboBtn").addEventListener("click",()=>{ S.turbo=!S.turbo; $("#turboBtn").classList.toggle("on",S.turbo); });
@@ -1647,7 +1789,9 @@ $("#planBtn").addEventListener("click",()=>{
 function calc(){
   const spins=+($("#calcSpins")?.value||0), bet=+($("#calcBet")?.value||0), daily=spins*bet, el=$("#saveOut");
   if(!el)return;
-  el.innerHTML=`<b>30 gün:</b> çevirmediğiniz <b>₺${fmt(daily*30)}</b> bahis; yaklaşık %10'luk kasayla sizde kalan beklenen <b>₺${fmt(daily*30*.101)}</b> ve vermek zorunda kalmadığınız ${fmt(spins*30)} karar.<br><b>1 yıl:</b> çevirmediğiniz <b>₺${fmt(daily*365)}</b> · beklenen tasarruf ≈<b>₺${fmt(daily*365*.101)}</b> · spine gitmeyen yaklaşık <b>${Math.round(spins*365*4/3600)} saat</b>.`;
+  el.innerHTML=LANG==="en"
+    ? `<b>30 days:</b> you don't wager <b>₺${fmt(daily*30)}</b>; at a ~10% house edge, the expected <b>₺${fmt(daily*30*.101)}</b> stays with you — plus ${fmt(spins*30)} decisions you never have to make.<br><b>1 year:</b> you don't wager <b>₺${fmt(daily*365)}</b> · expected saving ≈<b>₺${fmt(daily*365*.101)}</b> · roughly <b>${Math.round(spins*365*4/3600)} hours</b> not spent spinning.`
+    : `<b>30 gün:</b> çevirmediğiniz <b>₺${fmt(daily*30)}</b> bahis; yaklaşık %10'luk kasayla sizde kalan beklenen <b>₺${fmt(daily*30*.101)}</b> ve vermek zorunda kalmadığınız ${fmt(spins*30)} karar.<br><b>1 yıl:</b> çevirmediğiniz <b>₺${fmt(daily*365)}</b> · beklenen tasarruf ≈<b>₺${fmt(daily*365*.101)}</b> · spine gitmeyen yaklaşık <b>${Math.round(spins*365*4/3600)} saat</b>.`;
 }
 $("#calcSpins").addEventListener("input",calc); $("#calcBet").addEventListener("input",calc);
 $("#sharePlanBtn").addEventListener("click",async()=>{
@@ -1669,6 +1813,7 @@ setInterval(botTick,2100);
 
 /* init */
 setBet(20); roast("start");
+if(LANG==="en")setLang("en");
 renderGrid(currentGrid);
 renderPlayers(); updateHUD(); updateHouse(); drawChart(); setUrge(10); calc(); realityText();
 addChat("Salon","Gates of Olympus demo açıldı. Oyuncular simüle, bakiye demo.","sys");
